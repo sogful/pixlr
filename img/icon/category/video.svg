@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="32" height="32" version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
- <rect transform="rotate(-90)" x="-28" y="4" width="24" height="24" rx="3" ry="3" fill="#73a5f6" stroke-dashoffset="12.8" stroke-linejoin="bevel" stroke-opacity=".6" stroke-width="2" style="paint-order:stroke markers fill"/>
- <path transform="matrix(.867 0 0 1.05 2.3 -1.1)" d="m22.7 16.3-11.5 6.66v-6.66-6.66l5.77 3.33z" fill="#fff" stroke-dashoffset="12.8" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.09" style="paint-order:stroke markers fill"/>
-</svg>

@@ -1,7 +1,7 @@
-// local dev server for the pixlr offline mirror.
-// the editor bundles have absolute root paths (/dist/, /img/, /images/, /font/, /text/, /js/)
-// baked in as literal strings, so this maps those urls onto the assets/ folder layout
-// instead of rewriting every occurrence inside the bundles.
+// local dev server for the pixlr offline mirror. plain static file serving --
+// no url rewriting, since all paths in the html/js now match the real folder
+// layout directly. any other static server (vs code live preview, python -m
+// http.server, etc.) works exactly the same, this is just a convenience.
 // run: node index.js [port]
 
 const http = require("http")
@@ -20,31 +20,9 @@ const mimetypes = {
     ".mp4": "video/mp4"
 }
 
-const mappings = [
-    ["/dist/", "assets/static/dist/"],
-    ["/font/", "assets/fonts/"],
-    ["/img/", "assets/images/img/"],
-    ["/images/", "assets/images/images/"],
-    ["/text/", "assets/static/text/"],
-    ["/js/", "assets/static/js/"],
-    ["/favicon/", "assets/static/favicon/"],
-    ["/src/", "src/"]
-]
-
-function resolvefile(urlpath) {
-    if (urlpath === "/") return "index.html"
-    if (urlpath === "/service-worker.js") return "assets/static/service-worker.js"
-    for (const [prefix, dir] of mappings) {
-        if (urlpath.startsWith(prefix)) {
-            return path.join(dir, urlpath.slice(prefix.length))
-        }
-    }
-    return urlpath.slice(1)
-}
-
 http.createServer((req, res) => {
     const urlpath = decodeURIComponent(req.url.split("?")[0])
-    const relative = resolvefile(urlpath)
+    const relative = urlpath === "/" ? "index.html" : urlpath.slice(1)
     const full = path.normalize(path.join(root, relative))
     if (!full.startsWith(root)) {
         res.writeHead(403)

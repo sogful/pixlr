@@ -1,23 +1,9 @@
-/* offline mirror overrides -- hides features that need pixlr's server, or that the user asked
-   removed from the main screen. elements are hidden, not deleted, since several are wired
-   with unguarded getelementbyid().addeventlistener() calls in editor.js that throw if the
-   element is missing entirely */
-
-#navigator-panel, #history-panel, #shortcut-navigator, #shortcut-history,
-#filter-super-sharp, #filter-remove-noise,
-#view-aiquicktip, #view-navigator, #view-history,
-#menu-help {
-    display: none !important;
-}
-
-#workspace > .aip {
-    display: none !important;
-}
-
-.offline-icon {
-    display: none !important;
-}
-
+/* offline mirror: pixlr's login/subscribe nag modals ("bounce" upsells and the "hi
+   there" entry modal) are reachable from many scattered call sites throughout
+   editor.js for account/paywall flows that don't apply to a local mirror with no
+   login. hiding them here is a deliberate exception, not a stand-in for removed
+   code -- every ai service and dead panel/menu this repo used to hide has instead
+   been deleted at the source, see the js source directly. */
 .modal:has(.bounce-sheet), .modal:has(#entry-pop-right) {
     display: none !important;
 }

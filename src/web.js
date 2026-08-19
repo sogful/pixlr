@@ -1219,10 +1219,10 @@ var web;
             const n = (0, s.Ay)(t);
             if (n.type === "text") {
               n.type = "password";
-              i.src = "/img/icon/eye-hide.svg";
+              i.src = "/assets/images/img/icon/eye-hide.svg";
             } else {
               n.type = "text";
-              i.src = "/img/icon/eye-show.svg";
+              i.src = "/assets/images/img/icon/eye-show.svg";
             }
           };
           this.validateInputTimer = e => {
@@ -1591,8 +1591,8 @@ var web;
       const r = window.location.href.includes("localhost") ? "10000000-ffff-ffff-ffff-000000000001" : "550ad708-3266-4d24-8566-69208120dbe6";
       class c {
         constructor() {
-          this.chooser = () => `\n            <div class="chooser">\n                <div class="social-button" data-social="google">\n                    <img src="/images/icon/google.svg" alt="google">\n                    ${(0, n.A)("commonContinueWith")} Google\n                </div>\n                <div class="social-button" data-social="facebook">\n                    <img src="/images/icon/facebook.svg" alt="facebook">\n                    ${(0, n.A)("commonContinueWith")} Facebook\n                </div>\n                <div class="social-button" data-social="apple">\n                    <img src="/images/icon/apple_gray.svg" alt="apple">\n                    ${(0, n.A)("commonContinueWith")} Apple\n                </div>\n                <a class="top-20" style="display:inline-block;text-align:center;font-size:15px;" id="choose-email">\n                    <strong>${(0, n.A)("commonOrUseEmail")}</strong>\n                </a>\n            </div>\n            <p class="top-30 center" style="padding:0 25px">\n                ${(0, n.A)("commonAgreeTo")} <a href="/terms-of-use/" target='_new'>${(0, n.A)("commonTermsOfUse")}</a> ${(0, n.A)("commonAnd")} <a href="/privacy-policy/" target='_new'> ${(0, n.A)("commonPrivacyPolicy")}</a>.\n            </p>\n        `;
-          this.login = () => `\n\n            <div class="center top-10">\n                ${(0, n.A)("commonNotMember")} &nbsp; <strong><a id="load-signup">${(0, n.A)("commonSignUp")}!</a></strong>\n            </div>\n\n            <form id="entry-form" data-entry="login" class="top-30">\n                <div class="input-group">\n                    <label for="entry-email">${(0, n.A)("commonEmail")}</label>\n                    <input type="email" maxlength="70" name="email" id="entry-email" placeholder="Email address">\n                    <p class="error-msg">${(0, n.A)("commonEnterValidEmail")}</p>\n                </div>\n                <div class="input-group">\n                    <label for="entry-password">${(0, n.A)("commonPassword")}</label>\n                    <input type="password" name="password" id="entry-password" placeholder="Enter password" data-login="true">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="/img/icon/eye-hide.svg">\n                </div>\n\n                <input type="checkbox" id="entry-rememberMe" name="rememberMe" checked/>\n                <label class="top-20 switch" for="entry-rememberMe"><span></span> ${(0, n.A)("commonRememberMe")}</label>\n\n                <div id="h-captcha" style="margin: 0px" data-sitekey="${r}"></div>\n\n                <button type="submit" class="button med w-100 top-40" id="entry-submit">${(0, n.A)("commonLogin")}</button>\n\n                <div class="center top-30"><strong><a id="load-forgotPassword">${(0, n.A)("commonForgotPass")}</a></strong></center>\n\n            </form>\n        `;
+          this.chooser = () => `\n            <div class="chooser">\n                <div class="social-button" data-social="google">\n                    <img src="/assets/images/images/icon/google.svg" alt="google">\n                    ${(0, n.A)("commonContinueWith")} Google\n                </div>\n                <div class="social-button" data-social="facebook">\n                    <img src="/assets/images/images/icon/facebook.svg" alt="facebook">\n                    ${(0, n.A)("commonContinueWith")} Facebook\n                </div>\n                <div class="social-button" data-social="apple">\n                    <img src="/assets/images/images/icon/apple_gray.svg" alt="apple">\n                    ${(0, n.A)("commonContinueWith")} Apple\n                </div>\n                <a class="top-20" style="display:inline-block;text-align:center;font-size:15px;" id="choose-email">\n                    <strong>${(0, n.A)("commonOrUseEmail")}</strong>\n                </a>\n            </div>\n            <p class="top-30 center" style="padding:0 25px">\n                ${(0, n.A)("commonAgreeTo")} <a href="/terms-of-use/" target='_new'>${(0, n.A)("commonTermsOfUse")}</a> ${(0, n.A)("commonAnd")} <a href="/privacy-policy/" target='_new'> ${(0, n.A)("commonPrivacyPolicy")}</a>.\n            </p>\n        `;
+          this.login = () => `\n\n            <div class="center top-10">\n                ${(0, n.A)("commonNotMember")} &nbsp; <strong><a id="load-signup">${(0, n.A)("commonSignUp")}!</a></strong>\n            </div>\n\n            <form id="entry-form" data-entry="login" class="top-30">\n                <div class="input-group">\n                    <label for="entry-email">${(0, n.A)("commonEmail")}</label>\n                    <input type="email" maxlength="70" name="email" id="entry-email" placeholder="Email address">\n                    <p class="error-msg">${(0, n.A)("commonEnterValidEmail")}</p>\n                </div>\n                <div class="input-group">\n                    <label for="entry-password">${(0, n.A)("commonPassword")}</label>\n                    <input type="password" name="password" id="entry-password" placeholder="Enter password" data-login="true">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="/assets/images/img/icon/eye-hide.svg">\n                </div>\n\n                <input type="checkbox" id="entry-rememberMe" name="rememberMe" checked/>\n                <label class="top-20 switch" for="entry-rememberMe"><span></span> ${(0, n.A)("commonRememberMe")}</label>\n\n                <div id="h-captcha" style="margin: 0px" data-sitekey="${r}"></div>\n\n                <button type="submit" class="button med w-100 top-40" id="entry-submit">${(0, n.A)("commonLogin")}</button>\n\n                <div class="center top-30"><strong><a id="load-forgotPassword">${(0, n.A)("commonForgotPass")}</a></strong></center>\n\n            </form>\n        `;
           this.register = async () => {
             let e = "";
             let t = false;
@@ -1605,18 +1605,18 @@ var web;
                 t = true;
               }
             }
-            return `\n            <form id="entry-form" data-entry="register">\n                <div class="input-group">\n                    <label for="entry-email">${(0, n.A)("commonEmail")}</label>\n                    <input type="email" maxlength="70" name="email" id="entry-email" placeholder="Email address">\n                    <p class="error-msg">${(0, n.A)("commonEnterValidEmail")}</p>\n                </div>\n                <div class="input-group">\n                    <label for="entry-password">${(0, n.A)("commonPassword")}</label>\n                    <input type="password" name="password" id="entry-password" placeholder="Enter password">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="/img/icon/eye-hide.svg">\n                 </div>\n\n                <input type="checkbox" id="entry-newsletter" name="newsletter">\n                <label class="top-20 switch" for="entry-newsletter"><span></span>${(0, n.A)("subscribeToNewsletter")}</label>\n\n                <div id="h-captcha" style="margin: 0px" data-sitekey="${r}"></div>\n\n                <button type="submit" class="button med w-100 top-40">${(0, n.A)("commonSignUp")}</button>\n            </form>\n        `;
+            return `\n            <form id="entry-form" data-entry="register">\n                <div class="input-group">\n                    <label for="entry-email">${(0, n.A)("commonEmail")}</label>\n                    <input type="email" maxlength="70" name="email" id="entry-email" placeholder="Email address">\n                    <p class="error-msg">${(0, n.A)("commonEnterValidEmail")}</p>\n                </div>\n                <div class="input-group">\n                    <label for="entry-password">${(0, n.A)("commonPassword")}</label>\n                    <input type="password" name="password" id="entry-password" placeholder="Enter password">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="/assets/images/img/icon/eye-hide.svg">\n                 </div>\n\n                <input type="checkbox" id="entry-newsletter" name="newsletter">\n                <label class="top-20 switch" for="entry-newsletter"><span></span>${(0, n.A)("subscribeToNewsletter")}</label>\n\n                <div id="h-captcha" style="margin: 0px" data-sitekey="${r}"></div>\n\n                <button type="submit" class="button med w-100 top-40">${(0, n.A)("commonSignUp")}</button>\n            </form>\n        `;
           };
           this.forgotPassword = () => `\n            <h2 class="top-30">${(0, n.A)("commonForgotPass")}</h2>\n\n            <form id="entry-form" class="top-30" data-entry="forgotPassword">\n                <div class="input-group">\n                    <label for="entry-email">${(0, n.A)("commonEmail")}</label>\n                    <input type="email" maxlength="70" name="email" id="entry-email" placeholder="Email address"/>\n                    <p class="error-msg">${(0, n.A)("commonEnterValidEmail")}</p>\n                </div>\n\n                <div id="h-captcha" style="margin: 0px" data-sitekey="${r}"></div>\n\n                <button type="submit" class="button large w-100 top-40" id="load-verification">${(0, n.A)("commonReqCode")}</button>\n            </form>\n        `;
-          this.resetPassword = (e = false) => `\n            <h2 class="top-10">${e ? (0, n.A)("commonSetPassword") : (0, n.A)("commonResetPass")}</h2>\n\n            <form id="entry-form" class="top-30" data-entry="${e ? "setPassword" : "resetPassword"}">\n                <div class="input-group">\n                    <label for="entry-email">${(0, n.A)("commonEmail")}</label>\n                    <input type="email" maxlength="70" name="email" id="entry-email" readonly/>\n                    <p class="error-msg">${(0, n.A)("commonEnterValidEmail")}</p>\n                </div>\n                <div class="input-group">\n                    <label for="entry-password">${(0, n.A)("commonNewPass")}</label>\n                    <input type="password" name="password" id="entry-password">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="/img/icon/eye-hide.svg">\n                    <span id="password-meter" class="none">\n                        <span></span><span></span><span></span><span></span>\n                    </span>\n                </div>\n                <div class="input-group">\n                    <label for="entry-code">${(0, n.A)("commonCode")}</label>\n                    <input type="number" name="code" id="entry-code" style="text-align: left;" onkeypress="if(this.value.length===6)return false;">\n                    <p class="error-msg">${(0, n.A)("commonEnterValidCode")}</p>\n                </div>\n\n                ${e ? `<p class="center top-20 text-center"><strong><a id="entry-resend">${(0, n.A)("commonSendResetCode")}</a></strong></p>` : ""}\n\n                <div id="h-captcha" style="margin: 0px" data-sitekey="${r}"></div>\n                <button class="button large w-100 top-20" type="submit">${(0, n.A)("commonUpdatePass")}</button>\n                ${e ? "" : `<p class="top-20 hide center" id="entry-resend">${(0, n.A)("commonDidNotReceiveCode")} <a class="anchor">${(0, n.A)("commonResend")}</a></p>`}\n            </form>\n        `;
-          this.policyReset = (e = "") => `\n            <h2 class="top-10">${(0, n.A)("commonResetPass")}</h2>\n            ${e ? `<div class="info-box top-20"><p>${e}</p></div>` : ""}\n\n            <form id="entry-form" class="top-30" data-entry="policyReset">\n                <div class="input-group">\n                    <label for="entry-email">${(0, n.A)("commonEmail")}</label>\n                    <input type="email" name="email" id="entry-email" readonly/>\n                </div>\n                <div class="input-group">\n                    <label for="entry-password">${(0, n.A)("commonNewPass")}</label>\n                    <input type="password" name="password" id="entry-password">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="/img/icon/eye-hide.svg">\n                    <span id="password-meter" class="none">\n                        <span></span><span></span><span></span><span></span>\n                    </span>\n                </div>\n                <input type="hidden" name="token" id="entry-token">\n\n                <button class="button large w-100 top-20" type="submit">${(0, n.A)("commonUpdatePass")}</button>\n            </form>\n        `;
+          this.resetPassword = (e = false) => `\n            <h2 class="top-10">${e ? (0, n.A)("commonSetPassword") : (0, n.A)("commonResetPass")}</h2>\n\n            <form id="entry-form" class="top-30" data-entry="${e ? "setPassword" : "resetPassword"}">\n                <div class="input-group">\n                    <label for="entry-email">${(0, n.A)("commonEmail")}</label>\n                    <input type="email" maxlength="70" name="email" id="entry-email" readonly/>\n                    <p class="error-msg">${(0, n.A)("commonEnterValidEmail")}</p>\n                </div>\n                <div class="input-group">\n                    <label for="entry-password">${(0, n.A)("commonNewPass")}</label>\n                    <input type="password" name="password" id="entry-password">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="/assets/images/img/icon/eye-hide.svg">\n                    <span id="password-meter" class="none">\n                        <span></span><span></span><span></span><span></span>\n                    </span>\n                </div>\n                <div class="input-group">\n                    <label for="entry-code">${(0, n.A)("commonCode")}</label>\n                    <input type="number" name="code" id="entry-code" style="text-align: left;" onkeypress="if(this.value.length===6)return false;">\n                    <p class="error-msg">${(0, n.A)("commonEnterValidCode")}</p>\n                </div>\n\n                ${e ? `<p class="center top-20 text-center"><strong><a id="entry-resend">${(0, n.A)("commonSendResetCode")}</a></strong></p>` : ""}\n\n                <div id="h-captcha" style="margin: 0px" data-sitekey="${r}"></div>\n                <button class="button large w-100 top-20" type="submit">${(0, n.A)("commonUpdatePass")}</button>\n                ${e ? "" : `<p class="top-20 hide center" id="entry-resend">${(0, n.A)("commonDidNotReceiveCode")} <a class="anchor">${(0, n.A)("commonResend")}</a></p>`}\n            </form>\n        `;
+          this.policyReset = (e = "") => `\n            <h2 class="top-10">${(0, n.A)("commonResetPass")}</h2>\n            ${e ? `<div class="info-box top-20"><p>${e}</p></div>` : ""}\n\n            <form id="entry-form" class="top-30" data-entry="policyReset">\n                <div class="input-group">\n                    <label for="entry-email">${(0, n.A)("commonEmail")}</label>\n                    <input type="email" name="email" id="entry-email" readonly/>\n                </div>\n                <div class="input-group">\n                    <label for="entry-password">${(0, n.A)("commonNewPass")}</label>\n                    <input type="password" name="password" id="entry-password">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="/assets/images/img/icon/eye-hide.svg">\n                    <span id="password-meter" class="none">\n                        <span></span><span></span><span></span><span></span>\n                    </span>\n                </div>\n                <input type="hidden" name="token" id="entry-token">\n\n                <button class="button large w-100 top-20" type="submit">${(0, n.A)("commonUpdatePass")}</button>\n            </form>\n        `;
           this.verification = e => `\n            <h1>${(0, n.A)("commonVerifyAcc")}</h1>\n            <p id="entry-to-email" data-text="${(0, n.A)("commonSentCodeDesc")}">${(0, n.A)("commonSentCodeDesc")}</p>\n\n            <form id="entry-form" data-entry="${e}">\n                <input id="verification-email" type="hidden" name="email" readonly/>\n                <div class="input-group">\n                    <label for="code">${(0, n.A)("commonCode")}</label>\n                    <input type="number" name="code" id="entry-code" style="text-align: left;" onkeypress="if(this.value.length===6)return false;">\n                    <p class="error-msg">${(0, n.A)("commonEnterValidCode")}</p>\n                </div>\n\n                <button type="submit" class="button large w-100 top-20">${(0, n.A)("commonVerify")}</button>\n                <p class="top-20 hide text-center" id="entry-resend">${(0, n.A)("commonDidNotReceiveCode")} &nbsp; <a class="anchor">${(0, n.A)("commonResend")}</a></p>\n            </form>\n        `;
-          this.changePassword = () => `\n            <h2>${(0, n.A)("commonChangePassword")}</h2>\n            <form id="entry-form" class="top-30" data-entry="changePassword">\n                <div class="input-group">\n                    <label for="entry-password">${(0, n.A)("commonOldPass")}</label>\n                    <input type="password" name="password" id="entry-password">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="/img/icon/eye-hide.svg">\n                </div>\n                <div class="input-group">\n                    <label for="entry-password">${(0, n.A)("commonNewPass")}</label>\n                    <input type="password" name="new-password" id="entry-password-new">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password-2" class="input-icon" src="/img/icon/eye-hide.svg">\n                    <span id="password-meter" class="none">\n                        <span></span><span></span><span></span><span></span>\n                    </span>\n                </div>\n                <button type="submit" class="button w-100 top-20" style="margin-bottom: 20px">${(0, n.A)("commonChangePassword")}</button>\n            </form>\n        `;
+          this.changePassword = () => `\n            <h2>${(0, n.A)("commonChangePassword")}</h2>\n            <form id="entry-form" class="top-30" data-entry="changePassword">\n                <div class="input-group">\n                    <label for="entry-password">${(0, n.A)("commonOldPass")}</label>\n                    <input type="password" name="password" id="entry-password">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="/assets/images/img/icon/eye-hide.svg">\n                </div>\n                <div class="input-group">\n                    <label for="entry-password">${(0, n.A)("commonNewPass")}</label>\n                    <input type="password" name="new-password" id="entry-password-new">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password-2" class="input-icon" src="/assets/images/img/icon/eye-hide.svg">\n                    <span id="password-meter" class="none">\n                        <span></span><span></span><span></span><span></span>\n                    </span>\n                </div>\n                <button type="submit" class="button w-100 top-20" style="margin-bottom: 20px">${(0, n.A)("commonChangePassword")}</button>\n            </form>\n        `;
           this.changeEmail = () => `\n            <h2>${(0, n.A)("commonChangeEmail")}</h2>\n\n            <form id="entry-form" class="top-30" data-entry="changeEmail">\n                <div class="input-group">\n                    <label class="text-capitalize" for="email">${(0, n.A)("commonNewEmail")}</label>\n                    <input type="email" maxlength="70" name="email" id="entry-email">\n                    <p class="error-msg">${(0, n.A)("commonEnterValidEmail")}</p>\n                </div>\n\n                <button type="submit" class="button w-100 top-20" style="margin-bottom: 20px">${(0, n.A)("commonNewEmail")}</button>\n            </form>\n        `;
           this.changeUsername = (e = "") => `\n            <h2>${(0, n.A)("changeUsername")}</h2>\n\n            <form id="entry-form" class="top-30" data-entry="changeUsername">\n                <div class="input-group">\n                    <label for="entry-username">${(0, n.A)("newUsername")}</label>\n                    <input type="text" name="name" id="entry-username" value="${e}">\n                </div>\n\n                <button type="submit" class="button w-100 top-20">${(0, n.A)("update")}</button>\n            </form>\n        `;
           this.deleteAccount = e => `\n            <h2>${(0, n.A)("commonDeleteMyAccount")}</h2>\n            <p class="top-20">Hey ${e},</p>\n            <p class="no-margin">${(0, n.A)("commonSadToSeeYouGoWhyLeaving")}</p>\n\n            <form id="entry-form" data-entry="deleteAccount">\n                <div class="input-group">\n                    <label class="top-20 text-uppercase">${(0, n.A)("commonLeavingBecause")}</label>\n                    <select name="reason">\n                        <option value="leavingReasonDefault" disabled selected>${(0, n.A)("commonLeavingReasonDefault")}</option>\n                        <option value="leavingReasons1">${(0, n.A)("commonLeavingReasons1")}</option>\n                        <option value="leavingReasons2">${(0, n.A)("commonLeavingReasons2")}</option>\n                        <option value="leavingReasons3">${(0, n.A)("commonLeavingReasons3")}</option>\n                        <option value="leavingReasons4">${(0, n.A)("commonLeavingReasons4")}</option>\n                        <option value="leavingReasons5">${(0, n.A)("commonLeavingReasons5")}</option>\n                    <select>\n                </div>\n\n                <button type="submit" class="button red w-100 top-20" style="margin-bottom: 20px">${(0, n.A)("commonDeleteMyAccount")}</button>\n            </form>\n        `;
-          this.deleteAccountConfirmation = (e = "leavingReasonDefault") => `\n            <h4 class="top-35 text-default">${(0, n.A)("areYouSureYouWantToDelete")} </h4>\n            ${s.Ny.subscription ? `<p class="top-35">${(0, n.A)("commonYouHaveActiveSubsBeforeDelete")}</p>` : ""}\n            <p class="top-15">${(0, n.A)("youCanStillChangeYourMind")} </p>\n\n            <form id="entry-form" data-entry="deleteAccountConfirmation">\n                <input type="hidden" name="reason" value="${e}">\n                <div class="input-group">\n                    <label for="entry-password">${(0, n.A)("commonPassword")}</label>\n                    <input type="password" name="password" id="entry-password">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="/img/icon/eye-hide.svg">\n                </div>\n\n                <div class="input-group checkbox-group inline justify-center flex-wrap" style="margin-top: 30px">\n                    <button id="entry-cancel" class="button full positive">${(0, n.A)("cancel")}</button>\n                    <button id="delete-confirm" type="submit" class="button w-100 transparent">${(0, n.A)("deleteMyAccount")}</button>\n                </div>\n            </form>\n        `;
-          this.additionalVerification = () => `\n            <h3 class="heavy">${(0, n.A)("enterYourPasswordToContinue")}</h3>\n\n            <form id="entry-form" data-entry="additionalVerification">\n                <div class="input-group">\n                    <label for="entry-password">${(0, n.A)("commonPassword")}</label>\n                    <input type="password" name="password" id="entry-password">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="/img/icon/eye-hide.svg">\n                </div>\n\n                <div class="input-group checkbox-group inline justify-center" style="margin-top: 30px">\n                    <button type="submit" class="button full top-20">Continue</button>\n                </div>\n            </form>\n        `;
+          this.deleteAccountConfirmation = (e = "leavingReasonDefault") => `\n            <h4 class="top-35 text-default">${(0, n.A)("areYouSureYouWantToDelete")} </h4>\n            ${s.Ny.subscription ? `<p class="top-35">${(0, n.A)("commonYouHaveActiveSubsBeforeDelete")}</p>` : ""}\n            <p class="top-15">${(0, n.A)("youCanStillChangeYourMind")} </p>\n\n            <form id="entry-form" data-entry="deleteAccountConfirmation">\n                <input type="hidden" name="reason" value="${e}">\n                <div class="input-group">\n                    <label for="entry-password">${(0, n.A)("commonPassword")}</label>\n                    <input type="password" name="password" id="entry-password">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="/assets/images/img/icon/eye-hide.svg">\n                </div>\n\n                <div class="input-group checkbox-group inline justify-center flex-wrap" style="margin-top: 30px">\n                    <button id="entry-cancel" class="button full positive">${(0, n.A)("cancel")}</button>\n                    <button id="delete-confirm" type="submit" class="button w-100 transparent">${(0, n.A)("deleteMyAccount")}</button>\n                </div>\n            </form>\n        `;
+          this.additionalVerification = () => `\n            <h3 class="heavy">${(0, n.A)("enterYourPasswordToContinue")}</h3>\n\n            <form id="entry-form" data-entry="additionalVerification">\n                <div class="input-group">\n                    <label for="entry-password">${(0, n.A)("commonPassword")}</label>\n                    <input type="password" name="password" id="entry-password">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="/assets/images/img/icon/eye-hide.svg">\n                </div>\n\n                <div class="input-group checkbox-group inline justify-center" style="margin-top: 30px">\n                    <button type="submit" class="button full top-20">Continue</button>\n                </div>\n            </form>\n        `;
         }
       }
     },
@@ -1948,7 +1948,7 @@ var web;
                 className: "kort",
                 style: "border-radius: 8px; padding: 16px; display: flex; flex-direction: row; align-items: center; gap: 8px;"
               }, (0, n.T)("img", {
-                src: "/images/checkout/icon/card.svg",
+                src: "/assets/images/images/checkout/icon/card.svg",
                 width: 24,
                 height: 24
               }), (0, n.T)("span", {
@@ -2700,7 +2700,7 @@ var web;
               this.setContent((0, n.T)("div", {
                 id: "chckout-result"
               }, (0, n.T)("img", {
-                src: "/images/icon/red-cross.png",
+                src: "/assets/images/images/icon/red-cross.png",
                 width: 100,
                 style: "margin-bottom: 20px"
               }), (0, n.T)("h2", {
@@ -2712,7 +2712,7 @@ var web;
               this.setContent((0, n.T)("div", {
                 id: "chckout-result"
               }, (0, n.T)("img", {
-                src: "/images/myaccount/black-loading.gif",
+                src: "/assets/images/images/myaccount/black-loading.gif",
                 width: 150
               }), (0, n.T)("h2", {
                 style: "margin-bottom: 10px"
@@ -2726,7 +2726,7 @@ var web;
               this.setContent((0, n.T)("div", {
                 id: "chckout-result"
               }, (0, n.T)("img", {
-                src: "/images/icon/green-tick.png",
+                src: "/assets/images/images/icon/green-tick.png",
                 width: 100,
                 style: "margin-bottom: 20px"
               }), (0, n.T)("h2", {
@@ -3524,7 +3524,7 @@ var web;
           if (this.checkoutOptions.bounceSource) {
             this.optionUI.append((0, n.T)("img", {
               id: "back-chckout",
-              src: "/img/icon/arrow-left-black.svg"
+              src: "/assets/images/img/icon/arrow-left-black.svg"
             }));
           }
           if ((0, n.lR)("promo-code", "") !== "") {
@@ -3564,7 +3564,7 @@ var web;
                   className: "kort",
                   style: "border-radius: 8px; padding: 16px; display: flex; flex-direction: row; align-items: center; gap: 8px;"
                 }, (0, n.T)("img", {
-                  src: "/images/checkout/icon/card.svg",
+                  src: "/assets/images/images/checkout/icon/card.svg",
                   width: 24,
                   height: 24
                 }), (0, n.T)("span", {
@@ -3619,7 +3619,7 @@ var web;
                       id: "wrapper-payment-method",
                       style: "border-radius: 8px; padding: 16px; display: flex; flex-direction: row; align-items: center; gap: 8px; background: transparent;"
                     }, (0, n.T)("img", {
-                      src: "/images/checkout/icon/card.svg",
+                      src: "/assets/images/images/checkout/icon/card.svg",
                       width: 24,
                       height: 24
                     }), (0, n.T)("span", {
@@ -3855,14 +3855,14 @@ var web;
         }, (0, n.T)("summary", {
           style: "display: flex; align-items: center;"
         }, (0, n.T)("img", {
-          src: "/images/checkout/icon/card.svg",
+          src: "/assets/images/images/checkout/icon/card.svg",
           width: 24,
           height: 24,
           style: "margin-right: 8px;"
         }), (0, n.T)("span", {
           className: "fs-16 fw-7"
         }, (0, a.A)("optionalBillingInformation")), (0, n.T)("img", {
-          src: "/images/icon/up.svg",
+          src: "/assets/images/images/icon/up.svg",
           style: "margin-left: auto"
         })), (0, n.T)("div", {
           id: "billing-form",
@@ -3904,7 +3904,7 @@ var web;
         id: "paypal-upgrade-notice-wrapper",
         style: "display: flex; flex-direction: row; column-gap: 7px"
       }, (0, n.T)("img", {
-        src: "/img/icon/warning.svg",
+        src: "/assets/images/img/icon/warning.svg",
         style: "width: 30px"
       }), (0, a.A)("paypalUpgradeConfirmationDisclaimerOnPreviousSubscription")), "bV", 0, (e = false) => (0, n.T)("details", {
         id: "wrapper-promo-option",
@@ -3913,14 +3913,14 @@ var web;
       }, (0, n.T)("summary", {
         style: "display: flex; align-items: center;"
       }, (0, n.T)("img", {
-        src: "/images/checkout/icon/percent.svg",
+        src: "/assets/images/images/checkout/icon/percent.svg",
         width: 24,
         height: 24,
         style: "margin-right: 8px;"
       }), (0, n.T)("span", {
         className: "fs-16 fw-7"
       }, (0, a.A)("promoCode")), (0, n.T)("img", {
-        src: "/images/icon/up.svg",
+        src: "/assets/images/images/icon/up.svg",
         style: "margin-left: auto"
       })), (0, n.T)("div", (0, n.T)("div", {
         id: "promo-section"
@@ -3988,14 +3988,14 @@ var web;
       }, (0, n.T)("summary", {
         style: "display: flex; align-items: center;"
       }, (0, n.T)("img", {
-        src: "/images/checkout/icon/seats.svg",
+        src: "/assets/images/images/checkout/icon/seats.svg",
         width: 24,
         height: 24,
         style: "margin-right: 8px;"
       }), (0, n.T)("span", {
         className: "fs-16 fw-7"
       }, (0, a.A)("addMoreSeats")), (0, n.T)("img", {
-        src: "/images/icon/up.svg",
+        src: "/assets/images/images/icon/up.svg",
         style: "margin-left: auto"
       })), (0, n.T)("div", (0, n.T)("div", {
         className: "seat-select"
@@ -4070,7 +4070,7 @@ var web;
         }), (0, n.T)("span", {
           className: "fs-16 fw-7"
         }, t), (0, n.T)("img", {
-          src: "/images/icon/up.svg",
+          src: "/assets/images/images/icon/up.svg",
           style: "margin-left: auto"
         })), (0, n.T)("div", {
           style: "display: flex; flex-direction: column; row-gap: 8px"
@@ -4111,14 +4111,14 @@ var web;
       }, (0, n.T)("summary", {
         style: "display: flex; align-items: center;"
       }, (0, n.T)("img", {
-        src: "/images/checkout/icon/card.svg",
+        src: "/assets/images/images/checkout/icon/card.svg",
         width: 24,
         height: 24,
         style: "margin-right: 8px;"
       }), (0, n.T)("span", {
         className: "fs-16 fw-7"
       }, (0, a.A)("paymentMethod")), (0, n.T)("img", {
-        src: "/images/icon/up.svg",
+        src: "/assets/images/images/icon/up.svg",
         style: "margin-left: auto"
       })), (0, n.T)("div", {
         style: "display: flex; flex-direction: column; row-gap: 18px;"
@@ -5088,7 +5088,7 @@ var web;
             className: "announce-close",
             onclick: () => this.cleanUp()
           }, (0, n.T)("img", {
-            src: "/img/icon/close.svg"
+            src: "/assets/images/img/icon/close.svg"
           })), this.content);
           document.addEventListener("keydown", this.keyDown, false);
           setTimeout(() => this.dialog.classList.add("ani"), 5);
@@ -6402,7 +6402,7 @@ var web;
       throw e;
     }) : s());
   };
-  i.p = "/dist/";
+  i.p = "/assets/static/dist/";
   (() => {
     const e = {
       651: 0
@@ -6571,7 +6571,7 @@ var web;
             const n = i ? (0, r.A)("congratsYouNowHaveFullAccess") : (0, r.A)("congratsYouHaveAICredit");
             const a = t > 0 ? `<li>${(0, r.A)("pricingCreditsIncluded").replace("{number}", t.toLocaleString())}</li>` : "";
             const o = i ? `\n            <li>${(0, r.A)("pricingAdFree")}</li>\n            <li>${(0, r.A)("pricingUnlimitedSaves")}</li>\n            ${a}\n            <li>${(0, r.A)("pricingPrivateMode")}</li>\n            <li>${(0, r.A)("pricingBigLibrary")}</li>\n        ` : a;
-            return `\n        <div id="redeemed-success">\n            <div class="redeem-detail">\n                <h2>${(0, r.A)("successfullyRedeemedWelcomeProductName").replace("{product}", e.product || "")}</h2>\n                <p class="top-10"><b>${n}</b></p>\n                ${o ? `<p class="top-20"><b>${(0, r.A)("whatYouGet")}</b></p><ul class="redeem-benefits">${o}</ul>` : ""}\n\n                <h5 class="heavy top-20">${(0, r.A)("pixlrMobileApps")}</h5>\n                <div class="redeem-apps">\n                    <div class="mobile-app-item"><img src="/img/general/mobile-x-icon.png" width="32" height="32" alt="Pixlr Express">Pixlr Express</div>\n                    <div class="mobile-app-item"><img src="/img/general/mobile-remove-bg-icon.png" width="32" height="32" alt="Remove Background by Pixlr">Remove Background by Pixlr</div>\n                    <div class="mobile-app-item"><img src="/img/general/mobile-stories-icon.png" width="32" height="32" alt="Stories by Pixlr">Stories by Pixlr</div>\n                    <div class="mobile-app-item"><img src="/img/general/mobile-img-gen-icon.png" width="32" height="32" alt="AI Image Generator">AI Image Generator</div>\n                    <div class="mobile-app-item"><img src="/img/general/mobile-face-flip-icon.png" width="32" height="32" alt="FaceFlip">FaceFlip</div>\n                </div>\n\n                <a class="button top-20" href="/editor/">${(0, r.A)("startEditing")}</a>\n            </div>\n            <div class="redeem-card">\n                <img src="/images/license/pixlr-redeem-success.png" alt="pixlr redeem license success">\n            </div>\n        </div>\n    `;
+            return `\n        <div id="redeemed-success">\n            <div class="redeem-detail">\n                <h2>${(0, r.A)("successfullyRedeemedWelcomeProductName").replace("{product}", e.product || "")}</h2>\n                <p class="top-10"><b>${n}</b></p>\n                ${o ? `<p class="top-20"><b>${(0, r.A)("whatYouGet")}</b></p><ul class="redeem-benefits">${o}</ul>` : ""}\n\n                <h5 class="heavy top-20">${(0, r.A)("pixlrMobileApps")}</h5>\n                <div class="redeem-apps">\n                    <div class="mobile-app-item"><img src="/assets/images/img/general/mobile-x-icon.png" width="32" height="32" alt="Pixlr Express">Pixlr Express</div>\n                    <div class="mobile-app-item"><img src="/assets/images/img/general/mobile-remove-bg-icon.png" width="32" height="32" alt="Remove Background by Pixlr">Remove Background by Pixlr</div>\n                    <div class="mobile-app-item"><img src="/assets/images/img/general/mobile-stories-icon.png" width="32" height="32" alt="Stories by Pixlr">Stories by Pixlr</div>\n                    <div class="mobile-app-item"><img src="/assets/images/img/general/mobile-img-gen-icon.png" width="32" height="32" alt="AI Image Generator">AI Image Generator</div>\n                    <div class="mobile-app-item"><img src="/assets/images/img/general/mobile-face-flip-icon.png" width="32" height="32" alt="FaceFlip">FaceFlip</div>\n                </div>\n\n                <a class="button top-20" href="/editor/">${(0, r.A)("startEditing")}</a>\n            </div>\n            <div class="redeem-card">\n                <img src="/assets/images/images/license/pixlr-redeem-success.png" alt="pixlr redeem license success">\n            </div>\n        </div>\n    `;
           }(a));
         });
       }
@@ -6999,7 +6999,7 @@ var web;
       id: "lightbox-close",
       onclick: N
     }, (0, s.T)("img", {
-      src: "/img/icon/close.svg",
+      src: "/assets/images/img/icon/close.svg",
       className: "close"
     }));
     const y = (0, s.T)("div", {
@@ -7246,7 +7246,7 @@ var web;
       if (m._id) {
         const e = (0, s.T)("img", {
           id: "lightbox-like-img",
-          src: m.liked ? "/img/icon/heart-filled.svg" : "/img/icon/heart-outline.svg",
+          src: m.liked ? "/assets/images/img/icon/heart-filled.svg" : "/assets/images/img/icon/heart-outline.svg",
           width: 20,
           height: 20
         });
@@ -7267,7 +7267,7 @@ var web;
             m.liked = !n;
             i.setAttribute("tooltip", m.liked ? (0, r.A)("commonUnlike") : (0, r.A)("commonLike"));
             if (n) {
-              e.src = "/img/icon/heart-outline.svg";
+              e.src = "/assets/images/img/icon/heart-outline.svg";
               if (m.likes > 0) {
                 m.likes--;
               }
@@ -7282,7 +7282,7 @@ var web;
               }).catch(() => {});
             } else {
               t.classList.add("run");
-              e.src = "/img/icon/heart-filled.svg";
+              e.src = "/assets/images/img/icon/heart-filled.svg";
               m.likes = (m.likes || 0) + 1;
               window.dispatchEvent(new CustomEvent("pixlr:like-changed", {
                 detail: {
@@ -7324,7 +7324,7 @@ var web;
             }
           }
         }, (0, s.T)("img", {
-          src: "/img/icon/download.svg",
+          src: "/assets/images/img/icon/download.svg",
           width: 18,
           height: 18,
           style: "width:18px;height:18px"
@@ -7333,7 +7333,7 @@ var web;
       if (m._id && d.Ny && (m.userId === d.Ny.id || d.Ny.isAdmin)) {
         const e = m.personal || false;
         const t = (0, s.T)("img", {
-          src: e ? "/img/icon/locked.svg" : "/img/icon/public.svg",
+          src: e ? "/assets/images/img/icon/locked.svg" : "/assets/images/img/icon/public.svg",
           width: 18,
           height: 18,
           style: "width:18px;height:18px"
@@ -7356,7 +7356,7 @@ var web;
             });
             if (e && e.ok) {
               m.personal = !m.personal;
-              t.src = m.personal ? "/img/icon/locked.svg" : "/img/icon/public.svg";
+              t.src = m.personal ? "/assets/images/img/icon/locked.svg" : "/assets/images/img/icon/public.svg";
             }
             if (e && !e.ok) {
               const t = (await e.json().catch(() => ({}))).message || (0, r.A)("commonServerError");
@@ -7377,7 +7377,7 @@ var web;
             N();
           }
         }, (0, s.T)("img", {
-          src: "/img/icon/trash.svg",
+          src: "/assets/images/img/icon/trash.svg",
           width: 18,
           height: 18,
           style: "width:18px;height:18px"
@@ -7443,7 +7443,7 @@ var web;
             i.setContent(n, a);
           }
         }, (0, s.T)("img", {
-          src: "/img/icon/report.svg",
+          src: "/assets/images/img/icon/report.svg",
           width: 20,
           height: 20
         }));
@@ -7588,7 +7588,7 @@ var web;
               }
             }
           }, (0, s.T)("img", {
-            src: "/img/icon/remix.svg",
+            src: "/assets/images/img/icon/remix.svg",
             width: 18,
             height: 18
           }), ` ${(0, r.A)("imageGeneratorRemix")}`));
@@ -7611,7 +7611,7 @@ var web;
               }
             }
           }, (0, s.T)("img", {
-            src: "/img/icon/remix.svg",
+            src: "/assets/images/img/icon/remix.svg",
             width: 18,
             height: 18
           }), ` ${(0, r.A)("videoGeneratorRemix")}`));
@@ -7629,7 +7629,7 @@ var web;
             }
           }
         }, (0, s.T)("img", {
-          src: "/img/icon/prompt.svg",
+          src: "/assets/images/img/icon/prompt.svg",
           width: 18,
           height: 18
         }), ` ${(0, r.A)("imageGeneratorUsePrompt")}`));
@@ -7654,10 +7654,10 @@ var web;
                   (0, s.y8)("success", "templateSaved");
                   e.innerHTML = "";
                   e.append((0, s.T)("img", {
-                    src: "/img/icon/check.svg",
+                    src: "/assets/images/img/icon/check.svg",
                     width: 18,
                     height: 18,
-                    onerror: "this.src=\"/img/tool/ai.svg\""
+                    onerror: "this.src=\"/assets/images/img/tool/ai.svg\""
                   }), ` ${(0, r.A)("addedAsTemplate")}`);
                 } else {
                   (0, s.y8)("danger", t.message || "commonServerError");
@@ -7671,7 +7671,7 @@ var web;
           }
         });
         e.append((0, s.T)("img", {
-          src: "/img/tool/ai.svg",
+          src: "/assets/images/img/tool/ai.svg",
           width: 18,
           height: 18
         }), ` ${(0, r.A)("addAsTemplate")}`);
@@ -7684,7 +7684,7 @@ var web;
             window.open(`/admin/generator-templates/create?from=${m._id}`, "_blank", "noopener");
           }
         }, (0, s.T)("img", {
-          src: "/img/tool/ai.svg",
+          src: "/assets/images/img/tool/ai.svg",
           width: 18,
           height: 18
         }), " Admin Template"));
@@ -7696,7 +7696,7 @@ var web;
             location.href = "/express/?file=" + encodeURIComponent(P);
           }
         }, (0, s.T)("img", {
-          src: "/img/tool/fill.svg",
+          src: "/assets/images/img/tool/fill.svg",
           width: 18,
           height: 18
         }), ` ${(0, r.A)("imageGeneratorEdit")}`));
@@ -7706,7 +7706,7 @@ var web;
             location.href = "/video-generator/?ref=" + encodeURIComponent(P);
           }
         }, (0, s.T)("img", {
-          src: "/img/icon/play.svg",
+          src: "/assets/images/img/icon/play.svg",
           width: 18,
           height: 18
         }), ` ${(0, r.A)("commonCreateVideo")}`));
@@ -7716,7 +7716,7 @@ var web;
             location.href = "/face-swap/?file=" + encodeURIComponent(P);
           }
         }, (0, s.T)("img", {
-          src: "/img/tool/face-swap.svg",
+          src: "/assets/images/img/tool/face-swap.svg",
           width: 18,
           height: 18
         }), ` ${(0, r.A)("imageGeneratorFaceSwap")}`));
@@ -7731,7 +7731,7 @@ var web;
             location.href = "/video-generator/?audio=" + encodeURIComponent(P) + "&audioType=" + i;
           }
         }, (0, s.T)("img", {
-          src: "/img/icon/video.svg",
+          src: "/assets/images/img/icon/video.svg",
           width: 18,
           height: 18
         }), ` ${t}`));
@@ -7864,7 +7864,7 @@ var web;
           }
         }
       }, (0, s.T)("img", {
-        src: "/img/icon/trash.svg"
+        src: "/assets/images/img/icon/trash.svg"
       })));
       const t = new b.$U(e).url;
       if (t) {
@@ -7889,7 +7889,7 @@ var web;
             }
           }
         }, (0, s.T)("img", {
-          src: "/img/icon/download.svg"
+          src: "/assets/images/img/icon/download.svg"
         })));
       }
     }
@@ -7897,7 +7897,7 @@ var web;
       n.append(function (e) {
         let t = !!e.liked;
         const i = (0, s.T)("img", {
-          src: t ? "/img/icon/heart-filled.svg" : "/img/icon/heart-outline.svg"
+          src: t ? "/assets/images/img/icon/heart-filled.svg" : "/assets/images/img/icon/heart-outline.svg"
         });
         const n = (0, s.T)("span", {
           className: "like-burst"
@@ -7907,13 +7907,13 @@ var web;
           e.liked = a;
           o.setAttribute("tooltip", a ? (0, r.A)("commonUnlike") : (0, r.A)("commonLike"));
           if (a) {
-            i.src = "/img/icon/heart-filled.svg";
+            i.src = "/assets/images/img/icon/heart-filled.svg";
             if (s) {
               n.classList.add("run");
               setTimeout(() => n.classList.remove("run"), 1200);
             }
           } else {
-            i.src = "/img/icon/heart-outline.svg";
+            i.src = "/assets/images/img/icon/heart-outline.svg";
           }
         };
         const o = (0, s.T)("div", {
@@ -8113,7 +8113,7 @@ var web;
         tooltip: (0, r.A)("commonPrivate"),
         flow: "right"
       }, (0, s.T)("img", {
-        src: "/img/icon/locked.svg",
+        src: "/assets/images/img/icon/locked.svg",
         width: 14,
         height: 14
       })));
@@ -8130,7 +8130,7 @@ var web;
           window.location.href = "/video-generator/?ref=" + encodeURIComponent(c.url);
         }
       }, (0, s.T)("img", {
-        src: "/img/icon/play.svg"
+        src: "/assets/images/img/icon/play.svg"
       })));
     }
     if (d && t.context === "recent" && c.url) {
@@ -8144,7 +8144,7 @@ var web;
           window.location.href = "/video-generator/?audio=" + encodeURIComponent(c.url) + "&audioType=" + t;
         }
       }, (0, s.T)("img", {
-        src: "/img/icon/play.svg"
+        src: "/assets/images/img/icon/play.svg"
       })));
     }
     if (t.callbacks?.extraActions) {
@@ -8509,7 +8509,7 @@ var web;
       const o = (0, s.T)("div", {
         className: "sheet-content"
       });
-      o.innerHTML = "\n            <h3 style=\"text-align:center;padding:20px 20px 10px\">Open in</h3>\n            <div style=\"display:flex;justify-content:center;gap:20px;padding:10px 20px 30px\">\n                <a href=\"/express/\" class=\"gbox\" style=\"display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 30px;text-decoration:none;color:var(--text-color);font-weight:600;font-size:0.85rem\">\n                    <img src=\"/images/express-icon.svg\" width=\"48\" height=\"48\" alt=\"Pixlr Express\">\n                    Express\n                </a>\n                <a href=\"/editor/\" class=\"gbox\" style=\"display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 30px;text-decoration:none;color:var(--text-color);font-weight:600;font-size:0.85rem\">\n                    <img src=\"/images/editor-icon.svg\" width=\"48\" height=\"48\" alt=\"Pixlr Editor\">\n                    Editor\n                </a>\n            </div>\n        ";
+      o.innerHTML = "\n            <h3 style=\"text-align:center;padding:20px 20px 10px\">Open in</h3>\n            <div style=\"display:flex;justify-content:center;gap:20px;padding:10px 20px 30px\">\n                <a href=\"/express/\" class=\"gbox\" style=\"display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 30px;text-decoration:none;color:var(--text-color);font-weight:600;font-size:0.85rem\">\n                    <img src=\"/assets/images/images/express-icon.svg\" width=\"48\" height=\"48\" alt=\"Pixlr Express\">\n                    Express\n                </a>\n                <a href=\"/editor/\" class=\"gbox\" style=\"display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 30px;text-decoration:none;color:var(--text-color);font-weight:600;font-size:0.85rem\">\n                    <img src=\"/assets/images/images/editor-icon.svg\" width=\"48\" height=\"48\" alt=\"Pixlr Editor\">\n                    Editor\n                </a>\n            </div>\n        ";
       o.querySelectorAll("a").forEach(t => {
         t.addEventListener("click", () => {
           sessionStorage.setItem("open-history-doc", e);
