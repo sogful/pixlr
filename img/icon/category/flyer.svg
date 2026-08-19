@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+ <g stroke-dashoffset="12.8" stroke-linejoin="bevel" stroke-opacity=".6" stroke-width="2">
+  <rect x="3" width="26" height="32" rx="3" ry="3" fill="#77c10d" style="paint-order:stroke markers fill"/>
+  <rect x="6" y="19" width="20" height="2.5" rx="1" ry="1" fill="#fff" stroke-width="2" style="paint-order:stroke markers fill"/>
+  <rect x="6" y="25" width="20" height="2.5" rx="1" ry="1" fill="#fff" stroke-width="2" style="paint-order:stroke markers fill"/>
+ </g>
+ <g transform="matrix(.0251 0 0 .0251 9 3)" fill="#fff" stroke-width="39.8">
+  <g fill="#fff" stroke-width="39.8">
+   <g fill="#fff" stroke-width="39.8">
+    <path d="m472 4.35c-3.63-3.21-8.44-4.75-13.3-4.25l-307 34.1c-8.65 0.957-15.2 8.26-15.2 17v304c-15.5-9.26-33.2-14.1-51.2-14-47.1 1e-3 -85.3 30.6-85.3 68.3s38.3 68.3 85.3 68.3 85.3-30.6 85.3-68.3v-258l273-30.4v200c-15.5-9.24-33.2-14.1-51.2-14-47.1 0-85.3 30.6-85.3 68.3s38.3 68.3 85.3 68.3 85.3-30.6 85.3-68.3v-358c0-4.85-2.07-9.48-5.68-12.7z" fill="#fff" stroke-width="39.8"/>
+   </g>
+  </g>
+ </g>
+</svg>

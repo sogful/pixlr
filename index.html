@@ -21,15 +21,14 @@
 
     <script>window.addEventListener('touchstart', function () { document.documentElement.classList.add('touch') }, {once: true});</script>
     <script>
+        // offline mirror: never register a service worker here, it fights local edits by
+        // caching stale files. actively unregister any that got registered by an earlier
+        // version of this repo (before this fix) and clear its caches.
         if ('serviceWorker' in navigator) {
-            window.addEventListener('load', async () => {
-                try {
-                    const registration = await navigator.serviceWorker.register('/service-worker.js', { scope: '/' });
-                    console.log('SW registered: ', registration);
-                } catch (e) {
-                    console.log('SW registration failed: ', e);
-                }
-            });
+            navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister()));
+        }
+        if ('caches' in window) {
+            caches.keys().then(keys => keys.forEach(k => caches.delete(k)));
         }
     </script>
 
@@ -234,7 +233,7 @@
                         <ul>
                             <li id="image-resize">Image size..</li>
                             <li id="image-canvas-resize">Canvas size..</li>
-                            <li id="image-smart-resize">Smart resize..</li>
+                            <li id="image-smart-resize">Smart resize..</li><li id="image-super-scale">AI super scale..</li><li id="image-generative-expand">AI generative expand..</li>
                             <li class="split"></li>
                             <li id="image-canvas-color">Canvas background..</li>
                             <li class="more">Canvas rotation
@@ -271,7 +270,7 @@
                             <li id="layer-merge-flatten">Flatten image <span>Ctrl + 8</span></li>
                             <li class="split"></li>
                             <li id="layer-move-up">Bring forward / up <span>Ctrl + 4</span></li>
-                            <li id="layer-move-down">Send backward / down <span>Ctrl + 5</span></li>
+                            <li id="layer-move-down">Send backward / down <span>Ctrl + 5</span></li><li class="split"></li><li class="image noframe" id="layer-ai-mask">AI Auto Mask</li><li class="image noframe" id="layer-extract-layers">AI extract layers..</li>
                             <li class="split"></li>
                             <li class="image noframe" id="layer-add-mask">Add mask</li>
                             <li class="mask" id="layer-apply-mask">Apply mask</li>
