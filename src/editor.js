@@ -24429,395 +24429,75 @@ var editor;
       var d = s(9266);
       var u = s(2443);
       var p = s(98);
-      class g extends c.A {
-        constructor() {
-          super(true);
-          (0, h.A)("after_save");
-          this.dialog.style.maxWidth = "420px";
-          this.setContent(`\n            <div id="after-content" style="padding:20px 0 20px;display:flex;position:relative;flex-direction:column;align-items:center;min-height:420px;">\n\n                <div style="padding:30px 30px 0px 30px;">\n                    <h2 class="split">${(0, i.A)("commonSuccess")} <span style="font-weight:bold;font-size:small">${(0, p.Lr)()}/3  ${(0, i.A)("commonFreeSave")}</span></h2>\n                    <div id="after-save-message" style="padding-top:16px"></div>\n\n                    <button id="premium-go-now" style="display:none;margin-top:140px;" class="button large w-100">${l.Ny?.eligibleForTrail ? (0, i.A)("try30DayFreePremium") : (0, i.A)("subscribeNow")}</button>\n                </div>\n\n                <div id="after-entry" class="top-20"></div>\n            </div>\n        `);
-          this.dialog.style.overflow = "unset";
-          if (l.Ny) {
-            this.dialog.append((0, o.T)("div", {
-              className: "premium-plug"
-            }, (0, o.T)("img", {
-              src: "/assets/images/icon/premium.svg"
-            })));
-            (0, o.Ay)("premium-go-now").addEventListener("click", async () => {
-              this.cleanUp();
-              new u.default("afterSave", "premium");
-            }, true);
-            (0, o.Ay)("after-save-message").innerText = (0, i.A)("commonAfterFileSaveTryPremium");
-            (0, o.Ay)("premium-go-now").style.display = "block";
-          } else {
-            new d.Ay({
-              holder: (0, o.Ay)("after-entry")
-            });
-            this.dialog.append((0, o.T)("div", {
-              className: "user-plug"
-            }, (0, o.T)("img", {
-              src: "/assets/images/icon/user.svg"
-            })));
-            (0, o.Ay)("after-save-message").innerText = (0, i.A)("commonAfterFileSaveRegister");
-          }
-        }
-      }
       var m = s(3641);
       class y extends a.A {
         constructor(t, e) {
-          super((0, i.A)("dialogSaveTitle"), true);
-          this.setType = t => {
-            const e = t.currentTarget.getAttribute("data");
-            this.changeType(e);
-          };
-          this.changeType = (t, e = false) => {
-            if (!e && this.type === t) {
-              return;
-            }
-            let s;
-            if (t === "jpg") {
-              s = Number((0, o.Ay)("jpg-width").value) / this.stage.fresco.width;
-            }
-            if (this.type) {
-              (0, o.Ay)("type-" + this.type).classList.remove("active");
-            }
-            (0, o.Ay)("type-" + t).classList.add("active");
-            this.type = t;
-            this.canvas.remove();
-            let i = this.type === "jpg" || this.type === "pdf" || this.type === "png" && !(0, o.Ay)("png-transparent").checked || this.type === "webp" && !(0, o.Ay)("webp-transparent").checked;
-            this.canvas = this.stage.getOutputCanvas(this.stage.fresco, s, i ? "#ffffff" : undefined);
-            if (!l.Ny?.subscription) {
-              this.canvas.oncontextmenu = () => false;
-            }
-            (0, o.Ay)("save-file-prop").innerHTML = this.canvas.width + " x " + this.canvas.height + "px";
-            (0, o.Ay)("save-file-type").innerHTML = "." + this.type;
-            (0, o.Ay)("save-preview").prepend(this.canvas);
-            this.renderBlob();
-          };
-          this.jpgSizeChange = t => {
-            let e = t.currentTarget;
-            if (e.value !== "") {
-              if (e.id === "jpg-width") {
-                const t = r.qE(Number(e.value), 1, this.canvas.width);
-                const s = Math.round(t / this.stage.fresco.width * this.stage.fresco.height);
-                (0, o.Ay)("jpg-height").value = s.toString();
-              } else {
-                const t = r.qE(Number(e.value), 1, this.canvas.width);
-                const s = Math.round(t / this.stage.fresco.height * this.stage.fresco.width);
-                (0, o.Ay)("jpg-width").value = s.toString();
-              }
-              r.sg("save", 500, () => this.changeType("jpg", true));
-            }
-          };
-          this.renderBlob = async () => {
-            (0, o.Ay)("save-file-size").innerText = (0, i.A)("dialogSaveCalculate");
-            if (this.type === "pxz") {
-              this.blob = undefined;
-              (0, o.Ay)("save-file-size").innerText = `Format: ${this.type}`;
-              return;
-            }
-            if (this.type === "pdf") {
-              this.canvas.toBlob(t => {
-                this.blob = t;
-                (0, o.Ay)("save-file-size").innerText = `Format: ${this.type}, size: ${r.Ov(t.size + 1024)}`;
-              }, "image/jpeg", 0.95);
-              return;
-            }
-            const t = "image/" + this.type.replace("jpg", "jpeg");
-            const e = this.type === "jpg" ? this.jpgquality.getValue() : this.type === "webp" ? this.webpquality.getValue() : 1;
-            this.canvas.toBlob(t => {
-              this.blob = t;
-              (0, o.Ay)("save-file-size").innerText = `Format: ${this.type}, size: ${r.Ov(t.size)}`;
-            }, t, e);
-          };
-          this.applyAPI = async (t = "client") => {
-            this.setWorking();
-            let e = this.stage.fresco.name;
-            let s = this.stage.fresco.saveMethod;
-            const i = this.type;
-            let a = (0, o.Ay)("save-file-name").value || this.stage.fresco.name || "Untitled";
-            if (i === "pxz") {
-              this.setMessage("Creating your PXZ file", "You've selected a large file format, please wait while we create the file for you.");
-              try {
-                this.blob = await (0, m.Ab)(this.stage, {
-                  id: this.stage.fresco.id,
-                  name: e,
-                  quality: 1,
-                  nonDestructive: (0, o.Ay)("save-pxz-ndestuctive").checked,
-                  type: "document",
-                  unit: "pixel"
-                });
-              } catch (l) {
-                console.error(l);
-                this.setMessage("Error when creating PXZ file");
-                return;
-              }
-            }
-            if (i === "pdf") {
-              this.blob = await (0, m.EB)(this.stage.fresco.width, this.stage.fresco.height, this.blob);
-            }
-            const n = p.Ay.follow;
-            let r = `image/${i}`;
-            switch (i) {
-              case "pdf":
-                r = "application/pdf";
-                break;
-              case "pxz":
-                r = "application/pxz";
-            }
-            const h = new File([this.blob], a + "." + i, {
-              type: r
-            });
-            if (s instanceof MessagePort) {
-              s.postMessage(h);
-            } else if (s instanceof URL && n) {
-              const t = (0, o.T)("form");
-              t.method = "post";
-              t.action = s.toString();
-              t.enctype = "multipart/form-data";
-              document.body.append(t);
-              t.addEventListener("formdata", t => {
-                t.formData.append("file", h);
-              });
-              t.submit();
-            } else if (s instanceof URL && !n) {
-              const e = new FormData();
-              e.append("file", h);
-              this.setMessage("Saving", `Uploading image to ${t}, please wait...`);
-              try {
-                const i = await fetch(s, {
-                  method: "post",
-                  body: e
-                });
-                if (i.status <= 200 && i.status >= 300) {
-                  throw new Error("non 2xx status");
-                }
-                await i.json();
-                let a = `<p>The image was saved to ${t}</p> <div class="buttons center"><a class="button positive" href=" ${s} ">View</a></div>`;
-                this.setMessage("Save completed", a);
-                (0, o.Ay)("dialog-close" + this.mid).style.display = "none";
-              } catch (c) {
-                this.setMessage("Error", `Failed to save to ${t}, please try again.`);
-              }
-            }
-          };
-          this.apply = async () => {
-            const t = this.type;
-            let e;
-            let s = (0, o.Ay)("save-file-name").value || this.stage.fresco.name || "Untitled";
-            (0, h.A)("save-file", t);
-            if (!this.useLegacySave && this.stage.fresco.savedTimesCounterForUserEase > 0) {
-              s += "(" + this.stage.fresco.savedTimesCounterForUserEase + ")";
-            }
-            this.stage.fresco.savedTimesCounterForUserEase++;
-            if (!this.useLegacySave) {
-              let i = "image/jpeg";
-              let a = "Jpg image";
-              switch (t) {
-                case "pxz":
-                  i = "application/pxz";
-                  a = "Pixlr document";
-                  break;
-                case "png":
-                  i = "image/png";
-                  a = "PNG image";
-                  break;
-                case "webp":
-                  i = "image/webp";
-                  a = "WebP image";
-              }
-              e = await (0, m.D0)(s, t, a, i);
-              if (e === false) {
-                return;
-              }
-            }
-            if (t === "pdf") {
-              this.setMessage("Creating your PDF file", "You've selected a large file format, please wait while we create the file for you.");
-              try {
-                this.blob = await (0, m.EB)(this.stage.fresco.width, this.stage.fresco.height, this.blob);
-              } catch (a) {
-                console.error(a);
-                this.setMessage("Error when creating PDF file");
-                return;
-              }
-            }
-            if (t === "pxz") {
-              this.setMessage("Creating your PXZ file", "You've selected a large file format, please wait while we create the file for you.");
-              try {
-                this.blob = await (0, m.Ab)(this.stage, {
-                  id: this.stage.fresco.id,
-                  name: s,
-                  quality: 1,
-                  nonDestructive: (0, o.Ay)("save-pxz-ndestuctive").checked,
-                  type: "document",
-                  unit: "pixel"
-                });
-              } catch (a) {
-                console.error(a);
-                this.setMessage("Error when creating PXZ file");
-                return;
-              }
-            }
-            if (this.blob) {
-              if (e) {
-                if (!(await (0, m.IF)(e, new File([this.blob], s + "." + t)))) {
-                  (0, m.gr)(new File([this.blob], s + "." + t), s, t);
-                }
-              } else {
-                (0, m.gr)(new File([this.blob], s + "." + t), s, t);
-              }
-              this.cleanUp();
-              if (t !== "pxz") {
-                (0, p.pp)();
-              }
-              if (l.Ny?.subscription) {
-                document.dispatchEvent(new CustomEvent("notification", {
-                  detail: (0, i.A)("fileSaved")
-                }));
-              } else {
-                new g();
-              }
-            }
-          };
-          this.setWorking = () => {
-            (0, o.Ay)("dialog-apply" + this.mid).style.display = "none";
-            if ((0, o.Ay)("dialog-api-apply")) {
-              (0, o.Ay)("dialog-api-apply").style.display = "none";
-            }
-            (0, o.Ay)("save-settings").style.display = "none";
-            (0, o.Ay)("save-working").style.display = "block";
-          };
-          this.setMessage = (t, e = "") => {
-            (0, o.Ay)("dialog-apply" + this.mid).style.display = "none";
-            if ((0, o.Ay)("dialog-api-apply")) {
-              (0, o.Ay)("dialog-api-apply").style.display = "none";
-            }
-            (0, o.Ay)("save-working").style.display = "none";
-            (0, o.Ay)("save-settings").style.display = "none";
-            (0, o.Ay)("save-message").style.display = "block";
-            (0, o.Ay)("save-message-title").innerText = t;
-            (0, o.Ay)("save-message-body").innerHTML = e;
-            (0, o.Ay)("dialog-cancel" + this.mid).innerText = (0, i.A)("close");
-          };
-          this.dialog.id = "save-dialog";
-          if (!p.Ay.api && !l.Ny?.subscription && (0, p.P2)()) {
-            this.cleanUp();
-            new u.default("save", "save");
-            return;
-          }
+          super((0, i.A)("dialogSaveTitle"), false);
           this.stage = t;
-          this.dialog.style.maxWidth = "820px";
-          this.dialog.style.minHeight = "600px";
-          this.content.classList.add("flex");
-          this.useLegacySave = p.Ay.useLegacySave || !(0, m.zu)();
-          (0, o.Ay)("dialog-apply" + this.mid).innerText = this.useLegacySave ? (0, i.A)("save") : (0, i.A)("saveAs");
-          (0, o.Ay)("dialog-buttons" + this.mid).style.paddingTop = "0px";
-          this.setContent(`\n        <section id="save-preview">\n            <div id="save-file-size" class="top-10"></div>\n            <div id="save-file-prop"></div>\n        </section>\n        <section id="save-section">\n            <div id="save-message" style="display:none;">\n                <h2 id="save-message-title"></h2>\n                <p id="save-message-body"></p>\n            </div>\n            <div id="save-working" style="display:none;">\n                <h2>${(0, i.A)("working")}...</h2>\n                \n                <div class="progress-bar top-20">\n                    <span id="save-progress" class="inner"></span>\n                </div>\n            </div>\n\n            <div id="save-settings">\n\n                <div id="file-name-section" style="display:none;padding-bottom:20px">\n                    <label>${(0, i.A)("name")}</label>\n                    <div style="display:flex">\n                        <input type="text" id="save-file-name" style="width:280px" />\n                        <div id="save-file-type" style="padding-left:10px;line-height:32px;"></div>\n                    </div>\n                </div>\n\n                <div id="type-jpg" data="jpg" class="option-task">\n                    <img src="/assets/images/icon/file-jpg.svg" class="type ic">\n                    <div class="name">JPG <span>${(0, i.A)("smallFilesPerfect")}</span></div>\n                    <div class="settings">\n                        <div id="jpg-quality"></div>\n\n                        <div id="jpg-quality-switch" class="switch-field stretch top-10">\n                            <input type="radio" id="jpg-quality-low" name="jpg-quality-preset" value="50"/><label for="jpg-quality-low">${(0, i.A)("dialogSaveLow")}</label>\n                            <input type="radio" id="jpg-quality-med" name="jpg-quality-preset" value="70" /><label for="jpg-quality-med">${(0, i.A)("dialogSaveMed")}</label>\n                            <input type="radio" id="jpg-quality-high" name="jpg-quality-preset" value="90" checked /><label for="jpg-quality-high">${(0, i.A)("dialogSaveHigh")}</label>\n                        </div>\n\n                        <label class="split top-20">${(0, i.A)("width")} <input type="number" id="jpg-width" value="${t.fresco.width}"/></label>\n                        <label class="split top-5">${(0, i.A)("height")} <input type="number" id="jpg-height" value="${t.fresco.height}"/></label>\n                    </div>\n                </div>\n\n                <div id="type-png" data="png" class="option-task">\n                    <img src="/assets/images/icon/file-png.svg" class="type ic">\n                    <div class="name">PNG<span>${(0, i.A)("largeAndLossless")}</span></div>\n                    <div class="settings">\n                        <input type="checkbox" id="png-transparent" checked>\n                        <label class="switch" for="png-transparent">${(0, i.A)("transparent")}<span></span></label>\n                    </div>\n                </div>\n\n                <div id="type-webp" data="webp" class="option-task">\n                    <img src="/assets/images/icon/file-webp.svg" class="type ic">\n                    <div class="name">WebP<span>${(0, i.A)("modrenFormatSuitable")}</span></div>\n                    <div class="settings">\n                        <div id="webp-quality"></div>\n\n                        <div id="webp-quality-switch" class="switch-field stretch top-10">\n                            <input type="radio" id="webp-quality-low" name="webp-quality-preset" value="50"/><label for="webp-quality-low">${(0, i.A)("dialogSaveLow")}</label>\n                            <input type="radio" id="webp-quality-med" name="webp-quality-preset" value="70" /><label for="webp-quality-med">${(0, i.A)("dialogSaveMed")}</label>\n                            <input type="radio" id="webp-quality-high" name="webp-quality-preset" value="90" checked /><label for="webp-quality-high">${(0, i.A)("dialogSaveHigh")}</label>\n                        </div>\n\n                        <input type="checkbox" id="webp-transparent" checked>\n                        <label class="switch top-20" for="webp-transparent">${(0, i.A)("transparent")}<span></span></label>\n                    </div>\n                </div>\n\n                <div id="type-pdf" data="pdf" class="option-task">\n                    <img src="/assets/images/icon/file-pdf.svg" class="type ic">\n                    <div class="name">PDF <span>${(0, i.A)("bestForFlyersAndMarketing")}.</span></div>\n                </div>\n\n                <div id="type-pxz" data="pxz" class="option-task">\n                    <img src="/assets/images/icon/file-pxz.svg" class="type ic">\n                    <div class="name">PXZ <span>${(0, i.A)("completePixlrDocument")}</span></div>\n                    <div class="settings">\n                        <input type="checkbox" id="save-pxz-ndestuctive" />\n                        <label class="switch top-10" for="save-pxz-ndestuctive">${(0, i.A)("dialogSaveNonDestructive")}<span></span></label>\n                        <p>${(0, i.A)("dialogSavePXZDescription")}</p>\n                    </div>\n                </div>\n            </div>\n        </section>\n        `);
-          if (this.useLegacySave) {
-            (0, o.Ay)("file-name-section").style.display = "block";
-          } else if (document.body.offsetWidth >= 650) {
-            (0, o.Ay)("dialog-buttons" + this.mid).prepend((0, o.T)("div", {
-              style: "cursor:pointer;margin-right:auto;",
-              onclick: () => {
-                document.dispatchEvent(new CustomEvent("preferences"));
-                this.cleanUp();
+          this.dialog.style.maxWidth = "260px";
+          this.setContent(`
+        <section id="save-simple" style="display:flex;flex-direction:column;gap:10px;padding:6px 4px">
+            <a class="button positive w-100" data-format="png">${(0, i.A)("download")}<span style="display:block;font-size:11px;opacity:.65;font-weight:normal">PNG</span></a>
+            <a class="button positive w-100" data-format="jpg">${(0, i.A)("download")}<span style="display:block;font-size:11px;opacity:.65;font-weight:normal">JPG</span></a>
+            <a class="button positive w-100" data-format="webp">${(0, i.A)("download")}<span style="display:block;font-size:11px;opacity:.65;font-weight:normal">WEBP</span></a>
+            <a class="button positive w-100" data-format="pdf">${(0, i.A)("download")}<span style="display:block;font-size:11px;opacity:.65;font-weight:normal">PDF</span></a>
+            <a class="button positive w-100" data-format="pxz">${(0, i.A)("download")}<span style="display:block;font-size:11px;opacity:.65;font-weight:normal">PXZ</span></a>
+        </section>
+    `);
+          this.download = async fmt => {
+            const name = this.stage.fresco.name || "Untitled";
+            let blob;
+            if (fmt === "pxz") {
+              try {
+                blob = await (0, m.Ab)(this.stage, {
+                  id: this.stage.fresco.id,
+                  name: name,
+                  quality: 1,
+                  nonDestructive: false,
+                  type: "document",
+                  unit: "pixel"
+                });
+              } catch (err) {
+                console.error(err);
+                return;
               }
-            }, (0, i.A)("issuesSavingUseLegacy")));
-          }
-          if (document.body.clientWidth < 650) {
-            (0, o.Ay)("dialog-title" + this.mid).innerHTML += ":";
-            (0, o.Ay)("dialog-title" + this.mid).appendChild((0, o.Ay)("save-file-size"));
-          }
-          console.log("[Web Logs] this.stage.getOutputCanvas() is called in save dialog");
-          this.canvas = this.stage.getOutputCanvas();
-          console.log("[Web Logs] Canvas created for save dialog with size: " + this.canvas.width + "x" + this.canvas.height);
-          this.hasWebP = r.VI(5, 5).toDataURL("image/webp").indexOf("webp") !== -1;
-          console.log("[Web Logs] WebP support: " + this.hasWebP);
-          this.type = e || (r.P1(this.canvas) ? "png" : "jpg");
-          (0, o.Ay)("type-" + this.type).append((0, o.T)("div", {
-            className: "reko"
-          }, (0, i.A)("recommend")));
-          (0, o.Ay)("type-jpg").addEventListener("click", this.setType);
-          (0, o.Ay)("type-png").addEventListener("click", this.setType);
-          (0, o.Ay)("type-webp").addEventListener("click", this.setType);
-          (0, o.Ay)("type-pdf").addEventListener("click", this.setType);
-          (0, o.Ay)("type-pxz").addEventListener("click", this.setType);
-          let s = this.stage.fresco.name ? this.stage.fresco.name.lastIndexOf(".") : -1;
-          (0, o.Ay)("save-file-name").value = s !== -1 ? this.stage.fresco.name.substring(0, s) : this.stage.fresco.name || "Untitled";
-          this.jpgquality = new n.A("jpg-quality", {
-            range: [0.01, 1],
-            defaultValue: 0.9,
-            step: 0.001,
-            label: (0, i.A)("quality"),
-            labelFormat: t => (t * 100).toFixed(0) + "%",
-            labelParse: t => parseInt(t, 10) / 100,
-            onEnd: t => {
-              if (t < 0.5) {
-                (0, o.Ay)("jpg-quality-low").checked = true;
-              } else if (t < 0.8) {
-                (0, o.Ay)("jpg-quality-med").checked = true;
-              } else {
-                (0, o.Ay)("jpg-quality-high").checked = true;
+            } else {
+              const needsBg = fmt === "jpg" || fmt === "pdf";
+              const canvas = this.stage.getOutputCanvas(this.stage.fresco, 1, needsBg ? "#ffffff" : undefined);
+              const mime = fmt === "pdf" ? "image/jpeg" : "image/" + fmt;
+              blob = await new Promise(resolve => canvas.toBlob(resolve, mime, 0.92));
+              if (fmt === "pdf") {
+                try {
+                  blob = await (0, m.EB)(this.stage.fresco.width, this.stage.fresco.height, blob);
+                } catch (err) {
+                  console.error(err);
+                  return;
+                }
               }
-              this.renderBlob();
             }
+            if (!blob) {
+              return;
+            }
+            const file = new File([blob], name + "." + fmt);
+            if ((0, m.zu)()) {
+              const handle = await (0, m.D0)(name, fmt, fmt.toUpperCase(), file.type || "image/png");
+              if (handle === false) {
+                return;
+              }
+              if (!(await (0, m.IF)(handle, file))) {
+                (0, m.gr)(file, name, fmt);
+              }
+            } else {
+              (0, m.gr)(file, name, fmt);
+            }
+            this.cleanUp();
+            document.dispatchEvent(new CustomEvent("notification", {
+              detail: (0, i.A)("fileSaved")
+            }));
+          };
+          (0, o.Ay)("save-simple").querySelectorAll("a[data-format]").forEach(btn => {
+            btn.addEventListener("click", () => this.download(btn.getAttribute("data-format")));
           });
-          let a = (0, o.Ay)("jpg-quality-switch").getElementsByTagName("input");
-          for (var c = 0; c < a.length; c++) {
-            a[c].addEventListener("change", t => {
-              let e = t.currentTarget;
-              this.jpgquality.setValue(Number(e.value) / 100);
-              this.renderBlob();
-            }, false);
-          }
-          let d = (0, o.Ay)("jpg-width");
-          d.addEventListener("change", this.jpgSizeChange, false);
-          d.addEventListener("input", this.jpgSizeChange, false);
-          let y = (0, o.Ay)("jpg-height");
-          y.addEventListener("change", this.jpgSizeChange, false);
-          y.addEventListener("input", this.jpgSizeChange, false);
-          this.webpquality = new n.A("webp-quality", {
-            range: [0.01, 1],
-            defaultValue: 0.9,
-            step: 0.001,
-            label: (0, i.A)("quality"),
-            labelFormat: t => (t * 100).toFixed(0) + "%",
-            labelParse: t => parseInt(t, 10) / 100,
-            onEnd: t => {
-              if (t < 0.5) {
-                (0, o.Ay)("webp-quality-low").checked = true;
-              } else if (t < 0.8) {
-                (0, o.Ay)("webp-quality-med").checked = true;
-              } else {
-                (0, o.Ay)("webp-quality-high").checked = true;
-              }
-              this.renderBlob();
-            }
-          });
-          a = (0, o.Ay)("webp-quality-switch").getElementsByTagName("input");
-          for (c = 0; c < a.length; c++) {
-            a[c].addEventListener("change", t => {
-              let e = t.currentTarget;
-              this.webpquality.setValue(Number(e.value) / 100);
-              this.renderBlob();
-            }, false);
-          }
-          (0, o.Ay)("webp-transparent").addEventListener("change", () => this.changeType("webp", true));
-          (0, o.Ay)("png-transparent").addEventListener("change", () => this.changeType("png", true));
-          if (this.stage.fresco.saveMethod !== "normal") {
-            (0, o.Ay)("dialog-apply" + this.mid).after((0, o.T)("a", {
-              id: "dialog-api-apply",
-              className: "button positive",
-              onclick: () => this.applyAPI()
-            }, p.Ay.icon ? (0, o.T)("img", {
-              src: p.Ay.icon,
-              style: "max-width:20px"
-            }) : undefined, (0, i.A)("save")));
-            (0, o.Ay)("dialog-apply" + this.mid).style.display = "none";
-            if (p.Ay.target) {
-              (0, o.Ay)("dialog-api-apply").style.display = "inline-flex";
-            }
-          }
-          this.changeType(this.type, true);
         }
       }
     },
@@ -49801,7 +49481,7 @@ var editor;
       var d = s(3350);
       var u = s(2128);
       var p = s(3171);
-      var g = s(4034);
+      var g = s(3641);
       var m = s(5432);
       var y = s(4182);
       var v = s(8464);
@@ -50342,7 +50022,7 @@ var editor;
           };
           this.tabSave = (t, e) => {
             this.stage.select(t);
-            new g.A(this.stage, e);
+            this.downloadFormat(e || "png");
           };
           this.dragOver = t => {
             if (t.dataTransfer && t.dataTransfer.types.includes("Files") && (t.preventDefault(), t.stopPropagation(), (!this.isModal() || !this.stage.fresco) && !(0, n.Ay)("modal-drop"))) {
@@ -50644,7 +50324,60 @@ var editor;
               });
               return;
             }
-            new g.A(this.stage);
+            this.downloadFormat("png");
+          };
+          this.downloadFormat = async fmt => {
+            if (!this.stage || !this.stage.fresco) {
+              return;
+            }
+            const name = this.stage.fresco.name || "Untitled";
+            let blob;
+            if (fmt === "pxz") {
+              try {
+                blob = await (0, g.Ab)(this.stage, {
+                  id: this.stage.fresco.id,
+                  name: name,
+                  quality: 1,
+                  nonDestructive: false,
+                  type: "document",
+                  unit: "pixel"
+                });
+              } catch (err) {
+                console.error(err);
+                return;
+              }
+            } else {
+              const needsBg = fmt === "jpg" || fmt === "pdf";
+              const canvas = this.stage.getOutputCanvas(this.stage.fresco, 1, needsBg ? "#ffffff" : undefined);
+              const mime = fmt === "pdf" ? "image/jpeg" : "image/" + fmt;
+              blob = await new Promise(resolve => canvas.toBlob(resolve, mime, 0.92));
+              if (fmt === "pdf") {
+                try {
+                  blob = await (0, g.EB)(this.stage.fresco.width, this.stage.fresco.height, blob);
+                } catch (err) {
+                  console.error(err);
+                  return;
+                }
+              }
+            }
+            if (!blob) {
+              return;
+            }
+            const file = new File([blob], name + "." + fmt);
+            if ((0, g.zu)()) {
+              const handle = await (0, g.D0)(name, fmt, fmt.toUpperCase(), file.type || "image/png");
+              if (handle === false) {
+                return;
+              }
+              if (!(await (0, g.IF)(handle, file))) {
+                (0, g.gr)(file, name, fmt);
+              }
+            } else {
+              (0, g.gr)(file, name, fmt);
+            }
+            document.dispatchEvent(new CustomEvent("notification", {
+              detail: (0, a.A)("fileSaved")
+            }));
           };
           this.setSaving = (t = true) => {
             (0, n.Ay)("save").classList.toggle("working", t);

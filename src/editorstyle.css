@@ -7040,7 +7040,7 @@ html:not(.touch) .model-list-item:hover {
     padding: 30px 10px 40px;
     position: relative;
     row-gap: 20px;
-    width: 50%
+    width: 100%
 }
 
 #splash-content-file-dropper #splash-drop-icon {
