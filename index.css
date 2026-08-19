@@ -1,0 +1,23 @@
+/* offline mirror overrides -- hides features that need pixlr's server, or that the user asked
+   removed from the main screen. elements are hidden, not deleted, since several are wired
+   with unguarded getelementbyid().addeventlistener() calls in editor.js that throw if the
+   element is missing entirely */
+
+#navigator-panel, #history-panel, #shortcut-navigator, #shortcut-history,
+#filter-super-sharp, #filter-remove-noise,
+#view-aiquicktip, #view-navigator, #view-history,
+#menu-help {
+    display: none !important;
+}
+
+#workspace > .aip {
+    display: none !important;
+}
+
+.offline-icon {
+    display: none !important;
+}
+
+.modal:has(.bounce-sheet), .modal:has(#entry-pop-right) {
+    display: none !important;
+}
