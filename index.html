@@ -1,16 +1,9 @@
 <!DOCTYPE html>
-
-
-<html lang="en" class="  ">
-
+<html lang="en">
+    
 <head>
     <meta charset="utf-8">
     <script>
-        // offline mirror: patch fetch before web.js/editor.js load so their early
-        // calls to endpoints this mirror cant serve never hit the network. ai/asset
-        // endpoints reject with a notice, geoip/country get a harmless stub reply
-        // (their callers already handle failure gracefully, this just avoids the
-        // console noise from a real failed request).
         (function() {
             var blockedprefixes = ["/api/ai/", "/api/aif/", "/api/font/google", "/api/assets/"]
             var stubbedprefixes = ["/api/geoip/", "/api/country/", "/checkout/products/"]
@@ -35,20 +28,10 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link rel="preload" as="style"
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;display=swap"
-        onload="this.rel='stylesheet'">
-    <noscript>
-        <link
-            href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;display=swap"
-            rel="stylesheet">
-    </noscript>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;display=swap" onload="this.rel='stylesheet'">
 
     <script>window.addEventListener('touchstart', function () { document.documentElement.classList.add('touch') }, {once: true});</script>
     <script>
-        // offline mirror: never register a service worker here, it fights local edits by
-        // caching stale files. actively unregister any that got registered by an earlier
-        // version of this repo (before this fix) and clear its caches.
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister()));
         }
@@ -74,7 +57,7 @@
     <link rel="manifest" href="/site.webmanifest">
 
     <link rel="preload" as="image" imagesrcset="/assets/images/editor-top-bg.jpg 1x, /images/editor-top-bg-x2.jpg 2x" fetchpriority="high">
-    <link rel="stylesheet" type="text/css" href="/src/editorstyle.84d857fc8c06dc46086c.css">
+    <link rel="stylesheet" type="text/css" href="/src/editorstyle.css">
     <link rel="stylesheet" type="text/css" href="/index.css">
 
 </head>
@@ -648,8 +631,7 @@
 
                             <div id="cutout-sub-tools">
 
-                                <a class="button outline tab-10" id="cutout-auto"><img src="/assets/images/icon/ai-tag.svg"
-                                        class="ic" width="16" height="16">AI Auto</a>
+                                
 
                                 <label class="tab-20">Tool:</label>
                                 <div class="switch-icon-field tab-5">
