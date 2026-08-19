@@ -8097,6 +8097,37 @@ html:not(.touch) #tab-bar #tabs-drop:hover img {
     width: 18px
 }
 
+#right-bar .shortcut.positive.save-format {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    height: 36px;
+    justify-content: center;
+    margin-bottom: 2px;
+    margin-top: 0;
+    width: 40px
+}
+
+#right-bar .shortcut.positive.save-format#shortcut-save-png {
+    margin-top: auto
+}
+
+#right-bar .shortcut.positive.save-format img {
+    height: 12px;
+    margin: 0;
+    opacity: 1;
+    width: 12px
+}
+
+#right-bar .shortcut.positive.save-format span {
+    color: #fff;
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: .2px;
+    line-height: 1
+}
+
 #panel-bar {
     bottom: 0;
     display: flex;

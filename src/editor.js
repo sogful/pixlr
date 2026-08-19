@@ -35025,7 +35025,11 @@ var editor;
             if (!C.Ay.barQuicklink) {
               (0, a.Ay)("right-bar").style.display = "none";
             }
-            (0, a.Ay)("shortcut-save").addEventListener("click", this.saveClick);
+            (0, a.Ay)("shortcut-save-png").addEventListener("click", () => this.downloadFormat("png"));
+            (0, a.Ay)("shortcut-save-jpg").addEventListener("click", () => this.downloadFormat("jpg"));
+            (0, a.Ay)("shortcut-save-webp").addEventListener("click", () => this.downloadFormat("webp"));
+            (0, a.Ay)("shortcut-save-pdf").addEventListener("click", () => this.downloadFormat("pdf"));
+            (0, a.Ay)("shortcut-save-pxz").addEventListener("click", () => this.downloadFormat("pxz"));
             (0, a.Ay)("shortcut-layers").addEventListener("click", () => this.togglePanel("layer-panel"));
           };
           this.setUpPanelBar = () => {
@@ -50495,7 +50499,7 @@ var editor;
 },
     3221(t, e, s) {
       var i = s(9821);
-      t.exports = s.v(e, t.id, "872c81e2d357331d115b", {
+      t.exports = s.v(e, t.id, "editor", {
         "./pixlr_bg.js": {
           __wbg_x_7af334499c70ecf9: i._k,
           __wbg_y_7b2e0b17f2702db7: i._4,
@@ -50699,15 +50703,7 @@ var editor;
     262: "native",
     885: "pdf-lib",
     990: "tiff"
-  }[t] || t) + "." + {
-    161: "b84928cbb576c39be48a",
-    220: "f29da89cf56abf6de871",
-    262: "97faf13b7b620e00b6a9",
-    497: "06205716d644cfa03051",
-    876: "e13362de6a3c17f1978e",
-    885: "2e44ad6635d20a3d0205",
-    990: "a138c7c55a28e6eccc44"
-  }[t] + ".js";
+  }[t] || t) + ".js";
   s.miniCssF = t => {};
   s.hmd = t => {
     if (!(t = Object.create(t)).children) {

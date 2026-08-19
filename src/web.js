@@ -6302,18 +6302,7 @@ var web;
     596: "preferences",
     946: "news",
     990: "tiff"
-  }[e] || e) + "." + {
-    21: "1b4db4780c3d992e170e",
-    220: "f29da89cf56abf6de871",
-    262: "97faf13b7b620e00b6a9",
-    273: "3d570dc56c6ee0fb1ac0",
-    334: "f543b122c198cd20f653",
-    497: "06205716d644cfa03051",
-    596: "ff5428b21db80918373e",
-    876: "e13362de6a3c17f1978e",
-    946: "fedb68c7b025734de7f3",
-    990: "a138c7c55a28e6eccc44"
-  }[e] + ".js";
+  }[e] || e) + ".js";
   i.miniCssF = e => {};
   i.hmd = e => {
     if (!(e = Object.create(e)).children) {
