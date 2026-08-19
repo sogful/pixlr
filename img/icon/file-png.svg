@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+ <g fill="none" stroke="#fff">
+  <g transform="matrix(1.74 0 0 1.74 -5.46 -4.16)" stroke-width="1.15">
+   <circle cx="7.75" cy="7" r="3.5" stroke-dashoffset="12.8" stroke-linejoin="round" stroke-width="1.15" style="paint-order:stroke markers fill"/>
+  </g>
+  <rect x="4" y="19" width="13" height="10" stroke-dashoffset="12.8" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="paint-order:stroke markers fill"/>
+  <path transform="matrix(.407 .53 -.531 .406 21.3 -7.07)" d="m32.3 23.3-17.4-6.77 14.6-11.7 1.42 9.24z" stroke-dashoffset="12.8" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.99" style="paint-order:stroke markers fill"/>
+ </g>
+</svg>
