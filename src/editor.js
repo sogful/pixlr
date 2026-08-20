@@ -49761,6 +49761,45 @@ var editor;
             }));
             t.remove();
           };
+          this.autoBackupToCache = async () => {
+            if (!("caches" in window) || this.__autoBackupRunning) {
+              return;
+            }
+            this.__autoBackupRunning = true;
+            try {
+              const e = await k.DocumentMeta.history();
+              if (!e.length) {
+                return;
+              }
+              let o = new M.ZipWriter();
+              for (var i = 0; i < e.length; i++) {
+                const c = e[i];
+                const a = new x.A(c.id, c.name, c.width, c.height, c.transparent ? undefined : c.color, c.templateMeta);
+                await c.restore(a);
+                const blob = await (0, L.Ab)(this.stage, {
+                  id: a.id,
+                  name: a.name,
+                  quality: 1,
+                  nonDestructive: false,
+                  type: "document",
+                  unit: "pixel"
+                }, a);
+                const bytes = new Uint8Array(await blob.arrayBuffer());
+                o.writeFile(a.name + ".pxz", bytes, false);
+              }
+              const r = o.finish();
+              const cache = await caches.open("pixlr-backup");
+              await cache.put("/backup.zip", new Response(new Blob([r.buffer]), {
+                headers: {
+                  "Content-Type": "application/zip"
+                }
+              }));
+            } catch (err) {
+              console.log(err);
+            } finally {
+              this.__autoBackupRunning = false;
+            }
+          };
           this.showAllHistory = async () => {
             (0, n.Ay)("history-all").style.display = "none";
             const t = await k.DocumentMeta.history();
@@ -49817,15 +49856,28 @@ var editor;
               }, s ? "active" : "open"));
             }
             let d;
-            t.getThumbnail().then(e => {
-              if (e) {
-                d = e;
-                e.alt = t.name;
-                e.width = Math.round(e.width * (180 / e.height));
-                e.height = 180;
-                r.appendChild(e);
-              }
-            });
+            const loadThumb = () => {
+              t.getThumbnail().then(e => {
+                if (e) {
+                  d = e;
+                  e.alt = t.name;
+                  r.appendChild(e);
+                }
+              });
+            };
+            if ("IntersectionObserver" in window) {
+              const thumbObserver = new IntersectionObserver(entries => {
+                if (entries[0].isIntersecting) {
+                  thumbObserver.disconnect();
+                  loadThumb();
+                }
+              }, {
+                rootMargin: "200px"
+              });
+              thumbObserver.observe(r);
+            } else {
+              loadThumb();
+            }
             const u = async e => {
               if (e != null) {
                 e.preventDefault();
@@ -50468,6 +50520,13 @@ var editor;
           if (!T.Ay.api) {
             this.setUpSplash();
             this.setHistory();
+            setTimeout(() => this.autoBackupToCache(), 5000);
+            setInterval(() => this.autoBackupToCache(), 300000);
+            document.addEventListener("visibilitychange", () => {
+              if (document.visibilityState === "hidden") {
+                this.autoBackupToCache();
+              }
+            });
           }
           document.dispatchEvent(new CustomEvent("resize"));
         }

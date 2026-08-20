@@ -7223,28 +7223,26 @@ html:not(.touch) .image-box .more:hover {
 }
 
 .image-box .holder {
-    align-items: flex-end;
+    align-items: center;
     display: flex;
-    flex: 1;
+    height: 103px;
     justify-content: center;
-    min-height: 80px;
-    min-width: 160px;
     position: relative;
-    transition: all .2s linear
+    transition: all .2s linear;
+    width: 103px
 }
 
 .image-box .holder,
 .image-box .holder img {
     border-radius: 6px;
-    max-width: 180px;
     overflow: hidden
 }
 
 .image-box .holder img {
     box-shadow: 1.95px 1.95px 2.6px rgba(0, 0, 0, .15);
-    height: auto;
-    max-height: 180px;
-    width: auto
+    height: 100%;
+    object-fit: cover;
+    width: 100%
 }
 
 .image-box.selected .holder {
@@ -13130,12 +13128,13 @@ html:not(.touch) .aip-aspect-option:hover {
 
     .image-box,
     .image-box .holder {
-        max-width: 140px;
-        min-width: 130px
+        max-width: 80px;
+        min-width: 74px
     }
 
     .image-box .holder {
-        height: 130px
+        height: 74px;
+        width: 74px
     }
 
     .modal {
