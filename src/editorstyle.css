@@ -23,8 +23,8 @@
     --accent-negative: #ffffff0d;
     --splitter-size: 8px;
     --splitter-small-size: 4px;
-    --splitter-background: url(/assets/images/misc/bg-hash.svg) 0 0;
-    --square-bg: url(/assets/images/misc/square-bg.png);
+    --splitter-background: url(../assets/images/misc/bg-hash.svg) 0 0;
+    --square-bg: url(../assets/images/misc/square-bg.png);
     --scrollbar-color: #ffffff20;
     --scrollbar-color-hover: #ffffff30;
     --invert-bg: #fefefe;
@@ -61,7 +61,7 @@
     --splitter-size: 5px;
     --splitter-small-size: 4px;
     --splitter-background: hsla(0, 0%, 100%, .04);
-    --square-bg: url(/assets/images/misc/square-bg-mid.png);
+    --square-bg: url(../assets/images/misc/square-bg-mid.png);
     --invert-bg: #fefefe;
     --invert-text: #000
 }
@@ -90,7 +90,7 @@
     --splitter-size: 3px;
     --splitter-small-size: 2px;
     --splitter-background: hsla(0, 0%, 100%, .3);
-    --square-bg: url(/assets/images/misc/square-bg-bright.png);
+    --square-bg: url(../assets/images/misc/square-bg-bright.png);
     --scrollbar-color: #00000030;
     --scrollbar-color-hover: #00000050;
     --invert-bg: #444;
@@ -127,7 +127,7 @@
     --splitter-size: 3px;
     --splitter-small-size: 2px;
     --splitter-background: rgba(0, 0, 0, .06);
-    --square-bg: url(/assets/images/misc/square-bg-light.png);
+    --square-bg: url(../assets/images/misc/square-bg-light.png);
     --scrollbar-color: #00000030;
     --scrollbar-color-hover: #00000050;
     --invert-bg: #444;
@@ -6325,7 +6325,7 @@ html:not(.touch) .model-list-item:hover {
 }
 
 .like-burst.run {
-    background: url(/assets/images/icon/heart.png) no-repeat;
+    background: url(../assets/images/icon/heart.png) no-repeat;
     background-position: -2800px 0;
     height: 100px;
     transform: translate(-50%, -50%) scale(0);
@@ -7366,7 +7366,7 @@ html:not(.touch) .image-box .more:hover {
 }
 
 .premium:after {
-    background-image: url(/assets/images/icon/premium.svg);
+    background-image: url(../assets/images/icon/premium.svg);
     background-position: 2px 0;
     background-repeat: no-repeat;
     background-size: 16px 16px;
@@ -9709,7 +9709,7 @@ html:not(.touch) #color-switch:hover img {
 }
 
 #grad-selector-stoplist .knob .bg {
-    background-image: url(/assets/images/icon/knob.svg);
+    background-image: url(../assets/images/icon/knob.svg);
     background-repeat: no-repeat;
     background-size: 11px 18px;
     content: "";
@@ -11744,19 +11744,19 @@ html:not(.touch) .text-box:hover {
 }
 
 #add-element-overlay {
-    background-image: url(/assets/images/misc/overlay.jpg)
+    background-image: url(../assets/images/misc/overlay.jpg)
 }
 
 #add-element-border {
-    background-image: url(/assets/images/misc/border.jpg)
+    background-image: url(../assets/images/misc/border.jpg)
 }
 
 #add-element-shape {
-    background-image: url(/assets/images/misc/shape.jpg)
+    background-image: url(../assets/images/misc/shape.jpg)
 }
 
 #add-element-sticker {
-    background-image: url(/assets/images/misc/sticker.jpg)
+    background-image: url(../assets/images/misc/sticker.jpg)
 }
 
 .effect-group,
@@ -12176,7 +12176,7 @@ html:not(.touch) #element-rotate-flip li:hover {
 }
 
 #levels-holder .knob .bg {
-    background-image: url(/assets/images/icon/knob.svg);
+    background-image: url(../assets/images/icon/knob.svg);
     background-repeat: no-repeat;
     background-size: 11px 18px;
     content: "";

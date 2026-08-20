@@ -2689,10 +2689,10 @@ var editor;
             const i = (0, o.Ay)(e);
             if (i.type === "text") {
               i.type = "password";
-              s.src = "/assets/images/icon/eye-hide.svg";
+              s.src = "assets/images/icon/eye-hide.svg";
             } else {
               i.type = "text";
-              s.src = "/assets/images/icon/eye-show.svg";
+              s.src = "assets/images/icon/eye-show.svg";
             }
           };
           this.validateInputTimer = t => {
@@ -3061,8 +3061,8 @@ var editor;
       const r = window.location.href.includes("localhost") ? "10000000-ffff-ffff-ffff-000000000001" : "550ad708-3266-4d24-8566-69208120dbe6";
       class h {
         constructor() {
-          this.chooser = () => `\n            <div class="chooser">\n                <div class="social-button" data-social="google">\n                    <img src="/assets/images/icon/google.svg" alt="google">\n                    ${(0, i.A)("commonContinueWith")} Google\n                </div>\n                <div class="social-button" data-social="facebook">\n                    <img src="/assets/images/icon/facebook.svg" alt="facebook">\n                    ${(0, i.A)("commonContinueWith")} Facebook\n                </div>\n                <div class="social-button" data-social="apple">\n                    <img src="/assets/images/icon/apple_gray.svg" alt="apple">\n                    ${(0, i.A)("commonContinueWith")} Apple\n                </div>\n                <a class="top-20" style="display:inline-block;text-align:center;font-size:15px;" id="choose-email">\n                    <strong>${(0, i.A)("commonOrUseEmail")}</strong>\n                </a>\n            </div>\n            <p class="top-30 center" style="padding:0 25px">\n                ${(0, i.A)("commonAgreeTo")} <a href="/terms-of-use/" target='_new'>${(0, i.A)("commonTermsOfUse")}</a> ${(0, i.A)("commonAnd")} <a href="/privacy-policy/" target='_new'> ${(0, i.A)("commonPrivacyPolicy")}</a>.\n            </p>\n        `;
-          this.login = () => `\n\n            <div class="center top-10">\n                ${(0, i.A)("commonNotMember")} &nbsp; <strong><a id="load-signup">${(0, i.A)("commonSignUp")}!</a></strong>\n            </div>\n\n            <form id="entry-form" data-entry="login" class="top-30">\n                <div class="input-group">\n                    <label for="entry-email">${(0, i.A)("commonEmail")}</label>\n                    <input type="email" maxlength="70" name="email" id="entry-email" placeholder="Email address">\n                    <p class="error-msg">${(0, i.A)("commonEnterValidEmail")}</p>\n                </div>\n                <div class="input-group">\n                    <label for="entry-password">${(0, i.A)("commonPassword")}</label>\n                    <input type="password" name="password" id="entry-password" placeholder="Enter password" data-login="true">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="/assets/images/icon/eye-hide.svg">\n                </div>\n\n                <input type="checkbox" id="entry-rememberMe" name="rememberMe" checked/>\n                <label class="top-20 switch" for="entry-rememberMe"><span></span> ${(0, i.A)("commonRememberMe")}</label>\n\n                <div id="h-captcha" style="margin: 0px" data-sitekey="${r}"></div>\n\n                <button type="submit" class="button med w-100 top-40" id="entry-submit">${(0, i.A)("commonLogin")}</button>\n\n                <div class="center top-30"><strong><a id="load-forgotPassword">${(0, i.A)("commonForgotPass")}</a></strong></center>\n\n            </form>\n        `;
+          this.chooser = () => `\n            <div class="chooser">\n                <div class="social-button" data-social="google">\n                    <img src="assets/images/icon/google.svg" alt="google">\n                    ${(0, i.A)("commonContinueWith")} Google\n                </div>\n                <div class="social-button" data-social="facebook">\n                    <img src="assets/images/icon/facebook.svg" alt="facebook">\n                    ${(0, i.A)("commonContinueWith")} Facebook\n                </div>\n                <div class="social-button" data-social="apple">\n                    <img src="assets/images/icon/apple_gray.svg" alt="apple">\n                    ${(0, i.A)("commonContinueWith")} Apple\n                </div>\n                <a class="top-20" style="display:inline-block;text-align:center;font-size:15px;" id="choose-email">\n                    <strong>${(0, i.A)("commonOrUseEmail")}</strong>\n                </a>\n            </div>\n            <p class="top-30 center" style="padding:0 25px">\n                ${(0, i.A)("commonAgreeTo")} <a href="/terms-of-use/" target='_new'>${(0, i.A)("commonTermsOfUse")}</a> ${(0, i.A)("commonAnd")} <a href="/privacy-policy/" target='_new'> ${(0, i.A)("commonPrivacyPolicy")}</a>.\n            </p>\n        `;
+          this.login = () => `\n\n            <div class="center top-10">\n                ${(0, i.A)("commonNotMember")} &nbsp; <strong><a id="load-signup">${(0, i.A)("commonSignUp")}!</a></strong>\n            </div>\n\n            <form id="entry-form" data-entry="login" class="top-30">\n                <div class="input-group">\n                    <label for="entry-email">${(0, i.A)("commonEmail")}</label>\n                    <input type="email" maxlength="70" name="email" id="entry-email" placeholder="Email address">\n                    <p class="error-msg">${(0, i.A)("commonEnterValidEmail")}</p>\n                </div>\n                <div class="input-group">\n                    <label for="entry-password">${(0, i.A)("commonPassword")}</label>\n                    <input type="password" name="password" id="entry-password" placeholder="Enter password" data-login="true">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="assets/images/icon/eye-hide.svg">\n                </div>\n\n                <input type="checkbox" id="entry-rememberMe" name="rememberMe" checked/>\n                <label class="top-20 switch" for="entry-rememberMe"><span></span> ${(0, i.A)("commonRememberMe")}</label>\n\n                <div id="h-captcha" style="margin: 0px" data-sitekey="${r}"></div>\n\n                <button type="submit" class="button med w-100 top-40" id="entry-submit">${(0, i.A)("commonLogin")}</button>\n\n                <div class="center top-30"><strong><a id="load-forgotPassword">${(0, i.A)("commonForgotPass")}</a></strong></center>\n\n            </form>\n        `;
           this.register = async () => {
             let t = "";
             let e = false;
@@ -3075,18 +3075,18 @@ var editor;
                 e = true;
               }
             }
-            return `\n            <form id="entry-form" data-entry="register">\n                <div class="input-group">\n                    <label for="entry-email">${(0, i.A)("commonEmail")}</label>\n                    <input type="email" maxlength="70" name="email" id="entry-email" placeholder="Email address">\n                    <p class="error-msg">${(0, i.A)("commonEnterValidEmail")}</p>\n                </div>\n                <div class="input-group">\n                    <label for="entry-password">${(0, i.A)("commonPassword")}</label>\n                    <input type="password" name="password" id="entry-password" placeholder="Enter password">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="/assets/images/icon/eye-hide.svg">\n                 </div>\n\n                <input type="checkbox" id="entry-newsletter" name="newsletter">\n                <label class="top-20 switch" for="entry-newsletter"><span></span>${(0, i.A)("subscribeToNewsletter")}</label>\n\n                <div id="h-captcha" style="margin: 0px" data-sitekey="${r}"></div>\n\n                <button type="submit" class="button med w-100 top-40">${(0, i.A)("commonSignUp")}</button>\n            </form>\n        `;
+            return `\n            <form id="entry-form" data-entry="register">\n                <div class="input-group">\n                    <label for="entry-email">${(0, i.A)("commonEmail")}</label>\n                    <input type="email" maxlength="70" name="email" id="entry-email" placeholder="Email address">\n                    <p class="error-msg">${(0, i.A)("commonEnterValidEmail")}</p>\n                </div>\n                <div class="input-group">\n                    <label for="entry-password">${(0, i.A)("commonPassword")}</label>\n                    <input type="password" name="password" id="entry-password" placeholder="Enter password">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="assets/images/icon/eye-hide.svg">\n                 </div>\n\n                <input type="checkbox" id="entry-newsletter" name="newsletter">\n                <label class="top-20 switch" for="entry-newsletter"><span></span>${(0, i.A)("subscribeToNewsletter")}</label>\n\n                <div id="h-captcha" style="margin: 0px" data-sitekey="${r}"></div>\n\n                <button type="submit" class="button med w-100 top-40">${(0, i.A)("commonSignUp")}</button>\n            </form>\n        `;
           };
           this.forgotPassword = () => `\n            <h2 class="top-30">${(0, i.A)("commonForgotPass")}</h2>\n\n            <form id="entry-form" class="top-30" data-entry="forgotPassword">\n                <div class="input-group">\n                    <label for="entry-email">${(0, i.A)("commonEmail")}</label>\n                    <input type="email" maxlength="70" name="email" id="entry-email" placeholder="Email address"/>\n                    <p class="error-msg">${(0, i.A)("commonEnterValidEmail")}</p>\n                </div>\n\n                <div id="h-captcha" style="margin: 0px" data-sitekey="${r}"></div>\n\n                <button type="submit" class="button large w-100 top-40" id="load-verification">${(0, i.A)("commonReqCode")}</button>\n            </form>\n        `;
-          this.resetPassword = (t = false) => `\n            <h2 class="top-10">${t ? (0, i.A)("commonSetPassword") : (0, i.A)("commonResetPass")}</h2>\n\n            <form id="entry-form" class="top-30" data-entry="${t ? "setPassword" : "resetPassword"}">\n                <div class="input-group">\n                    <label for="entry-email">${(0, i.A)("commonEmail")}</label>\n                    <input type="email" maxlength="70" name="email" id="entry-email" readonly/>\n                    <p class="error-msg">${(0, i.A)("commonEnterValidEmail")}</p>\n                </div>\n                <div class="input-group">\n                    <label for="entry-password">${(0, i.A)("commonNewPass")}</label>\n                    <input type="password" name="password" id="entry-password">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="/assets/images/icon/eye-hide.svg">\n                    <span id="password-meter" class="none">\n                        <span></span><span></span><span></span><span></span>\n                    </span>\n                </div>\n                <div class="input-group">\n                    <label for="entry-code">${(0, i.A)("commonCode")}</label>\n                    <input type="number" name="code" id="entry-code" style="text-align: left;" onkeypress="if(this.value.length===6)return false;">\n                    <p class="error-msg">${(0, i.A)("commonEnterValidCode")}</p>\n                </div>\n\n                ${t ? `<p class="center top-20 text-center"><strong><a id="entry-resend">${(0, i.A)("commonSendResetCode")}</a></strong></p>` : ""}\n\n                <div id="h-captcha" style="margin: 0px" data-sitekey="${r}"></div>\n                <button class="button large w-100 top-20" type="submit">${(0, i.A)("commonUpdatePass")}</button>\n                ${t ? "" : `<p class="top-20 hide center" id="entry-resend">${(0, i.A)("commonDidNotReceiveCode")} <a class="anchor">${(0, i.A)("commonResend")}</a></p>`}\n            </form>\n        `;
-          this.policyReset = (t = "") => `\n            <h2 class="top-10">${(0, i.A)("commonResetPass")}</h2>\n            ${t ? `<div class="info-box top-20"><p>${t}</p></div>` : ""}\n\n            <form id="entry-form" class="top-30" data-entry="policyReset">\n                <div class="input-group">\n                    <label for="entry-email">${(0, i.A)("commonEmail")}</label>\n                    <input type="email" name="email" id="entry-email" readonly/>\n                </div>\n                <div class="input-group">\n                    <label for="entry-password">${(0, i.A)("commonNewPass")}</label>\n                    <input type="password" name="password" id="entry-password">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="/assets/images/icon/eye-hide.svg">\n                    <span id="password-meter" class="none">\n                        <span></span><span></span><span></span><span></span>\n                    </span>\n                </div>\n                <input type="hidden" name="token" id="entry-token">\n\n                <button class="button large w-100 top-20" type="submit">${(0, i.A)("commonUpdatePass")}</button>\n            </form>\n        `;
+          this.resetPassword = (t = false) => `\n            <h2 class="top-10">${t ? (0, i.A)("commonSetPassword") : (0, i.A)("commonResetPass")}</h2>\n\n            <form id="entry-form" class="top-30" data-entry="${t ? "setPassword" : "resetPassword"}">\n                <div class="input-group">\n                    <label for="entry-email">${(0, i.A)("commonEmail")}</label>\n                    <input type="email" maxlength="70" name="email" id="entry-email" readonly/>\n                    <p class="error-msg">${(0, i.A)("commonEnterValidEmail")}</p>\n                </div>\n                <div class="input-group">\n                    <label for="entry-password">${(0, i.A)("commonNewPass")}</label>\n                    <input type="password" name="password" id="entry-password">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="assets/images/icon/eye-hide.svg">\n                    <span id="password-meter" class="none">\n                        <span></span><span></span><span></span><span></span>\n                    </span>\n                </div>\n                <div class="input-group">\n                    <label for="entry-code">${(0, i.A)("commonCode")}</label>\n                    <input type="number" name="code" id="entry-code" style="text-align: left;" onkeypress="if(this.value.length===6)return false;">\n                    <p class="error-msg">${(0, i.A)("commonEnterValidCode")}</p>\n                </div>\n\n                ${t ? `<p class="center top-20 text-center"><strong><a id="entry-resend">${(0, i.A)("commonSendResetCode")}</a></strong></p>` : ""}\n\n                <div id="h-captcha" style="margin: 0px" data-sitekey="${r}"></div>\n                <button class="button large w-100 top-20" type="submit">${(0, i.A)("commonUpdatePass")}</button>\n                ${t ? "" : `<p class="top-20 hide center" id="entry-resend">${(0, i.A)("commonDidNotReceiveCode")} <a class="anchor">${(0, i.A)("commonResend")}</a></p>`}\n            </form>\n        `;
+          this.policyReset = (t = "") => `\n            <h2 class="top-10">${(0, i.A)("commonResetPass")}</h2>\n            ${t ? `<div class="info-box top-20"><p>${t}</p></div>` : ""}\n\n            <form id="entry-form" class="top-30" data-entry="policyReset">\n                <div class="input-group">\n                    <label for="entry-email">${(0, i.A)("commonEmail")}</label>\n                    <input type="email" name="email" id="entry-email" readonly/>\n                </div>\n                <div class="input-group">\n                    <label for="entry-password">${(0, i.A)("commonNewPass")}</label>\n                    <input type="password" name="password" id="entry-password">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="assets/images/icon/eye-hide.svg">\n                    <span id="password-meter" class="none">\n                        <span></span><span></span><span></span><span></span>\n                    </span>\n                </div>\n                <input type="hidden" name="token" id="entry-token">\n\n                <button class="button large w-100 top-20" type="submit">${(0, i.A)("commonUpdatePass")}</button>\n            </form>\n        `;
           this.verification = t => `\n            <h1>${(0, i.A)("commonVerifyAcc")}</h1>\n            <p id="entry-to-email" data-text="${(0, i.A)("commonSentCodeDesc")}">${(0, i.A)("commonSentCodeDesc")}</p>\n\n            <form id="entry-form" data-entry="${t}">\n                <input id="verification-email" type="hidden" name="email" readonly/>\n                <div class="input-group">\n                    <label for="code">${(0, i.A)("commonCode")}</label>\n                    <input type="number" name="code" id="entry-code" style="text-align: left;" onkeypress="if(this.value.length===6)return false;">\n                    <p class="error-msg">${(0, i.A)("commonEnterValidCode")}</p>\n                </div>\n\n                <button type="submit" class="button large w-100 top-20">${(0, i.A)("commonVerify")}</button>\n                <p class="top-20 hide text-center" id="entry-resend">${(0, i.A)("commonDidNotReceiveCode")} &nbsp; <a class="anchor">${(0, i.A)("commonResend")}</a></p>\n            </form>\n        `;
-          this.changePassword = () => `\n            <h2>${(0, i.A)("commonChangePassword")}</h2>\n            <form id="entry-form" class="top-30" data-entry="changePassword">\n                <div class="input-group">\n                    <label for="entry-password">${(0, i.A)("commonOldPass")}</label>\n                    <input type="password" name="password" id="entry-password">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="/assets/images/icon/eye-hide.svg">\n                </div>\n                <div class="input-group">\n                    <label for="entry-password">${(0, i.A)("commonNewPass")}</label>\n                    <input type="password" name="new-password" id="entry-password-new">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password-2" class="input-icon" src="/assets/images/icon/eye-hide.svg">\n                    <span id="password-meter" class="none">\n                        <span></span><span></span><span></span><span></span>\n                    </span>\n                </div>\n                <button type="submit" class="button w-100 top-20" style="margin-bottom: 20px">${(0, i.A)("commonChangePassword")}</button>\n            </form>\n        `;
+          this.changePassword = () => `\n            <h2>${(0, i.A)("commonChangePassword")}</h2>\n            <form id="entry-form" class="top-30" data-entry="changePassword">\n                <div class="input-group">\n                    <label for="entry-password">${(0, i.A)("commonOldPass")}</label>\n                    <input type="password" name="password" id="entry-password">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="assets/images/icon/eye-hide.svg">\n                </div>\n                <div class="input-group">\n                    <label for="entry-password">${(0, i.A)("commonNewPass")}</label>\n                    <input type="password" name="new-password" id="entry-password-new">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password-2" class="input-icon" src="assets/images/icon/eye-hide.svg">\n                    <span id="password-meter" class="none">\n                        <span></span><span></span><span></span><span></span>\n                    </span>\n                </div>\n                <button type="submit" class="button w-100 top-20" style="margin-bottom: 20px">${(0, i.A)("commonChangePassword")}</button>\n            </form>\n        `;
           this.changeEmail = () => `\n            <h2>${(0, i.A)("commonChangeEmail")}</h2>\n\n            <form id="entry-form" class="top-30" data-entry="changeEmail">\n                <div class="input-group">\n                    <label class="text-capitalize" for="email">${(0, i.A)("commonNewEmail")}</label>\n                    <input type="email" maxlength="70" name="email" id="entry-email">\n                    <p class="error-msg">${(0, i.A)("commonEnterValidEmail")}</p>\n                </div>\n\n                <button type="submit" class="button w-100 top-20" style="margin-bottom: 20px">${(0, i.A)("commonNewEmail")}</button>\n            </form>\n        `;
           this.changeUsername = (t = "") => `\n            <h2>${(0, i.A)("changeUsername")}</h2>\n\n            <form id="entry-form" class="top-30" data-entry="changeUsername">\n                <div class="input-group">\n                    <label for="entry-username">${(0, i.A)("newUsername")}</label>\n                    <input type="text" name="name" id="entry-username" value="${t}">\n                </div>\n\n                <button type="submit" class="button w-100 top-20">${(0, i.A)("update")}</button>\n            </form>\n        `;
           this.deleteAccount = t => `\n            <h2>${(0, i.A)("commonDeleteMyAccount")}</h2>\n            <p class="top-20">Hey ${t},</p>\n            <p class="no-margin">${(0, i.A)("commonSadToSeeYouGoWhyLeaving")}</p>\n\n            <form id="entry-form" data-entry="deleteAccount">\n                <div class="input-group">\n                    <label class="top-20 text-uppercase">${(0, i.A)("commonLeavingBecause")}</label>\n                    <select name="reason">\n                        <option value="leavingReasonDefault" disabled selected>${(0, i.A)("commonLeavingReasonDefault")}</option>\n                        <option value="leavingReasons1">${(0, i.A)("commonLeavingReasons1")}</option>\n                        <option value="leavingReasons2">${(0, i.A)("commonLeavingReasons2")}</option>\n                        <option value="leavingReasons3">${(0, i.A)("commonLeavingReasons3")}</option>\n                        <option value="leavingReasons4">${(0, i.A)("commonLeavingReasons4")}</option>\n                        <option value="leavingReasons5">${(0, i.A)("commonLeavingReasons5")}</option>\n                    <select>\n                </div>\n\n                <button type="submit" class="button red w-100 top-20" style="margin-bottom: 20px">${(0, i.A)("commonDeleteMyAccount")}</button>\n            </form>\n        `;
-          this.deleteAccountConfirmation = (t = "leavingReasonDefault") => `\n            <h4 class="top-35 text-default">${(0, i.A)("areYouSureYouWantToDelete")} </h4>\n            ${o.Ny.subscription ? `<p class="top-35">${(0, i.A)("commonYouHaveActiveSubsBeforeDelete")}</p>` : ""}\n            <p class="top-15">${(0, i.A)("youCanStillChangeYourMind")} </p>\n\n            <form id="entry-form" data-entry="deleteAccountConfirmation">\n                <input type="hidden" name="reason" value="${t}">\n                <div class="input-group">\n                    <label for="entry-password">${(0, i.A)("commonPassword")}</label>\n                    <input type="password" name="password" id="entry-password">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="/assets/images/icon/eye-hide.svg">\n                </div>\n\n                <div class="input-group checkbox-group inline justify-center flex-wrap" style="margin-top: 30px">\n                    <button id="entry-cancel" class="button full positive">${(0, i.A)("cancel")}</button>\n                    <button id="delete-confirm" type="submit" class="button w-100 transparent">${(0, i.A)("deleteMyAccount")}</button>\n                </div>\n            </form>\n        `;
-          this.additionalVerification = () => `\n            <h3 class="heavy">${(0, i.A)("enterYourPasswordToContinue")}</h3>\n\n            <form id="entry-form" data-entry="additionalVerification">\n                <div class="input-group">\n                    <label for="entry-password">${(0, i.A)("commonPassword")}</label>\n                    <input type="password" name="password" id="entry-password">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="/assets/images/icon/eye-hide.svg">\n                </div>\n\n                <div class="input-group checkbox-group inline justify-center" style="margin-top: 30px">\n                    <button type="submit" class="button full top-20">Continue</button>\n                </div>\n            </form>\n        `;
+          this.deleteAccountConfirmation = (t = "leavingReasonDefault") => `\n            <h4 class="top-35 text-default">${(0, i.A)("areYouSureYouWantToDelete")} </h4>\n            ${o.Ny.subscription ? `<p class="top-35">${(0, i.A)("commonYouHaveActiveSubsBeforeDelete")}</p>` : ""}\n            <p class="top-15">${(0, i.A)("youCanStillChangeYourMind")} </p>\n\n            <form id="entry-form" data-entry="deleteAccountConfirmation">\n                <input type="hidden" name="reason" value="${t}">\n                <div class="input-group">\n                    <label for="entry-password">${(0, i.A)("commonPassword")}</label>\n                    <input type="password" name="password" id="entry-password">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="assets/images/icon/eye-hide.svg">\n                </div>\n\n                <div class="input-group checkbox-group inline justify-center flex-wrap" style="margin-top: 30px">\n                    <button id="entry-cancel" class="button full positive">${(0, i.A)("cancel")}</button>\n                    <button id="delete-confirm" type="submit" class="button w-100 transparent">${(0, i.A)("deleteMyAccount")}</button>\n                </div>\n            </form>\n        `;
+          this.additionalVerification = () => `\n            <h3 class="heavy">${(0, i.A)("enterYourPasswordToContinue")}</h3>\n\n            <form id="entry-form" data-entry="additionalVerification">\n                <div class="input-group">\n                    <label for="entry-password">${(0, i.A)("commonPassword")}</label>\n                    <input type="password" name="password" id="entry-password">\n                    <p class="error-msg"></p>\n                    <img id="toggle-password" class="input-icon" src="assets/images/icon/eye-hide.svg">\n                </div>\n\n                <div class="input-group checkbox-group inline justify-center" style="margin-top: 30px">\n                    <button type="submit" class="button full top-20">Continue</button>\n                </div>\n            </form>\n        `;
         }
       }
     },
@@ -3451,7 +3451,7 @@ var editor;
                 className: "kort",
                 style: "border-radius: 8px; padding: 16px; display: flex; flex-direction: row; align-items: center; gap: 8px;"
               }, (0, i.T)("img", {
-                src: "/assets/images/checkout/icon/card.svg",
+                src: "assets/images/checkout/icon/card.svg",
                 width: 24,
                 height: 24
               }), (0, i.T)("span", {
@@ -4203,7 +4203,7 @@ var editor;
               this.setContent((0, i.T)("div", {
                 id: "chckout-result"
               }, (0, i.T)("img", {
-                src: "/assets/images/icon/red-cross.png",
+                src: "assets/images/icon/red-cross.png",
                 width: 100,
                 style: "margin-bottom: 20px"
               }), (0, i.T)("h2", {
@@ -4215,7 +4215,7 @@ var editor;
               this.setContent((0, i.T)("div", {
                 id: "chckout-result"
               }, (0, i.T)("img", {
-                src: "/assets/images/myaccount/black-loading.gif",
+                src: "assets/images/myaccount/black-loading.gif",
                 width: 150
               }), (0, i.T)("h2", {
                 style: "margin-bottom: 10px"
@@ -4229,7 +4229,7 @@ var editor;
               this.setContent((0, i.T)("div", {
                 id: "chckout-result"
               }, (0, i.T)("img", {
-                src: "/assets/images/icon/green-tick.png",
+                src: "assets/images/icon/green-tick.png",
                 width: 100,
                 style: "margin-bottom: 20px"
               }), (0, i.T)("h2", {
@@ -5027,7 +5027,7 @@ var editor;
           if (this.checkoutOptions.bounceSource) {
             this.optionUI.append((0, i.T)("img", {
               id: "back-chckout",
-              src: "/assets/images/icon/arrow-left-black.svg"
+              src: "assets/images/icon/arrow-left-black.svg"
             }));
           }
           if ((0, i.lR)("promo-code", "") !== "") {
@@ -5067,7 +5067,7 @@ var editor;
                   className: "kort",
                   style: "border-radius: 8px; padding: 16px; display: flex; flex-direction: row; align-items: center; gap: 8px;"
                 }, (0, i.T)("img", {
-                  src: "/assets/images/checkout/icon/card.svg",
+                  src: "assets/images/checkout/icon/card.svg",
                   width: 24,
                   height: 24
                 }), (0, i.T)("span", {
@@ -5122,7 +5122,7 @@ var editor;
                       id: "wrapper-payment-method",
                       style: "border-radius: 8px; padding: 16px; display: flex; flex-direction: row; align-items: center; gap: 8px; background: transparent;"
                     }, (0, i.T)("img", {
-                      src: "/assets/images/checkout/icon/card.svg",
+                      src: "assets/images/checkout/icon/card.svg",
                       width: 24,
                       height: 24
                     }), (0, i.T)("span", {
@@ -5358,14 +5358,14 @@ var editor;
         }, (0, i.T)("summary", {
           style: "display: flex; align-items: center;"
         }, (0, i.T)("img", {
-          src: "/assets/images/checkout/icon/card.svg",
+          src: "assets/images/checkout/icon/card.svg",
           width: 24,
           height: 24,
           style: "margin-right: 8px;"
         }), (0, i.T)("span", {
           className: "fs-16 fw-7"
         }, (0, a.A)("optionalBillingInformation")), (0, i.T)("img", {
-          src: "/assets/images/icon/up.svg",
+          src: "assets/images/icon/up.svg",
           style: "margin-left: auto"
         })), (0, i.T)("div", {
           id: "billing-form",
@@ -5407,7 +5407,7 @@ var editor;
         id: "paypal-upgrade-notice-wrapper",
         style: "display: flex; flex-direction: row; column-gap: 7px"
       }, (0, i.T)("img", {
-        src: "/assets/images/icon/warning.svg",
+        src: "assets/images/icon/warning.svg",
         style: "width: 30px"
       }), (0, a.A)("paypalUpgradeConfirmationDisclaimerOnPreviousSubscription")), "bV", 0, (t = false) => (0, i.T)("details", {
         id: "wrapper-promo-option",
@@ -5416,14 +5416,14 @@ var editor;
       }, (0, i.T)("summary", {
         style: "display: flex; align-items: center;"
       }, (0, i.T)("img", {
-        src: "/assets/images/checkout/icon/percent.svg",
+        src: "assets/images/checkout/icon/percent.svg",
         width: 24,
         height: 24,
         style: "margin-right: 8px;"
       }), (0, i.T)("span", {
         className: "fs-16 fw-7"
       }, (0, a.A)("promoCode")), (0, i.T)("img", {
-        src: "/assets/images/icon/up.svg",
+        src: "assets/images/icon/up.svg",
         style: "margin-left: auto"
       })), (0, i.T)("div", (0, i.T)("div", {
         id: "promo-section"
@@ -5491,14 +5491,14 @@ var editor;
       }, (0, i.T)("summary", {
         style: "display: flex; align-items: center;"
       }, (0, i.T)("img", {
-        src: "/assets/images/checkout/icon/seats.svg",
+        src: "assets/images/checkout/icon/seats.svg",
         width: 24,
         height: 24,
         style: "margin-right: 8px;"
       }), (0, i.T)("span", {
         className: "fs-16 fw-7"
       }, (0, a.A)("addMoreSeats")), (0, i.T)("img", {
-        src: "/assets/images/icon/up.svg",
+        src: "assets/images/icon/up.svg",
         style: "margin-left: auto"
       })), (0, i.T)("div", (0, i.T)("div", {
         className: "seat-select"
@@ -5573,7 +5573,7 @@ var editor;
         }), (0, i.T)("span", {
           className: "fs-16 fw-7"
         }, e), (0, i.T)("img", {
-          src: "/assets/images/icon/up.svg",
+          src: "assets/images/icon/up.svg",
           style: "margin-left: auto"
         })), (0, i.T)("div", {
           style: "display: flex; flex-direction: column; row-gap: 8px"
@@ -5614,14 +5614,14 @@ var editor;
       }, (0, i.T)("summary", {
         style: "display: flex; align-items: center;"
       }, (0, i.T)("img", {
-        src: "/assets/images/checkout/icon/card.svg",
+        src: "assets/images/checkout/icon/card.svg",
         width: 24,
         height: 24,
         style: "margin-right: 8px;"
       }), (0, i.T)("span", {
         className: "fs-16 fw-7"
       }, (0, a.A)("paymentMethod")), (0, i.T)("img", {
-        src: "/assets/images/icon/up.svg",
+        src: "assets/images/icon/up.svg",
         style: "margin-left: auto"
       })), (0, i.T)("div", {
         style: "display: flex; flex-direction: column; row-gap: 18px;"
@@ -6385,7 +6385,7 @@ var editor;
           if (e.local) {
             return new File([e.font], e.name);
           }
-          let s = await fetch("/assets/fonts/" + e.short + ".woff").then(t => t.blob());
+          let s = await fetch("assets/fonts/" + e.short + ".woff").then(t => t.blob());
           if (s) {
             return new File([s], e.short + ".woff", {
               type: "font/woff"
@@ -6680,9 +6680,9 @@ var editor;
                 (0, g.A)("open-file", "application/pdf");
                 x = await async function (t, e, s) {
                   const i = await (0, o.CB)(e);
-                  await D("/assets/static/pdf.js", () => !!window.pdfjsLib, undefined, "module");
+                  await D("assets/static/pdf.js", () => !!window.pdfjsLib, undefined, "module");
                   const a = window.pdfjsLib;
-                  a.GlobalWorkerOptions.workerSrc = "/assets/static/pdf.worker.mjs";
+                  a.GlobalWorkerOptions.workerSrc = "assets/static/pdf.worker.mjs";
                   const r = await a.getDocument(new Uint8Array(i)).promise;
                   const h = await r.getPage(1);
                   const l = h.getViewport({
@@ -7461,7 +7461,7 @@ var editor;
           detail: "start"
         }));
         const i = await async function (t) {
-          await D("/assets/static/psd.js", () => window.require && window.require("psd"));
+          await D("assets/static/psd.js", () => window.require && window.require("psd"));
           const e = window.require("psd");
           const s = await new Response(t).arrayBuffer();
           const i = new e(new Uint8Array(s));
@@ -21552,7 +21552,7 @@ var editor;
             className: "announce-close",
             onclick: () => this.cleanUp()
           }, (0, i.T)("img", {
-            src: "/assets/images/icon/close.svg"
+            src: "assets/images/icon/close.svg"
           })), this.content);
           document.addEventListener("keydown", this.keyDown, false);
           setTimeout(() => this.dialog.classList.add("ani"), 5);
@@ -22263,7 +22263,7 @@ var editor;
           }), (0, a.T)("label", {
             htmlFor: "brush-shape-circle"
           }, (0, a.T)("img", {
-            src: "/assets/images/icon/type-circle.svg",
+            src: "assets/images/icon/type-circle.svg",
             className: "ic"
           })), (0, a.T)("input", {
             type: "radio",
@@ -22273,7 +22273,7 @@ var editor;
           }), (0, a.T)("label", {
             htmlFor: "brush-shape-square"
           }, (0, a.T)("img", {
-            src: "/assets/images/icon/type-square.svg",
+            src: "assets/images/icon/type-square.svg",
             className: "ic"
           })), (0, a.T)("input", {
             type: "radio",
@@ -22283,7 +22283,7 @@ var editor;
           }), (0, a.T)("label", {
             htmlFor: "brush-shape-diamond"
           }, (0, a.T)("img", {
-            src: "/assets/images/icon/type-diamond.svg",
+            src: "assets/images/icon/type-diamond.svg",
             className: "ic"
           })));
           s.append((0, a.T)("div", {
@@ -22317,7 +22317,7 @@ var editor;
           new d.A(this.presets);
           const m = (0, a.T)("img", {
             id: "brush-resize",
-            src: "/assets/images/icon/three-dot.svg",
+            src: "assets/images/icon/three-dot.svg",
             className: "resize ic"
           });
           (0, a.Bb)(m, this.resizeStart, this.resizeMove);
@@ -22383,7 +22383,7 @@ var editor;
               id: e + "-hold"
             }, this.size, (0, a.T)("img", {
               id: e + "-more",
-              src: "/assets/images/icon/more.svg",
+              src: "assets/images/icon/more.svg",
               className: "ic"
             })));
           }
@@ -22857,7 +22857,7 @@ var editor;
               className: "icon-button",
               style: "margin-left:auto;"
             }, (0, r.T)("img", {
-              src: "/assets/images/tool/picker.svg",
+              src: "assets/images/tool/picker.svg",
               className: "ic"
             }));
             t.addEventListener("click", this.activeColorPick, false);
@@ -22993,7 +22993,7 @@ var editor;
               t("layer");
             };
           });
-          this.setContent(`    \n            ${(0, a.A)("dialogChoiceHeadline")}\n            <ul class="push-buttons top-20" style="text-align: center">\n                <li id="open-as-new">\n                    <img src="/assets/images/icon/document-new.svg" class="ic" />\n                    <span>${(0, a.A)("createNew")}</span>\n                </li>\n                <li id="open-in-current">\n                    <img src="/assets/images/icon/document-add.svg" class="ic" />\n                    <span>${(0, a.A)("addCurrent")}</span>\n                </li>\n            </ul>\n        `);
+          this.setContent(`    \n            ${(0, a.A)("dialogChoiceHeadline")}\n            <ul class="push-buttons top-20" style="text-align: center">\n                <li id="open-as-new">\n                    <img src="assets/images/icon/document-new.svg" class="ic" />\n                    <span>${(0, a.A)("createNew")}</span>\n                </li>\n                <li id="open-in-current">\n                    <img src="assets/images/icon/document-add.svg" class="ic" />\n                    <span>${(0, a.A)("addCurrent")}</span>\n                </li>\n            </ul>\n        `);
           (0, i.Ay)("dialog-buttons" + this.mid).style.display = "none";
         }
       }
@@ -23038,7 +23038,7 @@ var editor;
               this.cleanUp();
             } catch (t) {
               console.error(t);
-              (0, i.Ay)("ai-icon").src = "/assets/images/icon/ai-err.svg";
+              (0, i.Ay)("ai-icon").src = "assets/images/icon/ai-err.svg";
               (0, i.Ay)("dialog-cancel" + this.mid).innerText = (0, a.A)("close");
               (0, i.Ay)("ai-load").style.display = "none";
               (0, i.Ay)("ai-message").innerText = window.navigator.onLine ? (0, a.A)("genericError") : (0, a.A)("genericOffline");
@@ -23051,7 +23051,7 @@ var editor;
           this.stage = t;
           this.dialog.style.width = "300px";
           this.dialog.style.maxWidth = "300px";
-          this.setContent("\n            <img src=\"/assets/images/icon/ai.svg\" id=\"ai-icon\" class=\"ic\">\n            <div id=\"ai-load\" class=\"ai-load\"><div class=\"dot-floating\"></div></div> \n            <div id=\"ai-message\" class=\"top-20\">Machines are doing their thing, please wait ..</div>\n        ");
+          this.setContent("\n            <img src=\"assets/images/icon/ai.svg\" id=\"ai-icon\" class=\"ic\">\n            <div id=\"ai-load\" class=\"ai-load\"><div class=\"dot-floating\"></div></div> \n            <div id=\"ai-message\" class=\"top-20\">Machines are doing their thing, please wait ..</div>\n        ");
           (0, i.Ay)("dialog-apply" + this.mid).style.display = "none";
           (0, h.A)("run-ai-cutout");
           this.run();
@@ -23640,7 +23640,7 @@ var editor;
           this.dialog.append(h, (0, r.T)("img", {
             id: "dialog-close" + this.mid,
             className: "close ic",
-            src: "/assets/images/icon/close.svg",
+            src: "assets/images/icon/close.svg",
             onclick: () => this.cancel()
           }), this.content, (0, r.T)("div", {
             className: "buttons",
@@ -23657,7 +23657,7 @@ var editor;
           if (s) {
             const t = (0, r.T)("img", {
               id: "resize-" + this.mid,
-              src: "/assets/images/icon/three-dot.svg",
+              src: "assets/images/icon/three-dot.svg",
               className: "resize ic"
             });
             (0, r.Bb)(t, this.resizeStart, this.resizeMove);
@@ -24059,84 +24059,84 @@ var editor;
               case "recommended":
                 if (this.stage.clipboardSize) {
                   let t = this.stage.clipboardSize;
-                  this.addBox((0, i.A)("clipboard"), t.width, t.height, "/assets/images/icon/new-cutout.svg");
+                  this.addBox((0, i.A)("clipboard"), t.width, t.height, "assets/images/icon/new-cutout.svg");
                 }
-                this.addBox((0, i.A)("social-media-post"), 1080, 1080, "/assets/images/icon/category/social.svg");
-                this.addBox((0, i.A)("social-media-story"), 1080, 1920, "/assets/images/icon/category/social.svg");
-                this.addBox("Web med", 1600, 900, "/assets/images/icon/category/web.svg");
-                this.addBox("Thumb 720p", 1280, 720, "/assets/images/icon/category/video.svg");
-                this.addBox("Wide 1080p", 1920, 1080, "/assets/images/icon/category/video.svg");
-                this.addBox("Art grid", 1000, 1000, "/assets/images/icon/category/art.svg");
-                this.addBox("12 mpx 4:3", 4032, 3024, "/assets/images/icon/category/landscape.svg");
-                this.addBox("8 mpx 4:3", 3264, 2448, "/assets/images/icon/category/landscape.svg");
+                this.addBox((0, i.A)("social-media-post"), 1080, 1080, "assets/images/icon/category/social.svg");
+                this.addBox((0, i.A)("social-media-story"), 1080, 1920, "assets/images/icon/category/social.svg");
+                this.addBox("Web med", 1600, 900, "assets/images/icon/category/web.svg");
+                this.addBox("Thumb 720p", 1280, 720, "assets/images/icon/category/video.svg");
+                this.addBox("Wide 1080p", 1920, 1080, "assets/images/icon/category/video.svg");
+                this.addBox("Art grid", 1000, 1000, "assets/images/icon/category/art.svg");
+                this.addBox("12 mpx 4:3", 4032, 3024, "assets/images/icon/category/landscape.svg");
+                this.addBox("8 mpx 4:3", 3264, 2448, "assets/images/icon/category/landscape.svg");
                 break;
               case "photo":
-                this.addBox("12 mpx 4:3", 4032, 3024, "/assets/images/icon/category/landscape.svg");
-                this.addBox("8 mpx 4:3", 3264, 2448, "/assets/images/icon/category/landscape.svg");
-                this.addBox("Landscape 3x2 in", 900, 600, "/assets/images/icon/category/landscape.svg");
-                this.addBox("Landscape 6x4 in", 1800, 1200, "/assets/images/icon/category/landscape.svg");
-                this.addBox("Landscape 7x5 in", 2100, 1500, "/assets/images/icon/category/landscape.svg");
-                this.addBox("Landscape 10x8 in", 3000, 2400, "/assets/images/icon/category/landscape.svg");
-                this.addBox("Portrait 2x3 in", 600, 900, "/assets/images/icon/category/portrait.svg");
-                this.addBox("Portrait 4x6 in", 1200, 1800, "/assets/images/icon/category/portrait.svg");
-                this.addBox("Portrait 5x7 in", 1500, 2100, "/assets/images/icon/category/portrait.svg");
-                this.addBox("Portrait 8x10 in", 2400, 3000, "/assets/images/icon/category/portrait.svg");
+                this.addBox("12 mpx 4:3", 4032, 3024, "assets/images/icon/category/landscape.svg");
+                this.addBox("8 mpx 4:3", 3264, 2448, "assets/images/icon/category/landscape.svg");
+                this.addBox("Landscape 3x2 in", 900, 600, "assets/images/icon/category/landscape.svg");
+                this.addBox("Landscape 6x4 in", 1800, 1200, "assets/images/icon/category/landscape.svg");
+                this.addBox("Landscape 7x5 in", 2100, 1500, "assets/images/icon/category/landscape.svg");
+                this.addBox("Landscape 10x8 in", 3000, 2400, "assets/images/icon/category/landscape.svg");
+                this.addBox("Portrait 2x3 in", 600, 900, "assets/images/icon/category/portrait.svg");
+                this.addBox("Portrait 4x6 in", 1200, 1800, "assets/images/icon/category/portrait.svg");
+                this.addBox("Portrait 5x7 in", 1500, 2100, "assets/images/icon/category/portrait.svg");
+                this.addBox("Portrait 8x10 in", 2400, 3000, "assets/images/icon/category/portrait.svg");
                 break;
               case "social":
-                this.addBox((0, i.A)("instagram-square"), 1080, 1080, "/assets/images/icon/category/instagram.svg");
-                this.addBox((0, i.A)("instagram-post"), 1080, 1350, "/assets/images/icon/category/instagram.svg");
-                this.addBox((0, i.A)("instagram-story"), 1080, 1920, "/assets/images/icon/category/instagram.svg");
-                this.addBox((0, i.A)("facebook-post"), 1200, 630, "/assets/images/icon/category/facebook.svg");
-                this.addBox((0, i.A)("facebook-story"), 1080, 1920, "/assets/images/icon/category/facebook.svg");
-                this.addBox((0, i.A)("facebook-cover"), 851, 315, "/assets/images/icon/category/facebook.svg");
-                this.addBox((0, i.A)("facebook-profile"), 850, 850, "/assets/images/icon/category/facebook.svg");
-                this.addBox((0, i.A)("twitter-post"), 1600, 900, "/assets/images/icon/category/twitter.svg");
-                this.addBox((0, i.A)("twitter-cover"), 1500, 500, "/assets/images/icon/category/twitter.svg");
-                this.addBox((0, i.A)("twitter-profile"), 400, 400, "/assets/images/icon/category/twitter.svg");
-                this.addBox((0, i.A)("youtube-profile"), 800, 800, "/assets/images/icon/category/youtube.svg");
-                this.addBox((0, i.A)("youtube-thumbnail"), 1280, 720, "/assets/images/icon/category/youtube.svg");
-                this.addBox((0, i.A)("youtube-channel-art"), 2048, 1152, "/assets/images/icon/category/youtube.svg");
-                this.addBox((0, i.A)("pinterest-pin"), 1000, 1500, "/assets/images/icon/category/pinterest.svg");
-                this.addBox((0, i.A)("pinterest-square-pin"), 1000, 1000, "/assets/images/icon/category/pinterest.svg");
-                this.addBox((0, i.A)("pinterest-long-pin"), 1000, 2100, "/assets/images/icon/category/pinterest.svg");
+                this.addBox((0, i.A)("instagram-square"), 1080, 1080, "assets/images/icon/category/instagram.svg");
+                this.addBox((0, i.A)("instagram-post"), 1080, 1350, "assets/images/icon/category/instagram.svg");
+                this.addBox((0, i.A)("instagram-story"), 1080, 1920, "assets/images/icon/category/instagram.svg");
+                this.addBox((0, i.A)("facebook-post"), 1200, 630, "assets/images/icon/category/facebook.svg");
+                this.addBox((0, i.A)("facebook-story"), 1080, 1920, "assets/images/icon/category/facebook.svg");
+                this.addBox((0, i.A)("facebook-cover"), 851, 315, "assets/images/icon/category/facebook.svg");
+                this.addBox((0, i.A)("facebook-profile"), 850, 850, "assets/images/icon/category/facebook.svg");
+                this.addBox((0, i.A)("twitter-post"), 1600, 900, "assets/images/icon/category/twitter.svg");
+                this.addBox((0, i.A)("twitter-cover"), 1500, 500, "assets/images/icon/category/twitter.svg");
+                this.addBox((0, i.A)("twitter-profile"), 400, 400, "assets/images/icon/category/twitter.svg");
+                this.addBox((0, i.A)("youtube-profile"), 800, 800, "assets/images/icon/category/youtube.svg");
+                this.addBox((0, i.A)("youtube-thumbnail"), 1280, 720, "assets/images/icon/category/youtube.svg");
+                this.addBox((0, i.A)("youtube-channel-art"), 2048, 1152, "assets/images/icon/category/youtube.svg");
+                this.addBox((0, i.A)("pinterest-pin"), 1000, 1500, "assets/images/icon/category/pinterest.svg");
+                this.addBox((0, i.A)("pinterest-square-pin"), 1000, 1000, "assets/images/icon/category/pinterest.svg");
+                this.addBox((0, i.A)("pinterest-long-pin"), 1000, 2100, "assets/images/icon/category/pinterest.svg");
                 break;
               case "print":
-                this.addBox("Letter 8 x 11 in", 2400, 3300, "/assets/images/icon/category/paper.svg");
-                this.addBox("Legal 8 x 14 in", 2400, 4200, "/assets/images/icon/category/paper.svg", true);
-                this.addBox("Tabloid 11 x 17 in", 3300, 5100, "/assets/images/icon/category/paper.svg", true);
-                this.addBox("A3 297 x 420 mm", 3508, 4961, "/assets/images/icon/category/paper.svg", true);
-                this.addBox("A4 210 x 297 mm", 2480, 3508, "/assets/images/icon/category/paper.svg");
-                this.addBox("A5 148 x 210 mm", 1748, 2480, "/assets/images/icon/category/paper.svg");
-                this.addBox("A6 105 x 148 mm", 1240, 1748, "/assets/images/icon/category/paper.svg");
-                this.addBox((0, i.A)("business-card"), 1050, 600, "/assets/images/icon/category/business-card.svg");
-                this.addBox((0, i.A)("flyer") + " 4.25 x 5.5 in", 1275, 1650, "/assets/images/icon/category/flyer.svg");
-                this.addBox((0, i.A)("flyer") + " 5.5 x 8.5 in", 1650, 2550, "/assets/images/icon/category/flyer.svg");
-                this.addBox((0, i.A)("flyer") + " 8.5 x 11 in", 2550, 3300, "/assets/images/icon/category/flyer.svg");
-                this.addBox((0, i.A)("brochure") + " 8.5 x 11 in", 2550, 3300, "/assets/images/icon/category/flyer.svg");
-                this.addBox((0, i.A)("brochure") + " 8.5 x 14 in", 2550, 4200, "/assets/images/icon/category/flyer.svg", true);
-                this.addBox((0, i.A)("brochure") + " 11 x 17 in", 3300, 5100, "/assets/images/icon/category/flyer.svg", true);
-                this.addBox((0, i.A)("invitation") + " 4 x 6 in", 384, 576, "/assets/images/icon/category/invitation.svg");
-                this.addBox((0, i.A)("invitation") + " 5 x 7 in", 480, 672, "/assets/images/icon/category/invitation.svg");
+                this.addBox("Letter 8 x 11 in", 2400, 3300, "assets/images/icon/category/paper.svg");
+                this.addBox("Legal 8 x 14 in", 2400, 4200, "assets/images/icon/category/paper.svg", true);
+                this.addBox("Tabloid 11 x 17 in", 3300, 5100, "assets/images/icon/category/paper.svg", true);
+                this.addBox("A3 297 x 420 mm", 3508, 4961, "assets/images/icon/category/paper.svg", true);
+                this.addBox("A4 210 x 297 mm", 2480, 3508, "assets/images/icon/category/paper.svg");
+                this.addBox("A5 148 x 210 mm", 1748, 2480, "assets/images/icon/category/paper.svg");
+                this.addBox("A6 105 x 148 mm", 1240, 1748, "assets/images/icon/category/paper.svg");
+                this.addBox((0, i.A)("business-card"), 1050, 600, "assets/images/icon/category/business-card.svg");
+                this.addBox((0, i.A)("flyer") + " 4.25 x 5.5 in", 1275, 1650, "assets/images/icon/category/flyer.svg");
+                this.addBox((0, i.A)("flyer") + " 5.5 x 8.5 in", 1650, 2550, "assets/images/icon/category/flyer.svg");
+                this.addBox((0, i.A)("flyer") + " 8.5 x 11 in", 2550, 3300, "assets/images/icon/category/flyer.svg");
+                this.addBox((0, i.A)("brochure") + " 8.5 x 11 in", 2550, 3300, "assets/images/icon/category/flyer.svg");
+                this.addBox((0, i.A)("brochure") + " 8.5 x 14 in", 2550, 4200, "assets/images/icon/category/flyer.svg", true);
+                this.addBox((0, i.A)("brochure") + " 11 x 17 in", 3300, 5100, "assets/images/icon/category/flyer.svg", true);
+                this.addBox((0, i.A)("invitation") + " 4 x 6 in", 384, 576, "assets/images/icon/category/invitation.svg");
+                this.addBox((0, i.A)("invitation") + " 5 x 7 in", 480, 672, "assets/images/icon/category/invitation.svg");
                 break;
               case "web":
-                this.addBox("Web 1994", 800, 600, "/assets/images/icon/category/web.svg");
-                this.addBox("Web 2004", 1280, 720, "/assets/images/icon/category/web.svg");
-                this.addBox("Web 2012", 1366, 768, "/assets/images/icon/category/web.svg");
-                this.addBox("Web 2016", 1440, 900, "/assets/images/icon/category/web.svg");
-                this.addBox("Web 2020", 1920, 1200, "/assets/images/icon/category/web.svg");
-                this.addBox("Icon 16", 16, 16, "/assets/images/icon/category/icon.svg");
-                this.addBox("Icon 32", 32, 32, "/assets/images/icon/category/icon.svg");
-                this.addBox("Icon 64", 64, 64, "/assets/images/icon/category/icon.svg");
-                this.addBox("Icon 512", 512, 512, "/assets/images/icon/category/icon.svg");
-                this.addBox("Icon 1024", 1024, 1024, "/assets/images/icon/category/icon.svg");
+                this.addBox("Web 1994", 800, 600, "assets/images/icon/category/web.svg");
+                this.addBox("Web 2004", 1280, 720, "assets/images/icon/category/web.svg");
+                this.addBox("Web 2012", 1366, 768, "assets/images/icon/category/web.svg");
+                this.addBox("Web 2016", 1440, 900, "assets/images/icon/category/web.svg");
+                this.addBox("Web 2020", 1920, 1200, "assets/images/icon/category/web.svg");
+                this.addBox("Icon 16", 16, 16, "assets/images/icon/category/icon.svg");
+                this.addBox("Icon 32", 32, 32, "assets/images/icon/category/icon.svg");
+                this.addBox("Icon 64", 64, 64, "assets/images/icon/category/icon.svg");
+                this.addBox("Icon 512", 512, 512, "assets/images/icon/category/icon.svg");
+                this.addBox("Icon 1024", 1024, 1024, "assets/images/icon/category/icon.svg");
                 break;
               case "video":
-                this.addBox("360p", 640, 360, "/assets/images/icon/category/video.svg");
-                this.addBox("480p", 854, 480, "/assets/images/icon/category/video.svg");
-                this.addBox("720p", 1280, 720, "/assets/images/icon/category/video.svg");
-                this.addBox("1080p HD", 1920, 1080, "/assets/images/icon/category/video.svg");
-                this.addBox("1440p 2K", 2560, 1440, "/assets/images/icon/category/video.svg");
-                this.addBox("4K UHD", 3840, 2160, "/assets/images/icon/category/video.svg");
+                this.addBox("360p", 640, 360, "assets/images/icon/category/video.svg");
+                this.addBox("480p", 854, 480, "assets/images/icon/category/video.svg");
+                this.addBox("720p", 1280, 720, "assets/images/icon/category/video.svg");
+                this.addBox("1080p HD", 1920, 1080, "assets/images/icon/category/video.svg");
+                this.addBox("1440p 2K", 2560, 1440, "assets/images/icon/category/video.svg");
+                this.addBox("4K UHD", 3840, 2160, "assets/images/icon/category/video.svg");
             }
           };
           this.presetChange = t => {
@@ -24377,7 +24377,7 @@ var editor;
             this.height = t.height;
           }
           this.rotation = e;
-          this.setContent(`\n            <span style="display: block;">${(0, a.A)("dialogPreResizeInfo1")} (<span id="pre-resize-start"></span>) ${(0, a.A)("dialogPreResizeInfo2")}</span>\n\n            <input type="checkbox" id="preresize-never-ask-again" />\n            <label class="switch top-10" for="preresize-never-ask-again">${(0, a.A)("neverAskMeAgain")}<span></span></label>\n\n            <span id="pre-resize-auto-rotate-setting" style="display:none;">\n                <input type="checkbox" checked id="pre-resize-auto-rotate" />\n                <label class="switch top-20" for="pre-resize-auto-rotate">${(0, a.A)("dialogPreResizeExif")}<span></span></label>\n            </span>\n        \n            <ul id="pre-resize-preset" class="push-buttons top-20">\n                <li id="pre-resize-original" data="4096"><img src="/assets/images/icon/layer-image.svg" class="ic"><span>${(0, a.A)("original")}<br /><small id="pre-resize-uhd-size">Max 3840 px</small></span></li>\n                <li id="pre-resize-uhd" data="3840"><img src="/assets/images/icon/size-uhd.svg" class="ic"><span>${(0, a.A)("sizeUltraHD")}<br /><small>Max 3840 px</small></span></li>\n                <li id="pre-resize-fhd" data="1920" class="selected"><img src="/assets/images/icon/size-fhd.svg" class="ic"><span>${(0, a.A)("sizeFullHD")}<br /><small>Max 1920 px</small></span></li>\n                <li id="pre-resize-uhd" data="1280"><img src="/assets/images/icon/size-web.svg" class="ic"><span>${(0, a.A)("sizeWeb")}<br /><small>Max 1280 px</small></span></li>\n            </ul>\n\n            <div class="top-20" style="text-align:right;line-height:32px;">${(0, a.A)("newSize")}<input type="number" style="text-align:center;margin-left:16px" id="pre-resize-width"/> x <input type="number" style="text-align:center" id="pre-resize-height"/></div>\n        `);
+          this.setContent(`\n            <span style="display: block;">${(0, a.A)("dialogPreResizeInfo1")} (<span id="pre-resize-start"></span>) ${(0, a.A)("dialogPreResizeInfo2")}</span>\n\n            <input type="checkbox" id="preresize-never-ask-again" />\n            <label class="switch top-10" for="preresize-never-ask-again">${(0, a.A)("neverAskMeAgain")}<span></span></label>\n\n            <span id="pre-resize-auto-rotate-setting" style="display:none;">\n                <input type="checkbox" checked id="pre-resize-auto-rotate" />\n                <label class="switch top-20" for="pre-resize-auto-rotate">${(0, a.A)("dialogPreResizeExif")}<span></span></label>\n            </span>\n        \n            <ul id="pre-resize-preset" class="push-buttons top-20">\n                <li id="pre-resize-original" data="4096"><img src="assets/images/icon/layer-image.svg" class="ic"><span>${(0, a.A)("original")}<br /><small id="pre-resize-uhd-size">Max 3840 px</small></span></li>\n                <li id="pre-resize-uhd" data="3840"><img src="assets/images/icon/size-uhd.svg" class="ic"><span>${(0, a.A)("sizeUltraHD")}<br /><small>Max 3840 px</small></span></li>\n                <li id="pre-resize-fhd" data="1920" class="selected"><img src="assets/images/icon/size-fhd.svg" class="ic"><span>${(0, a.A)("sizeFullHD")}<br /><small>Max 1920 px</small></span></li>\n                <li id="pre-resize-uhd" data="1280"><img src="assets/images/icon/size-web.svg" class="ic"><span>${(0, a.A)("sizeWeb")}<br /><small>Max 1280 px</small></span></li>\n            </ul>\n\n            <div class="top-20" style="text-align:right;line-height:32px;">${(0, a.A)("newSize")}<input type="number" style="text-align:center;margin-left:16px" id="pre-resize-width"/> x <input type="number" style="text-align:center" id="pre-resize-height"/></div>\n        `);
           this.maxSize = (0, h.zl)("premium") ? 8192 : 4096;
           if ((0, h.zl)("premium")) {
             if (this.width < 3840 && this.height < 3840) {
@@ -24615,7 +24615,7 @@ var editor;
           this.compare = (0, n.T)("div", {
             className: "icon-button compare"
           }, (0, n.T)("img", {
-            src: "/assets/images/icon/compare.svg",
+            src: "assets/images/icon/compare.svg",
             className: "ic"
           }));
           this.compare.setAttribute("tooltip", (0, i.A)("compare"));
@@ -25115,12 +25115,12 @@ var editor;
           this.content.style.padding = "0px";
           this.content.style.display = "flex";
           this.content.style.position = "relative";
-          this.setContent(`\n            <div id="resize-settings" style="flex:0 0 auto;width:320px;position:relative;overflow: hidden;">\n\n                <div id="resize-settings-inner" style="padding:20px;overflow: hidden;">\n\n                    <div style="display: flex; line-height: 28px;">\n                        <div style="flex-grow:1">\n                            <label class="split" style="height: 36px!important;">${(0, i.A)("width")} <input type="number" id="resize-width"/></label>\n                            <label class="split" style="height: 36px!important;">${(0, i.A)("height")} <input type="number" id="resize-height"/></label>\n                        </div>\n                        <div style="width:30px">\n                            <div id="resize-constraint" class="constraint">\n                                <div class="constraint-lock" flow="left" tooltip="${(0, i.A)("toggleConstraint")}">\n                                    <img src="/assets/images/icon/locked.svg" id="resize-size-lock" width="16" height="16" loading="lazy" class="ic tiny-icon">\n                                    <img src="/assets/images/icon/x.svg" id="resize-size-vs" width="16" height="16" loading="lazy" style="display:none" class="ic tiny-icon">\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <input type="checkbox" checked id="toggle-resize-constraint" />\n                    <label class="switch top-10" for="toggle-resize-constraint">${(0, i.A)("dialogResizeLock")}<span></span></label>\n            \n                    <div class="splitter small top-20"></div>\n\n                    <div class="split top-20">\n                        <label>${(0, i.A)("method")}</label>\n                        <div class="switch-field">\n                            <input type="radio" id="resize-method-fill" name="resize-method" value="fill" checked="true" /><label for="resize-method-fill">${(0, i.A)("fill")}</label>\n                            <input type="radio" id="resize-method-fit" name="resize-method" value="fit" /><label for="resize-method-fit">${(0, i.A)("fit")}</label>\n                        </div>\n                    </div>\n\n                    <input type="checkbox" id="toggle-resize-rotate" />\n                    <label class="switch top-10" for="toggle-resize-rotate">${(0, i.A)("dialogResizeRotate")}<span></span></label>\n\n                    <div class="splitter top-20"></div>\n\n                    <ul id="resize-presets" class="size-list top-20">\n\n                        <li data="" id="resize-reset"><img src="/assets/images/icon/reset.svg" width="18" height="18" loading="lazy" title="reset">${(0, i.A)("reset")} <span id="resize-reset-span"></span></span></li>\n\n                        <li data="1:1"><img src="/assets/images/icon/category/landscape.svg" width="18" height="18" loading="lazy" title="Square">Square <span>1:1 aspect</span></span></li>\n                        <li data="16:9"><img src="/assets/images/icon/category/landscape.svg" width="18" height="18" loading="lazy" title="Wide">Wide <span>16:9 aspect</span></span></li>\n                        <li data="9:16"><img src="/assets/images/icon/category/portrait.svg" width="18" height="18" loading="lazy" title="Tall">Tall <span>9:16 aspect</span></span></li>\n                        <li data="4:3"><img src="/assets/images/icon/category/landscape.svg" width="18" height="18" loading="lazy" title="Landscape">Landscape <span>4:3 aspect</span></span></li>\n                        <li data="3:4"><img src="/assets/images/icon/category/portrait.svg" width="18" height="18" loading="lazy" title="Portrait">Portrait <span>3:4 aspect</span></span></li>\n\n                        <li data="1080x1920"><img src="/assets/images/icon/category/tiktok.svg" width="18" height="18" loading="lazy" title="Tiktok video">Tiktok video<span>1080x1920px</span></li>\n\n                        <li data="1080x1080"><img src="/assets/images/icon/category/instagram.svg" width="18" height="18" loading="lazy" title="Instagram square">Instagram square <span>1080x1080px</span></li>\n                        <li data="1080x1350"><img src="/assets/images/icon/category/instagram.svg" width="18" height="18" loading="lazy" title="Instagram post">Instagram post <span>1080x1350px</span></li>\n                        <li data="1080x1920"><img src="/assets/images/icon/category/instagram.svg" width="18" height="18" loading="lazy" title="Instagram story">Instagram story <span>1080x1920px</span></li>\n                        <li data="1080x1920"><img src="/assets/images/icon/category/instagram.svg" width="18" height="18" loading="lazy" title="Instagram reelse">Instagram reels <span>1080x1920px</span></li>\n\n                        <li data="1200x630"><img src="/assets/images/icon/category/facebook.svg" width="18" height="18" loading="lazy" title="Facebook post">Facebook post <span>1200x630px</span></li>\n                        <li data="1080x1920"><img src="/assets/images/icon/category/facebook.svg" width="18" height="18" loading="lazy" title="Facebook story">Facebook story <span>1080x1920px</span></li>\n                        <li data="1080x1920"><img src="/assets/images/icon/category/facebook.svg" width="18" height="18" loading="lazy" title="Facebook reelse">Facebook reels <span>1080x1920px</span></li>\n                        <li data="850x850"><img src="/assets/images/icon/category/facebook.svg" width="18" height="18" loading="lazy" title="Facebook profile">Facebook profile <span>850x850px</span></li>\n                        <li data="1920x1005"><img src="/assets/images/icon/category/facebook.svg" width="18" height="18" loading="lazy" title="Facebook event">Facebook event <span>1920x1005px</span></li>\n                        \n                        <li data="1600x900"><img src="/assets/images/icon/category/x.svg" width="18" height="18" loading="lazy" title="X post">X post <span>1600x900px</span></li>\n                        <li data="1500x500"><img src="/assets/images/icon/category/x.svg" width="18" height="18" loading="lazy" title="X cover">X cover <span>1500x500px</span></li>\n                        <li data="400x400"><img src="/assets/images/icon/category/x.svg" width="18" height="18" loading="lazy" title="X profile">X profile <span>400x400px</span></li>\n\n                        <li data="1080x1920"><img src="/assets/images/icon/category/youtube.svg" width="18" height="18" loading="lazy" title="Youtube shorts">Youtube shorts <span>1080x1920px</span></li>\n                        <li data="800x800"><img src="/assets/images/icon/category/youtube.svg" width="18" height="18" loading="lazy" title="Youtube profile">Youtube profile <span>800x800px</span></li>\n                        <li data="1280x720"><img src="/assets/images/icon/category/youtube.svg" width="18" height="18" loading="lazy" title="Youtube thumbnail">Youtube thumbnail <span>1280x720px</span></li>\n                        <li data="2048x1152"><img src="/assets/images/icon/category/youtube.svg" width="18" height="18" loading="lazy" title="Youtube channel art">Youtube channel art <span>2048x1152px</span></li>\n\n                        <li data="1000x1500"><img src="/assets/images/icon/category/pinterest.svg" width="18" height="18" loading="lazy" title="Pinterest pin">Pinterest pin <span>1000x1500px</span></li>\n                        <li data="1000x1000"><img src="/assets/images/icon/category/pinterest.svg" width="18" height="18" loading="lazy" title="Pinterest square pin">Pinterest square pin <span>1000x1000px</span></li>\n                        <li data="1000x2100"><img src="/assets/images/icon/category/pinterest.svg" width="18" height="18" loading="lazy" title="Pinterest long pin">Pinterest long pin <span>1000x2100px</span></li>\n\n                        <li data="1240x1748"><img src="/assets/images/icon/category/paper.svg" width="18" height="18" loading="lazy" title="ISO A6">A6 105 x 148 mm <span>1240x1748px</span></li>\n                        <li data="1748x2480"><img src="/assets/images/icon/category/paper.svg" width="18" height="18" loading="lazy" title="ISO A5">A5 148 x 210 mm <span>1748x2480px</span></li>\n                        <li data="2480x3508"><img src="/assets/images/icon/category/paper.svg" width="18" height="18" loading="lazy" title="ISO A4">A4 210 x 297 mm <span>2480x3508px</span></li>\n                        <li data="3508x4960"><img src="/assets/images/icon/category/paper.svg" width="18" height="18" loading="lazy" title="ISO A3">A3 297 x 420 mm <span>3508x4960px</span></li>\n\n                        <li data="2079x2953"><img src="/assets/images/icon/category/paper.svg" width="18" height="18" loading="lazy" title="ISO B5">B5 185 x 275 mm <span>2079x2953px</span></li>\n                        <li data="2953x4169"><img src="/assets/images/icon/category/paper.svg" width="18" height="18" loading="lazy" title="ISO B4">B4 257 x 364 mm <span>2953x4169px</span></li>\n                        <li data="4169x5906"><img src="/assets/images/icon/category/paper.svg" width="18" height="18" loading="lazy" title="ISO B4">B3 382 x 546 mm <span>4169x5906px</span></li>\n\n                        <li data="1275x1650"><img src="/assets/images/icon/category/flyer.svg" width="18" height="18" loading="lazy" title="Flyer 4.25 x 5.5 in">Flyer 4.25 x 5.5 in<span>1275x1650px</span></li>\n                        <li data="1650x2550"><img src="/assets/images/icon/category/flyer.svg" width="18" height="18" loading="lazy" title="Flyer 5.5 x 8.5 in">Flyer 5.5 x 8.5 in<span>1650x2550px</span></li>\n                        <li data="1650x2550"><img src="/assets/images/icon/category/flyer.svg" width="18" height="18" loading="lazy" title="Flyer 8.5 x 11 in">Flyer 8.5 x 11 in<span>2550x3300px</span></li>\n                    </ul>\n\n                </div>\n            </div>\n\n            <div id="resize-preview" style="display:flex;flex-grow:1;background: linear-gradient(43deg, #ffffff00 0%, #ffffff11 100%);padding:20px;align-items:center;justify-content:center;">\n                <canvas id="resize-preview-canvas" style="max-height:100%; max-width:100%; box-shadow: 6px 6px 12px rgb(0 0 0 / 30%);background-image: var(--square-bg);background-size: 20px 20px;background-position: 50% 50%;"/>\n            </div>\n        `);
+          this.setContent(`\n            <div id="resize-settings" style="flex:0 0 auto;width:320px;position:relative;overflow: hidden;">\n\n                <div id="resize-settings-inner" style="padding:20px;overflow: hidden;">\n\n                    <div style="display: flex; line-height: 28px;">\n                        <div style="flex-grow:1">\n                            <label class="split" style="height: 36px!important;">${(0, i.A)("width")} <input type="number" id="resize-width"/></label>\n                            <label class="split" style="height: 36px!important;">${(0, i.A)("height")} <input type="number" id="resize-height"/></label>\n                        </div>\n                        <div style="width:30px">\n                            <div id="resize-constraint" class="constraint">\n                                <div class="constraint-lock" flow="left" tooltip="${(0, i.A)("toggleConstraint")}">\n                                    <img src="assets/images/icon/locked.svg" id="resize-size-lock" width="16" height="16" loading="lazy" class="ic tiny-icon">\n                                    <img src="assets/images/icon/x.svg" id="resize-size-vs" width="16" height="16" loading="lazy" style="display:none" class="ic tiny-icon">\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <input type="checkbox" checked id="toggle-resize-constraint" />\n                    <label class="switch top-10" for="toggle-resize-constraint">${(0, i.A)("dialogResizeLock")}<span></span></label>\n            \n                    <div class="splitter small top-20"></div>\n\n                    <div class="split top-20">\n                        <label>${(0, i.A)("method")}</label>\n                        <div class="switch-field">\n                            <input type="radio" id="resize-method-fill" name="resize-method" value="fill" checked="true" /><label for="resize-method-fill">${(0, i.A)("fill")}</label>\n                            <input type="radio" id="resize-method-fit" name="resize-method" value="fit" /><label for="resize-method-fit">${(0, i.A)("fit")}</label>\n                        </div>\n                    </div>\n\n                    <input type="checkbox" id="toggle-resize-rotate" />\n                    <label class="switch top-10" for="toggle-resize-rotate">${(0, i.A)("dialogResizeRotate")}<span></span></label>\n\n                    <div class="splitter top-20"></div>\n\n                    <ul id="resize-presets" class="size-list top-20">\n\n                        <li data="" id="resize-reset"><img src="assets/images/icon/reset.svg" width="18" height="18" loading="lazy" title="reset">${(0, i.A)("reset")} <span id="resize-reset-span"></span></span></li>\n\n                        <li data="1:1"><img src="assets/images/icon/category/landscape.svg" width="18" height="18" loading="lazy" title="Square">Square <span>1:1 aspect</span></span></li>\n                        <li data="16:9"><img src="assets/images/icon/category/landscape.svg" width="18" height="18" loading="lazy" title="Wide">Wide <span>16:9 aspect</span></span></li>\n                        <li data="9:16"><img src="assets/images/icon/category/portrait.svg" width="18" height="18" loading="lazy" title="Tall">Tall <span>9:16 aspect</span></span></li>\n                        <li data="4:3"><img src="assets/images/icon/category/landscape.svg" width="18" height="18" loading="lazy" title="Landscape">Landscape <span>4:3 aspect</span></span></li>\n                        <li data="3:4"><img src="assets/images/icon/category/portrait.svg" width="18" height="18" loading="lazy" title="Portrait">Portrait <span>3:4 aspect</span></span></li>\n\n                        <li data="1080x1920"><img src="assets/images/icon/category/tiktok.svg" width="18" height="18" loading="lazy" title="Tiktok video">Tiktok video<span>1080x1920px</span></li>\n\n                        <li data="1080x1080"><img src="assets/images/icon/category/instagram.svg" width="18" height="18" loading="lazy" title="Instagram square">Instagram square <span>1080x1080px</span></li>\n                        <li data="1080x1350"><img src="assets/images/icon/category/instagram.svg" width="18" height="18" loading="lazy" title="Instagram post">Instagram post <span>1080x1350px</span></li>\n                        <li data="1080x1920"><img src="assets/images/icon/category/instagram.svg" width="18" height="18" loading="lazy" title="Instagram story">Instagram story <span>1080x1920px</span></li>\n                        <li data="1080x1920"><img src="assets/images/icon/category/instagram.svg" width="18" height="18" loading="lazy" title="Instagram reelse">Instagram reels <span>1080x1920px</span></li>\n\n                        <li data="1200x630"><img src="assets/images/icon/category/facebook.svg" width="18" height="18" loading="lazy" title="Facebook post">Facebook post <span>1200x630px</span></li>\n                        <li data="1080x1920"><img src="assets/images/icon/category/facebook.svg" width="18" height="18" loading="lazy" title="Facebook story">Facebook story <span>1080x1920px</span></li>\n                        <li data="1080x1920"><img src="assets/images/icon/category/facebook.svg" width="18" height="18" loading="lazy" title="Facebook reelse">Facebook reels <span>1080x1920px</span></li>\n                        <li data="850x850"><img src="assets/images/icon/category/facebook.svg" width="18" height="18" loading="lazy" title="Facebook profile">Facebook profile <span>850x850px</span></li>\n                        <li data="1920x1005"><img src="assets/images/icon/category/facebook.svg" width="18" height="18" loading="lazy" title="Facebook event">Facebook event <span>1920x1005px</span></li>\n                        \n                        <li data="1600x900"><img src="assets/images/icon/category/x.svg" width="18" height="18" loading="lazy" title="X post">X post <span>1600x900px</span></li>\n                        <li data="1500x500"><img src="assets/images/icon/category/x.svg" width="18" height="18" loading="lazy" title="X cover">X cover <span>1500x500px</span></li>\n                        <li data="400x400"><img src="assets/images/icon/category/x.svg" width="18" height="18" loading="lazy" title="X profile">X profile <span>400x400px</span></li>\n\n                        <li data="1080x1920"><img src="assets/images/icon/category/youtube.svg" width="18" height="18" loading="lazy" title="Youtube shorts">Youtube shorts <span>1080x1920px</span></li>\n                        <li data="800x800"><img src="assets/images/icon/category/youtube.svg" width="18" height="18" loading="lazy" title="Youtube profile">Youtube profile <span>800x800px</span></li>\n                        <li data="1280x720"><img src="assets/images/icon/category/youtube.svg" width="18" height="18" loading="lazy" title="Youtube thumbnail">Youtube thumbnail <span>1280x720px</span></li>\n                        <li data="2048x1152"><img src="assets/images/icon/category/youtube.svg" width="18" height="18" loading="lazy" title="Youtube channel art">Youtube channel art <span>2048x1152px</span></li>\n\n                        <li data="1000x1500"><img src="assets/images/icon/category/pinterest.svg" width="18" height="18" loading="lazy" title="Pinterest pin">Pinterest pin <span>1000x1500px</span></li>\n                        <li data="1000x1000"><img src="assets/images/icon/category/pinterest.svg" width="18" height="18" loading="lazy" title="Pinterest square pin">Pinterest square pin <span>1000x1000px</span></li>\n                        <li data="1000x2100"><img src="assets/images/icon/category/pinterest.svg" width="18" height="18" loading="lazy" title="Pinterest long pin">Pinterest long pin <span>1000x2100px</span></li>\n\n                        <li data="1240x1748"><img src="assets/images/icon/category/paper.svg" width="18" height="18" loading="lazy" title="ISO A6">A6 105 x 148 mm <span>1240x1748px</span></li>\n                        <li data="1748x2480"><img src="assets/images/icon/category/paper.svg" width="18" height="18" loading="lazy" title="ISO A5">A5 148 x 210 mm <span>1748x2480px</span></li>\n                        <li data="2480x3508"><img src="assets/images/icon/category/paper.svg" width="18" height="18" loading="lazy" title="ISO A4">A4 210 x 297 mm <span>2480x3508px</span></li>\n                        <li data="3508x4960"><img src="assets/images/icon/category/paper.svg" width="18" height="18" loading="lazy" title="ISO A3">A3 297 x 420 mm <span>3508x4960px</span></li>\n\n                        <li data="2079x2953"><img src="assets/images/icon/category/paper.svg" width="18" height="18" loading="lazy" title="ISO B5">B5 185 x 275 mm <span>2079x2953px</span></li>\n                        <li data="2953x4169"><img src="assets/images/icon/category/paper.svg" width="18" height="18" loading="lazy" title="ISO B4">B4 257 x 364 mm <span>2953x4169px</span></li>\n                        <li data="4169x5906"><img src="assets/images/icon/category/paper.svg" width="18" height="18" loading="lazy" title="ISO B4">B3 382 x 546 mm <span>4169x5906px</span></li>\n\n                        <li data="1275x1650"><img src="assets/images/icon/category/flyer.svg" width="18" height="18" loading="lazy" title="Flyer 4.25 x 5.5 in">Flyer 4.25 x 5.5 in<span>1275x1650px</span></li>\n                        <li data="1650x2550"><img src="assets/images/icon/category/flyer.svg" width="18" height="18" loading="lazy" title="Flyer 5.5 x 8.5 in">Flyer 5.5 x 8.5 in<span>1650x2550px</span></li>\n                        <li data="1650x2550"><img src="assets/images/icon/category/flyer.svg" width="18" height="18" loading="lazy" title="Flyer 8.5 x 11 in">Flyer 8.5 x 11 in<span>2550x3300px</span></li>\n                    </ul>\n\n                </div>\n            </div>\n\n            <div id="resize-preview" style="display:flex;flex-grow:1;background: linear-gradient(43deg, #ffffff00 0%, #ffffff11 100%);padding:20px;align-items:center;justify-content:center;">\n                <canvas id="resize-preview-canvas" style="max-height:100%; max-width:100%; box-shadow: 6px 6px 12px rgb(0 0 0 / 30%);background-image: var(--square-bg);background-size: 20px 20px;background-position: 50% 50%;"/>\n            </div>\n        `);
           this.content.append((0, n.T)("div", {
             id: "preview-scale",
             style: "display:flex;position:absolute;z-index:99;height:28px;top:20px;right:20px;padding:0 15px 0 10px;gap:8px;border-radius:50vh;background-color:#00000088;color:#fff;opacity:0.7;align-items:center;"
           }, (0, n.T)("img", {
-            src: "/assets/images/tool/zoom.svg",
+            src: "assets/images/tool/zoom.svg",
             width: 16,
             height: 16
           }), (0, n.T)("span", {
@@ -25579,7 +25579,7 @@ var editor;
           }, (0, i.T)("li", {
             id: "grad-editor-remove"
           }, (0, i.T)("img", {
-            src: "/assets/images/icon/delete.svg",
+            src: "assets/images/icon/delete.svg",
             className: "ic"
           }))));
           const a = (0, i.Ay)("grad-editor-remove");
@@ -25932,7 +25932,7 @@ var editor;
           }, (0, o.T)("li", {
             id: "grad-selector-remove"
           }, (0, o.T)("img", {
-            src: "/assets/images/icon/delete.svg",
+            src: "assets/images/icon/delete.svg",
             className: "ic"
           }))));
           this.container.append((0, o.T)("div", {
@@ -25978,7 +25978,7 @@ var editor;
             this.container.style.display = "flex";
             this.container.style.height = "360px";
             const e = (0, o.T)("img", {
-              src: "/assets/images/icon/three-dot.svg",
+              src: "assets/images/icon/three-dot.svg",
               className: "resize ic"
             });
             (0, o.Bb)(e, this.resizeStart, this.resizeMove);
@@ -26547,7 +26547,7 @@ var editor;
             }, (0, a.T)("div", {
               className: "aip-ring"
             }, (0, a.T)("img", {
-              src: "/assets/images/tool/ai.svg",
+              src: "assets/images/tool/ai.svg",
               className: "ic",
               alt: "Ai assitent"
             })));
@@ -26834,7 +26834,7 @@ var editor;
             }, (0, a.T)("div", {
               className: "aip-model-icon " + t.tier
             }, (0, a.T)("img", {
-              src: "/assets/images/icon/model.svg",
+              src: "assets/images/icon/model.svg",
               width: 14,
               height: 14
             })), (0, a.T)("div", {
@@ -26842,7 +26842,7 @@ var editor;
             }, (0, a.T)("strong", {}, t.name), (0, a.T)("span", {}, t.tier.charAt(0).toUpperCase() + t.tier.slice(1))), (0, a.T)("div", {
               className: "aip-model-cost"
             }, (0, a.T)("strong", {}, String((0, y.mH)(t))), (0, a.T)("img", {
-              src: "/assets/images/icon/credit.svg",
+              src: "assets/images/icon/credit.svg",
               width: 12,
               height: 12,
               className: "ic"
@@ -26864,7 +26864,7 @@ var editor;
             this.modelTrigger.appendChild((0, a.T)("div", {
               className: "aip-model-icon " + i
             }, (0, a.T)("img", {
-              src: "/assets/images/icon/model.svg",
+              src: "assets/images/icon/model.svg",
               width: 12,
               height: 12
             })));
@@ -27487,7 +27487,7 @@ var editor;
             this.container.style.top = c.bottom - 5 + "px";
             this.container.style.left = c.left - ~~(this.container.offsetWidth / 2) + 40 + "px";
             const t = (0, o.T)("img", {
-              src: "/assets/images/icon/three-dot.svg",
+              src: "assets/images/icon/three-dot.svg",
               className: "resize ic"
             });
             (0, o.Bb)(t, this.resizeStart, this.resizeMove);
@@ -29001,7 +29001,7 @@ var editor;
                 let t = (0, a.T)("div", {
                   className: "premium-tag"
                 }, (0, a.T)("img", {
-                  src: "/assets/images/icon/premium.svg"
+                  src: "assets/images/icon/premium.svg"
                 }));
                 t.setAttribute("tooltip", (0, i.A)("premium"));
                 t.setAttribute("flow", "up-right");
@@ -29053,7 +29053,7 @@ var editor;
                 let t = (0, a.T)("div", {
                   className: "premium-tag"
                 }, (0, a.T)("img", {
-                  src: "/assets/images/icon/premium.svg"
+                  src: "assets/images/icon/premium.svg"
                 }));
                 t.setAttribute("tooltip", (0, i.A)("premium"));
                 t.setAttribute("flow", "right");
@@ -29216,13 +29216,13 @@ var editor;
           this.content.style.padding = "0px 0px 0px 20px";
           this.content.id = "add-element-content";
           document.addEventListener("layer-select", this.layerSelect, false);
-          this.setContent(`\n            <div id="element-settings">\n                <progress id="element-progress" value="0" max="100"></progress>\n                <img class="close" id="element-delete" src="/assets/images/icon/close.svg" title="Delete">\n                <div class="range-white" id="element-settings-amount">\n                    <label>${(0, i.A)("transparency")}</label>\n                    <input type="range" value="100" min="0" max="100" step="1" id="element-opacity" name="element_opacity" oninput="element_opacity_out.value=this.value" />\n                    <output name="element_opacity_out" id="element_opacity_out" for="element_opacity">100</output>\n                </div>\n                <ul id="element-rotate-flip" class="small-icon-button-set">\n                    <li id="element-rotate-left"><img src="/assets/images/icon/rotate-left.svg" alt="Rotate Left"></li>\n                    <li id="element-rotate-right"><img src="/assets/images/icon/rotate-right.svg"  alt="Rotate Right"></li>\n                    <li id="element-flip-horizontal"><img src="/assets/images/icon/flip-horizontal.svg"  alt="Flip Horizontal"></li>\n                    <li id="element-flip-vertical"><img src="/assets/images/icon/flip-vertical.svg"  alt="Flip Vertical"></li>\n                </ul>\n            </div>\n\n            <ul id="add-element-category-list" class="section-list top-20">\n                <li data="overlay" id="add-element-overlay"><span>${(0, i.A)("overlay")}</span>\n                </li><li data="border" id="add-element-border"><span>${(0, i.A)("border")}</span>\n                </li><li data="shape" id="add-element-shape"><span>${(0, i.A)("shape")}</span>\n                </li><li data="sticker" id="add-element-sticker"><span>${(0, i.A)("sticker")}</span></li>\n            </ul>\n\n            <div id="add-element-category" style="display:none;" >\n                \n                <div id="add-element-loading" class="top-20" style="display:none;">${(0, i.A)("loading")} .. </div>\n                <div id="add-element-list" class="top-20">\n\n                </div>\n                <div id="add-element-error" class="top-20" style="display: none">\n                    <h3>${(0, i.A)("error")}</h3>\n                    <p>\n                        ${(0, i.A)("genericError")}\n                    </p>\n                </div>\n                <div id="add-element-offline" class="top-20" style="display: none">\n                    <h3>${(0, i.A)("offline")}</h3>\n                    <p>\n                        ${(0, i.A)("genericOffline")}\n                    </p>\n                </div>\n            </div>\n        `);
+          this.setContent(`\n            <div id="element-settings">\n                <progress id="element-progress" value="0" max="100"></progress>\n                <img class="close" id="element-delete" src="assets/images/icon/close.svg" title="Delete">\n                <div class="range-white" id="element-settings-amount">\n                    <label>${(0, i.A)("transparency")}</label>\n                    <input type="range" value="100" min="0" max="100" step="1" id="element-opacity" name="element_opacity" oninput="element_opacity_out.value=this.value" />\n                    <output name="element_opacity_out" id="element_opacity_out" for="element_opacity">100</output>\n                </div>\n                <ul id="element-rotate-flip" class="small-icon-button-set">\n                    <li id="element-rotate-left"><img src="assets/images/icon/rotate-left.svg" alt="Rotate Left"></li>\n                    <li id="element-rotate-right"><img src="assets/images/icon/rotate-right.svg"  alt="Rotate Right"></li>\n                    <li id="element-flip-horizontal"><img src="assets/images/icon/flip-horizontal.svg"  alt="Flip Horizontal"></li>\n                    <li id="element-flip-vertical"><img src="assets/images/icon/flip-vertical.svg"  alt="Flip Vertical"></li>\n                </ul>\n            </div>\n\n            <ul id="add-element-category-list" class="section-list top-20">\n                <li data="overlay" id="add-element-overlay"><span>${(0, i.A)("overlay")}</span>\n                </li><li data="border" id="add-element-border"><span>${(0, i.A)("border")}</span>\n                </li><li data="shape" id="add-element-shape"><span>${(0, i.A)("shape")}</span>\n                </li><li data="sticker" id="add-element-sticker"><span>${(0, i.A)("sticker")}</span></li>\n            </ul>\n\n            <div id="add-element-category" style="display:none;" >\n                \n                <div id="add-element-loading" class="top-20" style="display:none;">${(0, i.A)("loading")} .. </div>\n                <div id="add-element-list" class="top-20">\n\n                </div>\n                <div id="add-element-error" class="top-20" style="display: none">\n                    <h3>${(0, i.A)("error")}</h3>\n                    <p>\n                        ${(0, i.A)("genericError")}\n                    </p>\n                </div>\n                <div id="add-element-offline" class="top-20" style="display: none">\n                    <h3>${(0, i.A)("offline")}</h3>\n                    <p>\n                        ${(0, i.A)("genericOffline")}\n                    </p>\n                </div>\n            </div>\n        `);
           (0, a.Ay)("dialog-buttons" + this.mid).insertBefore((0, a.T)("a", {
             className: "button negative",
             id: "add-element-back",
             style: "margin-right:auto"
           }, (0, a.T)("img", {
-            src: "/assets/images/icon/back-small.svg",
+            src: "assets/images/icon/back-small.svg",
             width: 14,
             height: 14
           }), (0, i.A)("back")), (0, a.Ay)("dialog-cancel" + this.mid));
@@ -30637,7 +30637,7 @@ var editor;
                 onclick: () => this.renderEffects(e)
               });
               const i = document.createElement("img");
-              i.src = "/assets/images/preset/" + e + ".jpg";
+              i.src = "assets/images/preset/" + e + ".jpg";
               s.appendChild(i);
               let n = document.createElement("span");
               n.innerText = e.replace("-", " & ");
@@ -30743,13 +30743,13 @@ var editor;
           this.content.style.padding = "0px 0px 0px 20px";
           this.content.id = "effect-content";
           this.compare.remove();
-          this.setContent("\n            <div id=\"effect-settings\">\n                <img class=\"close\" id=\"effect-remove\" src=\"/assets/images/icon/close.svg\" title=\"Remove effect\">\n                <div class=\"range-white\" id=\"effect-settings-amount\">\n                    <input type=\"range\" value=\"100\" min=\"0\" max=\"100\" step=\"1\" id=\"effect-amount\" name=\"effect_amount\" oninput=\"effect_amount_out.value=this.value\" />\n                    <output name=\"effect_amount_out\" id=\"effect_amount_out\" for=\"effect_amount\">100</output>\n                </div>\n            </div>\n        \n            <section id=\"effect-presets\" class=\"top-20\">\n            </section>\n        ");
+          this.setContent("\n            <div id=\"effect-settings\">\n                <img class=\"close\" id=\"effect-remove\" src=\"assets/images/icon/close.svg\" title=\"Remove effect\">\n                <div class=\"range-white\" id=\"effect-settings-amount\">\n                    <input type=\"range\" value=\"100\" min=\"0\" max=\"100\" step=\"1\" id=\"effect-amount\" name=\"effect_amount\" oninput=\"effect_amount_out.value=this.value\" />\n                    <output name=\"effect_amount_out\" id=\"effect_amount_out\" for=\"effect_amount\">100</output>\n                </div>\n            </div>\n        \n            <section id=\"effect-presets\" class=\"top-20\">\n            </section>\n        ");
           (0, a.Ay)("dialog-buttons" + this.mid).insertBefore((0, a.T)("a", {
             className: "button negative",
             id: "effect-back",
             style: "margin-right:auto"
           }, (0, a.T)("img", {
-            src: "/assets/images/icon/back-small.svg",
+            src: "assets/images/icon/back-small.svg",
             width: 14,
             height: 14
           }), (0, i.A)("back")), (0, a.Ay)("dialog-cancel" + this.mid));
@@ -30890,7 +30890,7 @@ var editor;
           };
           this.stage = t;
           this.dialog.style.maxWidth = "380px";
-          this.setContent(`\n            <div id="extract-layers-content" style="flex:0 0 auto;width:100%;position:relative;overflow:hidden;">\n                <div style="padding:20px;overflow:hidden;">\n\n                    <section id="extract-layers-no-layer">\n                        <span class="tip top-20"><img src="/assets/images/icon/tip-lock.svg" width="16" height="16" loading="lazy" class="tip-icon ic"/>${(0, a.A)("genericNoImageMessage")}</span>\n                    </section>\n\n                    <div id="extract-layers-desc" class="tip" style="gap:2px;"><img src="/assets/images/icon/tip-bulb.svg" width="16" height="16" loading="lazy" class="tip-icon ic"/>\n                        <span>${(0, a.A)("extractLayersDesc")} Processing may take up to 3 minutes.</span>\n                    </div>\n\n                    <div id="extract-layers-execute" class="button positive top-20" style="width:100%;height:34px;"><img src="/assets/images/tool/wand.svg" width="18" height="18" loading="lazy">${(0, a.A)("titleExtractLayers")} (40c)</div>\n\n                    <div id="extract-layers-progress" class="top-20" style="display:none;">\n                        <div style="height:6px;border-radius:3px;background:var(--component-dim);overflow:hidden;">\n                            <div id="extract-layers-progress-fill" style="height:100%;width:0%;border-radius:3px;background:var(--accent-color);transition:width 5s linear;"></div>\n                        </div>\n                        <div id="extract-layers-progress-label" style="text-align:center;font-size:12px;opacity:0.6;padding-top:6px;">0%</div>\n                    </div>\n\n                </div>\n            </div>\n        `);
+          this.setContent(`\n            <div id="extract-layers-content" style="flex:0 0 auto;width:100%;position:relative;overflow:hidden;">\n                <div style="padding:20px;overflow:hidden;">\n\n                    <section id="extract-layers-no-layer">\n                        <span class="tip top-20"><img src="assets/images/icon/tip-lock.svg" width="16" height="16" loading="lazy" class="tip-icon ic"/>${(0, a.A)("genericNoImageMessage")}</span>\n                    </section>\n\n                    <div id="extract-layers-desc" class="tip" style="gap:2px;"><img src="assets/images/icon/tip-bulb.svg" width="16" height="16" loading="lazy" class="tip-icon ic"/>\n                        <span>${(0, a.A)("extractLayersDesc")} Processing may take up to 3 minutes.</span>\n                    </div>\n\n                    <div id="extract-layers-execute" class="button positive top-20" style="width:100%;height:34px;"><img src="assets/images/tool/wand.svg" width="18" height="18" loading="lazy">${(0, a.A)("titleExtractLayers")} (40c)</div>\n\n                    <div id="extract-layers-progress" class="top-20" style="display:none;">\n                        <div style="height:6px;border-radius:3px;background:var(--component-dim);overflow:hidden;">\n                            <div id="extract-layers-progress-fill" style="height:100%;width:0%;border-radius:3px;background:var(--accent-color);transition:width 5s linear;"></div>\n                        </div>\n                        <div id="extract-layers-progress-label" style="text-align:center;font-size:12px;opacity:0.6;padding-top:6px;">0%</div>\n                    </div>\n\n                </div>\n            </div>\n        `);
           (0, i.Ay)(`dialog-apply${this.mid}`).style.display = "none";
           (0, i.Ay)(`dialog-buttons${this.mid}`).insertBefore(document.createElement("div"), (0, i.Ay)(`dialog-cancel${this.mid}`));
           const e = (0, i.Ay)(`dialog-buttons${this.mid}`).children[0];
@@ -31540,7 +31540,7 @@ var editor;
           this.content.style.padding = "0px";
           this.content.style.display = "flex";
           this.content.style.position = "relative";
-          this.setContent(`\n            <div id="generative-expand-settings" style="flex:0 0 auto;width:300px;position:relative;overflow: hidden;">\n\n                <div id="generative-expand-base" style="padding:20px;overflow: hidden;">\n\n                    <section id="generative-expand-no-layer" style="display:none">\n                        <span class="tip top-20">\n                            <img src="/assets/images/icon/tip-lock.svg" width="16" height="16" loading="lazy" class="tip-icon ic" />\n                            ${(0, i.A)("genericNoImageMessage")}\n                        </span>\n                    </section>\n                    \n                    <label class="split">${(0, i.A)("generativeExpandPreset")}</label>\n                    <ul class="push-buttons small top-5" id="generative-expand-preset-list">\n                        <li data="1.5h"><img src="/assets/images/icon/aspect-15h.svg" width="18" height="18"><span>1.5x High</span></li>\n                        <li data="1.5w"><img src="/assets/images/icon/aspect-15w.svg" width="18" height="18"><span>1.5x Wide</span></li>\n                        <li data="1.5x"><img src="/assets/images/icon/aspect-2x.svg" width="18" height="18"><span>1.5x Size</span></li>\n                        <li data="2x"><img src="/assets/images/icon/aspect-2x.svg" width="18" height="18"><span>2x Size</span></li>\n                        <li data="1:1"><img src="/assets/images/icon/aspect-1-1.svg" width="18" height="18"><span>Square</span></li>\n                        <li data="3:4"><img src="/assets/images/icon/aspect-3-4.svg" width="18" height="18"><span>Portrait</span></li>\n                        <li data="4:3"><img src="/assets/images/icon/aspect-4-3.svg" width="18" height="18"><span>Post</span></li>\n                        <li data="9:16"><img src="/assets/images/icon/aspect-9-16.svg" width="18" height="18"><span>Story</span></li>\n                        <li data="16:9"><img src="/assets/images/icon/aspect-16-9.svg" width="18" height="18"><span>Wide</span></li>\n                    </ul>\n\n                    <div style="display: flex; line-height: 28px;" class="top-30">\n                        <div style="flex-grow:1">\n                            <label class="split" style="height: 36px!important;">${(0, i.A)("width")} <input type="number" id="generative-expand-width"/></label>\n                            <label class="split" style="height: 36px!important;">${(0, i.A)("height")} <input type="number" id="generative-expand-height"/></label>\n                        </div>\n                        <div style="width:30px">\n                            <div id="generative-expand-constraint" class="constraint">\n                                <div class="constraint-lock" flow="left" tooltip="${(0, i.A)("toggleConstraint")}">\n                                    <img src="/assets/images/icon/locked.svg" id="generative-expand-lock" width="16" height="16" loading="lazy" class="ic tiny-icon">\n                                    <img src="/assets/images/icon/x.svg" id="generative-expand-vs" width="16" height="16" loading="lazy" style="display:none" class="ic tiny-icon">\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <input type="checkbox" checked id="toggle-generative-expand-constraint" />\n                    <label class="switch top-10" for="toggle-generative-expand-constraint">${(0, i.A)("dialogResizeLock")}<span></span></label>\n\n                    <div id="generative-expand-execute" class="button positive top-30" style="width: 100%; height: 34px;">${(0, i.A)("aiInfillGenerate")} (2c)</div>\n                    <div id="generative-expand-repeat" class="button outline top-30" style="width: 100%; height: 34px; display:none">\n                        <img src="/assets/images/icon/reset.svg" width="16" height="16" loading="lazy" class="ic"/>\n                        ${(0, i.A)("repeat")} (2c)\n                    </div>\n                </div>\n            </div>\n            \n            <div id="generative-expand-preview" style="display: flex; flex-direction: column; flex-grow: 1; align-items: center; padding: 20px;background: linear-gradient(43deg, #ffffff00 0%, #ffffff11 100%)">\n                <label>${(0, i.A)("generativeExpandPosition")} <span class="tab-10" style="color:var(--text-dim);font-style: italic;">${(0, i.A)("generativeExpandDrag")}</span></label>\n                <div id="generative-expand-preview-holder" class="expand-preview-holder top-20"></div>\n            </div>\n\n            <div id="generative-expand-result" style="display:none;flex-direction:column;flex-grow:1;align-items:center;padding:20px;background:linear-gradient(43deg, #ffffff00 0%, #ffffff11 100%);">\n                <label class="split" style="width: 100%; margin-bottom: 15px;">${(0, i.A)("generativeExpandPosition")} <span style="color:var(--text-dim);font-style: italic;">${(0, i.A)("generativeExpandDrag")}</span></label>\n                <div id="generative-expand-result-list" style="display:flex;align-items:center;justify-content:center;"></div>\n            </div>\n        `);
+          this.setContent(`\n            <div id="generative-expand-settings" style="flex:0 0 auto;width:300px;position:relative;overflow: hidden;">\n\n                <div id="generative-expand-base" style="padding:20px;overflow: hidden;">\n\n                    <section id="generative-expand-no-layer" style="display:none">\n                        <span class="tip top-20">\n                            <img src="assets/images/icon/tip-lock.svg" width="16" height="16" loading="lazy" class="tip-icon ic" />\n                            ${(0, i.A)("genericNoImageMessage")}\n                        </span>\n                    </section>\n                    \n                    <label class="split">${(0, i.A)("generativeExpandPreset")}</label>\n                    <ul class="push-buttons small top-5" id="generative-expand-preset-list">\n                        <li data="1.5h"><img src="assets/images/icon/aspect-15h.svg" width="18" height="18"><span>1.5x High</span></li>\n                        <li data="1.5w"><img src="assets/images/icon/aspect-15w.svg" width="18" height="18"><span>1.5x Wide</span></li>\n                        <li data="1.5x"><img src="assets/images/icon/aspect-2x.svg" width="18" height="18"><span>1.5x Size</span></li>\n                        <li data="2x"><img src="assets/images/icon/aspect-2x.svg" width="18" height="18"><span>2x Size</span></li>\n                        <li data="1:1"><img src="assets/images/icon/aspect-1-1.svg" width="18" height="18"><span>Square</span></li>\n                        <li data="3:4"><img src="assets/images/icon/aspect-3-4.svg" width="18" height="18"><span>Portrait</span></li>\n                        <li data="4:3"><img src="assets/images/icon/aspect-4-3.svg" width="18" height="18"><span>Post</span></li>\n                        <li data="9:16"><img src="assets/images/icon/aspect-9-16.svg" width="18" height="18"><span>Story</span></li>\n                        <li data="16:9"><img src="assets/images/icon/aspect-16-9.svg" width="18" height="18"><span>Wide</span></li>\n                    </ul>\n\n                    <div style="display: flex; line-height: 28px;" class="top-30">\n                        <div style="flex-grow:1">\n                            <label class="split" style="height: 36px!important;">${(0, i.A)("width")} <input type="number" id="generative-expand-width"/></label>\n                            <label class="split" style="height: 36px!important;">${(0, i.A)("height")} <input type="number" id="generative-expand-height"/></label>\n                        </div>\n                        <div style="width:30px">\n                            <div id="generative-expand-constraint" class="constraint">\n                                <div class="constraint-lock" flow="left" tooltip="${(0, i.A)("toggleConstraint")}">\n                                    <img src="assets/images/icon/locked.svg" id="generative-expand-lock" width="16" height="16" loading="lazy" class="ic tiny-icon">\n                                    <img src="assets/images/icon/x.svg" id="generative-expand-vs" width="16" height="16" loading="lazy" style="display:none" class="ic tiny-icon">\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <input type="checkbox" checked id="toggle-generative-expand-constraint" />\n                    <label class="switch top-10" for="toggle-generative-expand-constraint">${(0, i.A)("dialogResizeLock")}<span></span></label>\n\n                    <div id="generative-expand-execute" class="button positive top-30" style="width: 100%; height: 34px;">${(0, i.A)("aiInfillGenerate")} (2c)</div>\n                    <div id="generative-expand-repeat" class="button outline top-30" style="width: 100%; height: 34px; display:none">\n                        <img src="assets/images/icon/reset.svg" width="16" height="16" loading="lazy" class="ic"/>\n                        ${(0, i.A)("repeat")} (2c)\n                    </div>\n                </div>\n            </div>\n            \n            <div id="generative-expand-preview" style="display: flex; flex-direction: column; flex-grow: 1; align-items: center; padding: 20px;background: linear-gradient(43deg, #ffffff00 0%, #ffffff11 100%)">\n                <label>${(0, i.A)("generativeExpandPosition")} <span class="tab-10" style="color:var(--text-dim);font-style: italic;">${(0, i.A)("generativeExpandDrag")}</span></label>\n                <div id="generative-expand-preview-holder" class="expand-preview-holder top-20"></div>\n            </div>\n\n            <div id="generative-expand-result" style="display:none;flex-direction:column;flex-grow:1;align-items:center;padding:20px;background:linear-gradient(43deg, #ffffff00 0%, #ffffff11 100%);">\n                <label class="split" style="width: 100%; margin-bottom: 15px;">${(0, i.A)("generativeExpandPosition")} <span style="color:var(--text-dim);font-style: italic;">${(0, i.A)("generativeExpandDrag")}</span></label>\n                <div id="generative-expand-result-list" style="display:flex;align-items:center;justify-content:center;"></div>\n            </div>\n        `);
           if (!this.stage.fresco.isSelectedImageWithCanvas()) {
             console.error("No image layer selected");
             (0, a.Ay)("generative-expand-base").querySelectorAll(":scope > *").forEach(t => t.style.display = "none");
@@ -32940,7 +32940,7 @@ var editor;
               yo: this.yo.getValue()
             });
           };
-          this.setContent(`\n                <label>${(0, i.A)("type")}</label>\n                <div class="switch-icon-field" style="display:flex">\n                    <input type="radio" id="reflect-type-minus-x" name="reflect-type" value="1" checked="true" /><label for="reflect-type-minus-x"><img src="/assets/images/icon/reflect-t1.svg" class="ic" width="20" height="20"/></label>\n                    <input type="radio" id="reflect-type-plus-y" name="reflect-type" value="4" /><label for="reflect-type-plus-y"><img src="/assets/images/icon/reflect-t2.svg" class="ic" width="20" height="20"/></label>\n                    <input type="radio" id="reflect-type-plus-x" name="reflect-type" value="3" /><label for="reflect-type-plus-x"><img src="/assets/images/icon/reflect-t3.svg" class="ic" width="20" height="20"/></label>\n                    <input type="radio" id="reflect-type-minus-y" name="reflect-type" value="2" /><label for="reflect-type-minus-y"><img src="/assets/images/icon/reflect-t4.svg" class="ic" width="20" height="20"/></label>\n                    <input type="radio" id="reflect-type-minus-x-minus-y" name="reflect-type" value="5" /><label for="reflect-type-minus-x-minus-y"><img src="/assets/images/icon/reflect-t5.svg" class="ic" width="20" height="20"/></label>\n                    <input type="radio" id="reflect-type-minus-x-plus-y" name="reflect-type" value="6" /><label for="reflect-type-minus-x-plus-y"><img src="/assets/images/icon/reflect-t6.svg" class="ic" width="20" height="20"/></label>\n                </div>\n                <div class="switch-icon-field" style="display:flex;margin-top:4px">\n                    <input type="radio" id="reflect-type-plus-x-plus-y" name="reflect-type" value="7" /><label for="reflect-type-plus-x-plus-y"><img src="/assets/images/icon/reflect-t7.svg" class="ic" width="20" height="20"/></label>\n                    <input type="radio" id="reflect-type-plus-x-minus-y" name="reflect-type" value="8" /><label for="reflect-type-plus-x-minus-y"><img src="/assets/images/icon/reflect-t8.svg" class="ic" width="20" height="20"/></label>\n                    <input type="radio" id="reflect-type-above-x-equalto-y" name="reflect-type" value="9" /><label for="reflect-type-above-x-equalto-y"><img src="/assets/images/icon/reflect-t9.svg" class="ic" width="20" height="20"/></label>\n                    <input type="radio" id="reflect-type-below-x-equalto-minus-y" name="reflect-type" value="10" /><label for="reflect-type-below-x-equalto-minus-y"><img src="/assets/images/icon/reflect-t10.svg" class="ic" width="20" height="20"/></label>\n                    <input type="radio" id="reflect-type-above-x-equalto-minus-y" name="reflect-type" value="11" /><label for="reflect-type-above-x-equalto-minus-y"><img src="/assets/images/icon/reflect-t11.svg" class="ic" width="20" height="20"/></label>\n                    <input type="radio" id="reflect-type-below-x-equalto-y" name="reflect-type" value="12" /><label for="reflect-type-below-x-equalto-y"><img src="/assets/images/icon/reflect-t12.svg" class="ic" width="20" height="20"/></label>\n                </div>\n                <div id="reflect-x" class="top-20"></div>\n                <div id="reflect-offset-x" class="top-10"></div>\n                <div id="reflect-y" class="top-20"></div>\n                <div id="reflect-offset-y" class="top-10"></div>\n            `);
+          this.setContent(`\n                <label>${(0, i.A)("type")}</label>\n                <div class="switch-icon-field" style="display:flex">\n                    <input type="radio" id="reflect-type-minus-x" name="reflect-type" value="1" checked="true" /><label for="reflect-type-minus-x"><img src="assets/images/icon/reflect-t1.svg" class="ic" width="20" height="20"/></label>\n                    <input type="radio" id="reflect-type-plus-y" name="reflect-type" value="4" /><label for="reflect-type-plus-y"><img src="assets/images/icon/reflect-t2.svg" class="ic" width="20" height="20"/></label>\n                    <input type="radio" id="reflect-type-plus-x" name="reflect-type" value="3" /><label for="reflect-type-plus-x"><img src="assets/images/icon/reflect-t3.svg" class="ic" width="20" height="20"/></label>\n                    <input type="radio" id="reflect-type-minus-y" name="reflect-type" value="2" /><label for="reflect-type-minus-y"><img src="assets/images/icon/reflect-t4.svg" class="ic" width="20" height="20"/></label>\n                    <input type="radio" id="reflect-type-minus-x-minus-y" name="reflect-type" value="5" /><label for="reflect-type-minus-x-minus-y"><img src="assets/images/icon/reflect-t5.svg" class="ic" width="20" height="20"/></label>\n                    <input type="radio" id="reflect-type-minus-x-plus-y" name="reflect-type" value="6" /><label for="reflect-type-minus-x-plus-y"><img src="assets/images/icon/reflect-t6.svg" class="ic" width="20" height="20"/></label>\n                </div>\n                <div class="switch-icon-field" style="display:flex;margin-top:4px">\n                    <input type="radio" id="reflect-type-plus-x-plus-y" name="reflect-type" value="7" /><label for="reflect-type-plus-x-plus-y"><img src="assets/images/icon/reflect-t7.svg" class="ic" width="20" height="20"/></label>\n                    <input type="radio" id="reflect-type-plus-x-minus-y" name="reflect-type" value="8" /><label for="reflect-type-plus-x-minus-y"><img src="assets/images/icon/reflect-t8.svg" class="ic" width="20" height="20"/></label>\n                    <input type="radio" id="reflect-type-above-x-equalto-y" name="reflect-type" value="9" /><label for="reflect-type-above-x-equalto-y"><img src="assets/images/icon/reflect-t9.svg" class="ic" width="20" height="20"/></label>\n                    <input type="radio" id="reflect-type-below-x-equalto-minus-y" name="reflect-type" value="10" /><label for="reflect-type-below-x-equalto-minus-y"><img src="assets/images/icon/reflect-t10.svg" class="ic" width="20" height="20"/></label>\n                    <input type="radio" id="reflect-type-above-x-equalto-minus-y" name="reflect-type" value="11" /><label for="reflect-type-above-x-equalto-minus-y"><img src="assets/images/icon/reflect-t11.svg" class="ic" width="20" height="20"/></label>\n                    <input type="radio" id="reflect-type-below-x-equalto-y" name="reflect-type" value="12" /><label for="reflect-type-below-x-equalto-y"><img src="assets/images/icon/reflect-t12.svg" class="ic" width="20" height="20"/></label>\n                </div>\n                <div id="reflect-x" class="top-20"></div>\n                <div id="reflect-offset-x" class="top-10"></div>\n                <div id="reflect-y" class="top-20"></div>\n                <div id="reflect-offset-y" class="top-10"></div>\n            `);
           this.x = new a.A("reflect-x", {
             label: (0, i.A)("horizontal"),
             range: [0, 1],
@@ -33128,7 +33128,7 @@ var editor;
           }, (0, i.T)("span", {
             className: "tip top-20"
           }, (0, i.T)("img", {
-            src: "/assets/images/icon/tip-lock.svg",
+            src: "assets/images/icon/tip-lock.svg",
             width: 16,
             height: 16,
             loading: "lazy",
@@ -33138,7 +33138,7 @@ var editor;
             className: "tip",
             style: "gap: 2px;"
           }, (0, i.T)("img", {
-            src: "/assets/images/icon/tip-bulb.svg",
+            src: "assets/images/icon/tip-bulb.svg",
             width: 16,
             height: 16,
             loading: "lazy",
@@ -33148,7 +33148,7 @@ var editor;
             className: "button positive top-30",
             style: "width: 100%; height: 34px;"
           }, (0, i.T)("img", {
-            src: "/assets/images/tool/wand.svg",
+            src: "assets/images/tool/wand.svg",
             width: 18,
             height: 18,
             loading: "lazy"
@@ -33160,7 +33160,7 @@ var editor;
             tooltip: (0, a.A)("holdDown"),
             flow: "up"
           }, (0, i.T)("img", {
-            src: "/assets/images/icon/compare-small.svg",
+            src: "assets/images/icon/compare-small.svg",
             className: "ic",
             width: 16,
             height: 16,
@@ -33779,7 +33779,7 @@ var editor;
           };
           this.stage = t;
           this.dialog.style.maxWidth = "380px";
-          this.setContent(`\n            <div id="super-scale-content" style="flex:0 0 auto;width:100%;position:relative;overflow: hidden;">\n                <div style="padding:10px 10px 0 10px;overflow: hidden;">\n\n                    <section id="super-scale-no-layer">\n                        <span class="tip top-20"><img src="/assets/images/icon/tip-lock.svg" width="16" height="16" loading="lazy" class="tip-icon ic"/>${(0, a.A)("genericNoImageMessage")}</span>\n                    </section>\n\n                    <section id="super-scale-too-large">\n                        <span class="tip top-20"><img src="/assets/images/icon/tip-lock.svg" width="16" height="16" loading="lazy" class="tip-icon ic"/>${(0, a.A)("imageTooLargeToScale")}</span>\n                    </section>\n\n                    <div id="super-scale-desc" class="tip flex" style="gap: 2px;"><img src="/assets/images/icon/tip-bulb.svg" width="16" height="16" loading="lazy" class="tip-icon ic"/>\n                        <span>${(0, a.A)("scaleUpDescription")}</span>\n                    </div>\n\n                    <div id="super-scale-settings" class="top-20">\n                        <label>${(0, a.A)("method")}</label>\n                        <div id="super-scale-preset-list" class="switch-field column upscale top-5">\n                            <input type="radio" id="super-scale-2" name="super-scale-size" value="2" /><label id="super-scale-2-label" for="super-scale-2">2x</label>\n                            // <input type="radio" id="super-scale-3" name="super-scale-size" value="3" /><label id="super-scale-3-label" for="super-scale-3">3x</label>\n                            <input type="radio" id="super-scale-4" name="super-scale-size" value="4" /><label id="super-scale-4-label" for="super-scale-4">4x</label>\n                            <input type="radio" id="super-scale-8" name="super-scale-size" value="6" /><label id="super-scale-8-label" for="super-scale-8">6x</label>\n                        </div>\n                    </div>\n                    \n                </div>\n            </div> \n        `);
+          this.setContent(`\n            <div id="super-scale-content" style="flex:0 0 auto;width:100%;position:relative;overflow: hidden;">\n                <div style="padding:10px 10px 0 10px;overflow: hidden;">\n\n                    <section id="super-scale-no-layer">\n                        <span class="tip top-20"><img src="assets/images/icon/tip-lock.svg" width="16" height="16" loading="lazy" class="tip-icon ic"/>${(0, a.A)("genericNoImageMessage")}</span>\n                    </section>\n\n                    <section id="super-scale-too-large">\n                        <span class="tip top-20"><img src="assets/images/icon/tip-lock.svg" width="16" height="16" loading="lazy" class="tip-icon ic"/>${(0, a.A)("imageTooLargeToScale")}</span>\n                    </section>\n\n                    <div id="super-scale-desc" class="tip flex" style="gap: 2px;"><img src="assets/images/icon/tip-bulb.svg" width="16" height="16" loading="lazy" class="tip-icon ic"/>\n                        <span>${(0, a.A)("scaleUpDescription")}</span>\n                    </div>\n\n                    <div id="super-scale-settings" class="top-20">\n                        <label>${(0, a.A)("method")}</label>\n                        <div id="super-scale-preset-list" class="switch-field column upscale top-5">\n                            <input type="radio" id="super-scale-2" name="super-scale-size" value="2" /><label id="super-scale-2-label" for="super-scale-2">2x</label>\n                            // <input type="radio" id="super-scale-3" name="super-scale-size" value="3" /><label id="super-scale-3-label" for="super-scale-3">3x</label>\n                            <input type="radio" id="super-scale-4" name="super-scale-size" value="4" /><label id="super-scale-4-label" for="super-scale-4">4x</label>\n                            <input type="radio" id="super-scale-8" name="super-scale-size" value="6" /><label id="super-scale-8-label" for="super-scale-8">6x</label>\n                        </div>\n                    </div>\n                    \n                </div>\n            </div> \n        `);
           (0, i.Ay)(`dialog-buttons${this.mid}`).insertBefore((0, i.T)("div", {
             id: "super-scale-credit-count",
             className: "credit-meter",
@@ -33941,7 +33941,7 @@ var editor;
           }, (0, i.T)("span", {
             className: "tip top-20"
           }, (0, i.T)("img", {
-            src: "/assets/images/icon/tip-lock.svg",
+            src: "assets/images/icon/tip-lock.svg",
             width: 16,
             height: 16,
             loading: "lazy",
@@ -33951,7 +33951,7 @@ var editor;
             className: "tip",
             style: "gap: 2px;"
           }, (0, i.T)("img", {
-            src: "/assets/images/icon/tip-bulb.svg",
+            src: "assets/images/icon/tip-bulb.svg",
             width: 16,
             height: 16,
             loading: "lazy",
@@ -33961,7 +33961,7 @@ var editor;
             className: "button positive top-30",
             style: "width: 100%; height: 34px;"
           }, (0, i.T)("img", {
-            src: "/assets/images/tool/wand.svg",
+            src: "assets/images/tool/wand.svg",
             width: 18,
             height: 18,
             loading: "lazy"
@@ -33973,7 +33973,7 @@ var editor;
             tooltip: (0, a.A)("holdDown"),
             flow: "up"
           }, (0, i.T)("img", {
-            src: "/assets/images/icon/compare-small.svg",
+            src: "assets/images/icon/compare-small.svg",
             className: "ic",
             width: 16,
             height: 16,
@@ -35421,7 +35421,7 @@ var editor;
           this.float.append(r, (0, o.T)("img", {
             id: "float-close" + this.mid,
             className: "close ic",
-            src: "/assets/images/icon/close.svg",
+            src: "assets/images/icon/close.svg",
             onclick: () => this.cleanUp()
           }), (0, o.T)("div", {
             className: "splitter small"
@@ -35429,7 +35429,7 @@ var editor;
           if (s) {
             const t = (0, o.T)("img", {
               id: "resize-" + this.mid,
-              src: "/assets/images/icon/three-dot.svg",
+              src: "assets/images/icon/three-dot.svg",
               className: "resize ic"
             });
             (0, o.Bb)(t, this.resizeStart, this.resizeMove);
@@ -35924,7 +35924,7 @@ var editor;
             }, (0, i.T)("div", {
               className: "option-icon"
             }, (0, i.T)("img", {
-              src: "/assets/images/tool/distort.svg",
+              src: "assets/images/tool/distort.svg",
               className: "ic"
             })), (0, i.T)("div", {
               id: "distort-settings"
@@ -35972,7 +35972,7 @@ var editor;
               className: "button outline tab-30",
               id: "distort-cancel"
             }, (0, i.T)("img", {
-              src: "/assets/images/icon/close.svg",
+              src: "assets/images/icon/close.svg",
               width: 10,
               height: 10,
               className: "ic"
@@ -35980,7 +35980,7 @@ var editor;
               className: "button outline tab-10",
               id: "distort-apply"
             }, (0, i.T)("img", {
-              src: "/assets/images/icon/check.svg",
+              src: "assets/images/icon/check.svg",
               width: 16,
               height: 16,
               className: "ic"
@@ -36744,7 +36744,7 @@ var editor;
           }, (0, i.T)("div", {
             className: "option-icon"
           }, (0, i.T)("img", {
-            src: "/assets/images/tool/transform.svg",
+            src: "assets/images/tool/transform.svg",
             className: "ic"
           })), (0, i.T)("div", {
             id: "transform-settings"
@@ -36775,7 +36775,7 @@ var editor;
             className: "button outline tab-30",
             id: "transform-cancel"
           }, (0, i.T)("img", {
-            src: "/assets/images/icon/close.svg",
+            src: "assets/images/icon/close.svg",
             width: 10,
             height: 10,
             className: "ic"
@@ -36783,7 +36783,7 @@ var editor;
             className: "button outline tab-10",
             id: "transform-apply"
           }, (0, i.T)("img", {
-            src: "/assets/images/icon/check.svg",
+            src: "assets/images/icon/check.svg",
             width: 16,
             height: 16,
             className: "ic"
@@ -36909,7 +36909,7 @@ var editor;
                 if (t.key === "Control" && !this.isCtrlDown) {
                   this.isCtrlDown = true;
                   if (this.stage.raster.style.cursor !== "move") {
-                    this.stage.raster.style.cursor = "url(\"/assets/images/cursor/move-copy.svg\") 2 2, auto";
+                    this.stage.raster.style.cursor = "url(\"assets/images/cursor/move-copy.svg\") 2 2, auto";
                   }
                 }
               } else {
@@ -36923,7 +36923,7 @@ var editor;
             }
             if (t.key === "Control" && this.isCtrlDown) {
               this.isCtrlDown = false;
-              if (this.stage.raster.style.cursor === "url(\"/assets/images/cursor/move-copy.svg\") 2 2, auto") {
+              if (this.stage.raster.style.cursor === "url(\"assets/images/cursor/move-copy.svg\") 2 2, auto") {
                 this.stage.raster.style.cursor = "url('/img/cursor/move-cut.svg') 2 2, auto";
               } else {
                 this.stage.raster.style.cursor = "move";
@@ -37727,7 +37727,7 @@ var editor;
           });
           (0, i.Ay)("clone-aligned").addEventListener("change", this.alignChange, false);
           this.sourceMarker = document.createElement("img");
-          this.sourceMarker.src = "/assets/images/cursor/source.svg";
+          this.sourceMarker.src = "assets/images/cursor/source.svg";
           this.sourceMarker.id = "source-marker";
           this.addDownListeners();
           this.setMode("source");
@@ -40913,7 +40913,7 @@ var editor;
           this.content.style.height = "400px";
           this.content.style.overflow = "hidden";
           this.content.style.paddingBottom = "4px";
-          this.setContent(`\n            <section>\n\n            <div>\n                <input type="checkbox" class="toggle-check" id="bokeh-blur" />\n                <label class="switch subline top-16" for="bokeh-blur">${(0, a.A)("bokehBlur")}<span></span><span class="arrow"></span></label>\n        \n                <div class="toggle">\n                    <div class="switch-icon-field stretch">\n                        <input type="radio" id="bokeh-blur-type-circle" name="bokeh-blur-type" value="circle" checked /><label for="bokeh-blur-type-circle" tooltip="${(0, a.A)("circle")}" flow="up"><img src="/assets/images/icon/shape-ellipse.svg" width="20" height="20" loading="lazy"/></label>\n                        <input type="radio" id="bokeh-blur-type-square" name="bokeh-blur-type" value="square" /><label for="bokeh-blur-type-square" tooltip="${(0, a.A)("square")}" flow="up"><img src="/assets/images/icon/shape-rectangle.svg" width="20" height="20" loading="lazy"/></label>\n                        <input type="radio" id="bokeh-blur-type-hexagon" name="bokeh-blur-type" value="hexagon" /><label for="bokeh-blur-type-hexagon" tooltip="${(0, a.A)("hexagon")}" flow="up"><img src="/assets/images/icon/shape-hexagon.svg"  width="20" height="20" loading="lazy"/></label>\n                        <input type="radio" id="bokeh-blur-type-cross" name="bokeh-blur-type" value="cross" /><label for="bokeh-blur-type-cross" tooltip="${(0, a.A)("cross")}" flow="up"><img src="/assets/images/icon/shape-cross.svg" width="20" height="20" loading="lazy"/></label>\n                    </div>\n                    <div id="bokeh-blur-size" class="top-16"></div>\n                    <div id="bokeh-blur-intensity"></div>\n                </div>\n            </div>\n        \n            <div class="top-16">\n                <input type="checkbox" class="toggle-check" id="bokeh-shape" />\n                <label class="switch subline top-16" for="bokeh-shape">${(0, a.A)("bokehShape")}<span></span><span class="arrow"></span></label>\n        \n                <div class="toggle">\n                    <div class="switch-icon-field stretch">\n                        <input type="radio" id="bokeh-shape-type-circle" name="bokeh-shape-type" value="circle" checked /><label for="bokeh-shape-type-circle" tooltip="${(0, a.A)("circle")}" flow="up"><img src="/assets/images/icon/shape-ellipse.svg" width="20" height="20" loading="lazy"/></label>\n                        <input type="radio" id="bokeh-shape-type-hexagon" name="bokeh-shape-type" value="hexagon" /><label for="bokeh-shape-type-hexagon" tooltip="${(0, a.A)("hexagon")}" flow="up"><img src="/assets/images/icon/shape-hexagon.svg"  width="20" height="20" loading="lazy"/></label>\n                        <input type="radio" id="bokeh-shape-type-square" name="bokeh-shape-type" value="square" /><label for="bokeh-shape-type-square" tooltip="${(0, a.A)("square")}" flow="up"><img src="/assets/images/icon/shape-rectangle.svg" width="20" height="20" loading="lazy"/></label>\n                        <input type="radio" id="bokeh-shape-type-triangle" name="bokeh-shape-type" value="triangle" /><label for="bokeh-shape-type-triangle" tooltip="${(0, a.A)("triangle")}" flow="up"><img src="/assets/images/icon/shape-triangle.svg" width="20" height="20" loading="lazy"/></label>\n                    </div>\n                    <div class="switch-icon-field stretch top-4">\n                        <input type="radio" id="bokeh-shape-type-heart" name="bokeh-shape-type" value="heart" /><label for="bokeh-shape-type-heart" tooltip="${(0, a.A)("heart")}" flow="up"><img src="/assets/images/icon/shape-heart.svg" width="20" height="20" loading="lazy"/></label>\n                        <input type="radio" id="bokeh-shape-type-cross" name="bokeh-shape-type" value="cross" /><label for="bokeh-shape-type-cross" tooltip="${(0, a.A)("cross")}" flow="up"><img src="/assets/images/icon/shape-cross.svg" width="20" height="20" loading="lazy"/></label>\n                        <input type="radio" id="bokeh-shape-type-star" name="bokeh-shape-type" value="star" /><label for="bokeh-shape-type-star" tooltip="${(0, a.A)("star")}" flow="up"><img src="/assets/images/icon/shape-star.svg"  width="20" height="20" loading="lazy"/></label>\n                        <input type="radio" id="bokeh-shape-type-glimmer" name="bokeh-shape-type" value="glimmer" /><label for="bokeh-shape-type-glimmer" tooltip="${(0, a.A)("glimmer")}" flow="up"><img src="/assets/images/icon/shape-glimmer.svg" width="20" height="20" loading="lazy"/></label>\n                    </div>\n                    <div id="bokeh-shape-hue" class="top-16"></div>\n                    <div id="bokeh-shape-size" ></div>\n                    <div id="bokeh-shape-quantity"></div>\n                    <div id="bokeh-shape-intensity"></div>\n                    <input type="checkbox" id="bokeh-shape-dual" />\n                    <label class="top-16 switch" for="bokeh-shape-dual">${(0, a.A)("dualTone")}<span></span></label>\n                </div>\n            </div>\n            </section>\n        `);
+          this.setContent(`\n            <section>\n\n            <div>\n                <input type="checkbox" class="toggle-check" id="bokeh-blur" />\n                <label class="switch subline top-16" for="bokeh-blur">${(0, a.A)("bokehBlur")}<span></span><span class="arrow"></span></label>\n        \n                <div class="toggle">\n                    <div class="switch-icon-field stretch">\n                        <input type="radio" id="bokeh-blur-type-circle" name="bokeh-blur-type" value="circle" checked /><label for="bokeh-blur-type-circle" tooltip="${(0, a.A)("circle")}" flow="up"><img src="assets/images/icon/shape-ellipse.svg" width="20" height="20" loading="lazy"/></label>\n                        <input type="radio" id="bokeh-blur-type-square" name="bokeh-blur-type" value="square" /><label for="bokeh-blur-type-square" tooltip="${(0, a.A)("square")}" flow="up"><img src="assets/images/icon/shape-rectangle.svg" width="20" height="20" loading="lazy"/></label>\n                        <input type="radio" id="bokeh-blur-type-hexagon" name="bokeh-blur-type" value="hexagon" /><label for="bokeh-blur-type-hexagon" tooltip="${(0, a.A)("hexagon")}" flow="up"><img src="assets/images/icon/shape-hexagon.svg"  width="20" height="20" loading="lazy"/></label>\n                        <input type="radio" id="bokeh-blur-type-cross" name="bokeh-blur-type" value="cross" /><label for="bokeh-blur-type-cross" tooltip="${(0, a.A)("cross")}" flow="up"><img src="assets/images/icon/shape-cross.svg" width="20" height="20" loading="lazy"/></label>\n                    </div>\n                    <div id="bokeh-blur-size" class="top-16"></div>\n                    <div id="bokeh-blur-intensity"></div>\n                </div>\n            </div>\n        \n            <div class="top-16">\n                <input type="checkbox" class="toggle-check" id="bokeh-shape" />\n                <label class="switch subline top-16" for="bokeh-shape">${(0, a.A)("bokehShape")}<span></span><span class="arrow"></span></label>\n        \n                <div class="toggle">\n                    <div class="switch-icon-field stretch">\n                        <input type="radio" id="bokeh-shape-type-circle" name="bokeh-shape-type" value="circle" checked /><label for="bokeh-shape-type-circle" tooltip="${(0, a.A)("circle")}" flow="up"><img src="assets/images/icon/shape-ellipse.svg" width="20" height="20" loading="lazy"/></label>\n                        <input type="radio" id="bokeh-shape-type-hexagon" name="bokeh-shape-type" value="hexagon" /><label for="bokeh-shape-type-hexagon" tooltip="${(0, a.A)("hexagon")}" flow="up"><img src="assets/images/icon/shape-hexagon.svg"  width="20" height="20" loading="lazy"/></label>\n                        <input type="radio" id="bokeh-shape-type-square" name="bokeh-shape-type" value="square" /><label for="bokeh-shape-type-square" tooltip="${(0, a.A)("square")}" flow="up"><img src="assets/images/icon/shape-rectangle.svg" width="20" height="20" loading="lazy"/></label>\n                        <input type="radio" id="bokeh-shape-type-triangle" name="bokeh-shape-type" value="triangle" /><label for="bokeh-shape-type-triangle" tooltip="${(0, a.A)("triangle")}" flow="up"><img src="assets/images/icon/shape-triangle.svg" width="20" height="20" loading="lazy"/></label>\n                    </div>\n                    <div class="switch-icon-field stretch top-4">\n                        <input type="radio" id="bokeh-shape-type-heart" name="bokeh-shape-type" value="heart" /><label for="bokeh-shape-type-heart" tooltip="${(0, a.A)("heart")}" flow="up"><img src="assets/images/icon/shape-heart.svg" width="20" height="20" loading="lazy"/></label>\n                        <input type="radio" id="bokeh-shape-type-cross" name="bokeh-shape-type" value="cross" /><label for="bokeh-shape-type-cross" tooltip="${(0, a.A)("cross")}" flow="up"><img src="assets/images/icon/shape-cross.svg" width="20" height="20" loading="lazy"/></label>\n                        <input type="radio" id="bokeh-shape-type-star" name="bokeh-shape-type" value="star" /><label for="bokeh-shape-type-star" tooltip="${(0, a.A)("star")}" flow="up"><img src="assets/images/icon/shape-star.svg"  width="20" height="20" loading="lazy"/></label>\n                        <input type="radio" id="bokeh-shape-type-glimmer" name="bokeh-shape-type" value="glimmer" /><label for="bokeh-shape-type-glimmer" tooltip="${(0, a.A)("glimmer")}" flow="up"><img src="assets/images/icon/shape-glimmer.svg" width="20" height="20" loading="lazy"/></label>\n                    </div>\n                    <div id="bokeh-shape-hue" class="top-16"></div>\n                    <div id="bokeh-shape-size" ></div>\n                    <div id="bokeh-shape-quantity"></div>\n                    <div id="bokeh-shape-intensity"></div>\n                    <input type="checkbox" id="bokeh-shape-dual" />\n                    <label class="top-16 switch" for="bokeh-shape-dual">${(0, a.A)("dualTone")}<span></span></label>\n                </div>\n            </div>\n            </section>\n        `);
           this.bokehBlurSize = new l.A("bokeh-blur-size", {
             label: (0, a.A)("size"),
             range: [0, 1],
@@ -45977,14 +45977,14 @@ var editor;
                     width: 200,
                     height: 40
                   }), (0, i.T)("img", {
-                    src: "/assets/images/icon/close.svg",
+                    src: "assets/images/icon/close.svg",
                     title: "Remove font",
                     className: "close ic",
                     onclick: t => this.removeFont(t, "font:" + e.name)
                   }));
                 } else {
                   s.append((0, i.T)("img", {
-                    src: "/assets/fonts/" + e.short + ".png",
+                    src: "assets/fonts/" + e.short + ".png",
                     title: e.name,
                     className: "thumb ic",
                     loading: "lazy",
@@ -46194,7 +46194,7 @@ var editor;
             }, (0, i.T)("img", {
               id: "font-close",
               className: "close ic",
-              src: "/assets/images/icon/close.svg",
+              src: "assets/images/icon/close.svg",
               onclick: () => this.hideFontList()
             }), (0, i.T)("div", {
               id: "font-list-title",
@@ -46207,12 +46207,12 @@ var editor;
               className: "google-fonts-entry",
               onclick: () => this.openGoogleFonts()
             }, (0, i.T)("img", {
-              src: "/assets/images/icon/google-logo.svg",
+              src: "assets/images/icon/google-logo.svg",
               width: 20,
               height: 20,
               className: "ic"
             }), (0, i.T)("span", {}, (0, a.A)("googleFonts")), (0, i.T)("img", {
-              src: "/assets/images/icon/chevron-right.svg",
+              src: "assets/images/icon/chevron-right.svg",
               width: 16,
               height: 16,
               className: "ic chevron"
@@ -46226,7 +46226,7 @@ var editor;
             }), (0, i.T)("img", {
               id: "font-search-icon",
               className: "search-icon ic",
-              src: "/assets/images/tool/zoom.svg"
+              src: "assets/images/tool/zoom.svg"
             })), (0, i.T)("div", {
               id: "font-list-holder"
             }), (0, i.T)("div", {
@@ -46235,7 +46235,7 @@ var editor;
               className: "button positive w-100",
               onclick: this.addLocalFont
             }, (0, i.T)("img", {
-              src: "/assets/images/icon/plus.svg",
+              src: "assets/images/icon/plus.svg",
               width: 20,
               height: 20
             }), (0, a.A)("addLocalFont")))));
@@ -46259,7 +46259,7 @@ var editor;
               if (e.local) {
                 this.holder.innerHTML = "<img src=\"" + URL.createObjectURL(e.thumb) + "\" class=\"ic\" title=\"" + e.name + "\" />";
               } else {
-                this.holder.innerHTML = "<img src=\"/assets/fonts/" + e.short + ".png\" class=\"ic\" title=\"" + e.name + "\" />";
+                this.holder.innerHTML = "<img src=\"assets/fonts/" + e.short + ".png\" class=\"ic\" title=\"" + e.name + "\" />";
               }
             }
           }
@@ -46362,7 +46362,7 @@ var editor;
             this.superCleanUp();
           };
           this.stage = t;
-          this.setContent(`\n            <section>\n                <div id="line-space" class="range-box top-5"></div>\n                <div id="letter-space" class="range-box top-10"></div>\n                <label class="top-10">${(0, a.A)("align")}</label>\n                <div class="switch-icon-field stretch top-5">\n                    <input type="radio" id="text-align-left" name="text-align" value="left"><label for="text-align-left" tooltip="${(0, a.A)("alignLeft")}" flow="up-right"><img src="/assets/images/icon/align-left.svg" class="ic"></label>\n                    <input type="radio" id="text-align-center" name="text-align" value="center"><label for="text-align-center" tooltip="${(0, a.A)("alignCenter")}" flow="up"><img src="/assets/images/icon/align-center.svg" class="ic"></label>\n                    <input type="radio" id="text-align-right" name="text-align" value="right"><label for="text-align-right" tooltip="${(0, a.A)("alignRight")}" flow="up"><img src="/assets/images/icon/align-right.svg" class="ic"></label>\n                    <input type="radio" id="text-align-justify" name="text-align" value="justify"><label for="text-align-justify" tooltip="${(0, a.A)("alignJustify")}" flow="up"><img src="/assets/images/icon/align-justify.svg" class="ic"></label>\n                </div>\n                <label class="top-16">${(0, a.A)("style")}</label>\n                <ul class="icon-button-set stretch top-5">\n                    <li id="text-uppercase" tooltip="${(0, a.A)("uppercase")}" flow="up"><img class="ic" src="/assets/images/icon/uppercase.svg" /><div class="mark"></div></li>\n                    <li id="text-italic" tooltip="${(0, a.A)("italic")}" flow="up"><img class="ic" src="/assets/images/icon/italic.svg" /><div class="mark"></div></li>\n                    <li id="text-bold" tooltip="${(0, a.A)("bold")}" flow="up"><img class="ic" src="/assets/images/icon/bold.svg" /><div class="mark"></div></li>\n                    <li id="text-underline" tooltip="${(0, a.A)("underline")}" flow="up"><img class="ic" src="/assets/images/icon/underline.svg" /><div class="mark"></div></li>\n                </ul>\n            </section>\n        `);
+          this.setContent(`\n            <section>\n                <div id="line-space" class="range-box top-5"></div>\n                <div id="letter-space" class="range-box top-10"></div>\n                <label class="top-10">${(0, a.A)("align")}</label>\n                <div class="switch-icon-field stretch top-5">\n                    <input type="radio" id="text-align-left" name="text-align" value="left"><label for="text-align-left" tooltip="${(0, a.A)("alignLeft")}" flow="up-right"><img src="assets/images/icon/align-left.svg" class="ic"></label>\n                    <input type="radio" id="text-align-center" name="text-align" value="center"><label for="text-align-center" tooltip="${(0, a.A)("alignCenter")}" flow="up"><img src="assets/images/icon/align-center.svg" class="ic"></label>\n                    <input type="radio" id="text-align-right" name="text-align" value="right"><label for="text-align-right" tooltip="${(0, a.A)("alignRight")}" flow="up"><img src="assets/images/icon/align-right.svg" class="ic"></label>\n                    <input type="radio" id="text-align-justify" name="text-align" value="justify"><label for="text-align-justify" tooltip="${(0, a.A)("alignJustify")}" flow="up"><img src="assets/images/icon/align-justify.svg" class="ic"></label>\n                </div>\n                <label class="top-16">${(0, a.A)("style")}</label>\n                <ul class="icon-button-set stretch top-5">\n                    <li id="text-uppercase" tooltip="${(0, a.A)("uppercase")}" flow="up"><img class="ic" src="assets/images/icon/uppercase.svg" /><div class="mark"></div></li>\n                    <li id="text-italic" tooltip="${(0, a.A)("italic")}" flow="up"><img class="ic" src="assets/images/icon/italic.svg" /><div class="mark"></div></li>\n                    <li id="text-bold" tooltip="${(0, a.A)("bold")}" flow="up"><img class="ic" src="assets/images/icon/bold.svg" /><div class="mark"></div></li>\n                    <li id="text-underline" tooltip="${(0, a.A)("underline")}" flow="up"><img class="ic" src="assets/images/icon/underline.svg" /><div class="mark"></div></li>\n                </ul>\n            </section>\n        `);
           this.selected = this.stage.fresco.getSelected();
           let s = this.selected.textSettings;
           const o = {
@@ -46623,7 +46623,7 @@ var editor;
           this.selected = this.stage.fresco.getSelected();
           this.content.id = "text-style-content";
           this.content.style.height = "333px";
-          this.setContent(`\n            <section>\n                <div>\n                    <input type="checkbox" class="toggle-check" id="text-curve" />\n                    <label class="switch subline top-4" for="text-curve">${(0, a.A)("curve")}<span></span><span class="arrow"></span></label>\n                    <div class="toggle">\n                        <div id="text-curve-type" class="switch-field stretch top-4">\n                            <input type="radio" id="text-curve-type-arc" name="curve-type" value="arc" checked/><label for="text-curve-type-arc">${(0, a.A)("arc")}</label>\n                            <input type="radio" id="text-curve-type-circle" name="curve-type" value="circle" /><label for="text-curve-type-circle">${(0, a.A)("circle")}</label>\n                            <input type="radio" id="text-curve-type-half" name="curve-type" value="half" /><label for="text-curve-type-half">${(0, a.A)("half")}</label>\n                        </div>\n                        <div id="text-curve-amount" class="top-16"></div>\n                        <input type="checkbox" id="text-curve-spread" />\n                        <label class="top-16 switch" id="text-curve-spread-label" for="text-curve-spread">${(0, a.A)("spread")}<span></span></label>\n                        <input type="checkbox" id="text-curve-flip" />\n                        <label class="top-16 switch" id="text-curve-flip-label" for="text-curve-flip">${(0, a.A)("flip")}<span></span></label>\n                    </div>\n                </div>\n                <div>\n                    <input type="checkbox" class="toggle-check" id="text-warp" />\n                    <label class="switch subline top-10" for="text-warp">${(0, a.A)("warp")}<span></span><span class="arrow"></span></label>\n                    <div class="toggle">\n        \n                        <div id="text-warp-mode" class="switch-icon-field stretch">\n                            <input type="radio" id="text-warp-mode-upper" name="warp-mode" value="upper" checked /><label for="text-warp-mode-upper" tooltip="Upper" flow="up-left"><img src="/assets/images/icon/warp-upper.svg" class="ic" width="18" height="18"></label>\n                            <input type="radio" id="text-warp-mode-middle" name="warp-mode" value="middle" /><label for="text-warp-mode-middle" tooltip="Middle" flow="up"><img src="/assets/images/icon/warp-middle.svg" class="ic" width="18" height="18"></label>\n                            <input type="radio" id="text-warp-mode-lower" name="warp-mode" value="lower" /><label for="text-warp-mode-lower" tooltip="Lower" flow="up-right"><img src="/assets/images/icon/warp-lower.svg" class="ic" width="18" height="18"></label>\n                        </div>\n                        <div id="text-warp-type" class="switch-field stretch top-16">\n                            <input type="radio" id="text-warp-type-circular" name="warp-type" value="circular" checked/><label for="text-warp-type-circular">${(0, a.A)("circular")}</label>\n                            <input type="radio" id="text-warp-type-angular" name="warp-type" value="angular" /><label for="text-warp-type-angular">${(0, a.A)("angular")}</label>\n                        </div>\n                        <div id="text-warp-edge-size" class="top-16"></div>\n                        <div id="text-warp-center-size"></div>\n                        <div id="text-warp-horizontal-offset"></div>\n                        <div id="text-warp-vertical-offset"></div>\n                    </div>\n                </div>\n                <div>\n                    <input type="checkbox" class="toggle-check" id="text-background" />\n                    <label class="switch subline top-10" for="text-background">${(0, a.A)("background")}<span></span><span class="arrow"></span></label>\n                    <div class="toggle">\n                        <label class="split">${(0, a.A)("color")}<div id="text-background-color"></div></label>\n                        <input type="checkbox" id="text-background-punch" />\n                        <label class="top-15 switch" for="text-background-punch">${(0, a.A)("punchout")}<span></span></label>\n                        <div id="text-background-offset" class="top-15"></div>\n                        <div id="text-background-type" class="switch-field stretch top-16">\n                            <input type="radio" id="text-background-type-full" name="background-type" value="full" checked/><label for="text-background-type-full">${(0, a.A)("full")}</label>\n                            <input type="radio" id="text-background-type-line" name="background-type" value="line" /><label for="text-background-type-line">${(0, a.A)("line")}</label>\n                            <input type="radio" id="text-background-type-word" name="background-type" value="word" /><label for="text-background-type-word">${(0, a.A)("word")}</label>\n                        </div>\n                    </div>\n                </div>\n                <div>\n                    <input type="checkbox" class="toggle-check" id="text-outline" />\n                    <label class="switch subline top-10" for="text-outline">${(0, a.A)("outline")}<span></span><span class="arrow"></span></label>\n                    <div class="toggle">\n                        <label class="split">${(0, a.A)("color")}<div id="text-outline-color"></div></label>\n                        <input type="checkbox" id="text-outline-punch" />\n                        <label class="top-15 switch" for="text-outline-punch">${(0, a.A)("punchout")}<span></span></label>\n                        <div id="text-outline-size" class="top-15"></div>\n                        <div id="text-outline-distance"></div>\n                        <div id="text-outline-direction"></div>\n                    </div>\n                </div>\n                <div>\n                <input type="checkbox" class="toggle-check" id="text-shadow" />\n                <label class="switch subline top-10" for="text-shadow">${(0, a.A)("shadow")}<span></span><span class="arrow"></span></label>\n                <div class="toggle">\n                        <label class="split">${(0, a.A)("color")}<div id="text-shadow-color"></div></label>\n                        <div id="text-shadow-blur" class="top-10"></div>\n                        <div id="text-shadow-distance"></div>\n                        <div id="text-shadow-direction"></div>\n                        <div id="text-shadow-alpha"></div>\n                    </div>\n                </div>\n            <section>\n        `);
+          this.setContent(`\n            <section>\n                <div>\n                    <input type="checkbox" class="toggle-check" id="text-curve" />\n                    <label class="switch subline top-4" for="text-curve">${(0, a.A)("curve")}<span></span><span class="arrow"></span></label>\n                    <div class="toggle">\n                        <div id="text-curve-type" class="switch-field stretch top-4">\n                            <input type="radio" id="text-curve-type-arc" name="curve-type" value="arc" checked/><label for="text-curve-type-arc">${(0, a.A)("arc")}</label>\n                            <input type="radio" id="text-curve-type-circle" name="curve-type" value="circle" /><label for="text-curve-type-circle">${(0, a.A)("circle")}</label>\n                            <input type="radio" id="text-curve-type-half" name="curve-type" value="half" /><label for="text-curve-type-half">${(0, a.A)("half")}</label>\n                        </div>\n                        <div id="text-curve-amount" class="top-16"></div>\n                        <input type="checkbox" id="text-curve-spread" />\n                        <label class="top-16 switch" id="text-curve-spread-label" for="text-curve-spread">${(0, a.A)("spread")}<span></span></label>\n                        <input type="checkbox" id="text-curve-flip" />\n                        <label class="top-16 switch" id="text-curve-flip-label" for="text-curve-flip">${(0, a.A)("flip")}<span></span></label>\n                    </div>\n                </div>\n                <div>\n                    <input type="checkbox" class="toggle-check" id="text-warp" />\n                    <label class="switch subline top-10" for="text-warp">${(0, a.A)("warp")}<span></span><span class="arrow"></span></label>\n                    <div class="toggle">\n        \n                        <div id="text-warp-mode" class="switch-icon-field stretch">\n                            <input type="radio" id="text-warp-mode-upper" name="warp-mode" value="upper" checked /><label for="text-warp-mode-upper" tooltip="Upper" flow="up-left"><img src="assets/images/icon/warp-upper.svg" class="ic" width="18" height="18"></label>\n                            <input type="radio" id="text-warp-mode-middle" name="warp-mode" value="middle" /><label for="text-warp-mode-middle" tooltip="Middle" flow="up"><img src="assets/images/icon/warp-middle.svg" class="ic" width="18" height="18"></label>\n                            <input type="radio" id="text-warp-mode-lower" name="warp-mode" value="lower" /><label for="text-warp-mode-lower" tooltip="Lower" flow="up-right"><img src="assets/images/icon/warp-lower.svg" class="ic" width="18" height="18"></label>\n                        </div>\n                        <div id="text-warp-type" class="switch-field stretch top-16">\n                            <input type="radio" id="text-warp-type-circular" name="warp-type" value="circular" checked/><label for="text-warp-type-circular">${(0, a.A)("circular")}</label>\n                            <input type="radio" id="text-warp-type-angular" name="warp-type" value="angular" /><label for="text-warp-type-angular">${(0, a.A)("angular")}</label>\n                        </div>\n                        <div id="text-warp-edge-size" class="top-16"></div>\n                        <div id="text-warp-center-size"></div>\n                        <div id="text-warp-horizontal-offset"></div>\n                        <div id="text-warp-vertical-offset"></div>\n                    </div>\n                </div>\n                <div>\n                    <input type="checkbox" class="toggle-check" id="text-background" />\n                    <label class="switch subline top-10" for="text-background">${(0, a.A)("background")}<span></span><span class="arrow"></span></label>\n                    <div class="toggle">\n                        <label class="split">${(0, a.A)("color")}<div id="text-background-color"></div></label>\n                        <input type="checkbox" id="text-background-punch" />\n                        <label class="top-15 switch" for="text-background-punch">${(0, a.A)("punchout")}<span></span></label>\n                        <div id="text-background-offset" class="top-15"></div>\n                        <div id="text-background-type" class="switch-field stretch top-16">\n                            <input type="radio" id="text-background-type-full" name="background-type" value="full" checked/><label for="text-background-type-full">${(0, a.A)("full")}</label>\n                            <input type="radio" id="text-background-type-line" name="background-type" value="line" /><label for="text-background-type-line">${(0, a.A)("line")}</label>\n                            <input type="radio" id="text-background-type-word" name="background-type" value="word" /><label for="text-background-type-word">${(0, a.A)("word")}</label>\n                        </div>\n                    </div>\n                </div>\n                <div>\n                    <input type="checkbox" class="toggle-check" id="text-outline" />\n                    <label class="switch subline top-10" for="text-outline">${(0, a.A)("outline")}<span></span><span class="arrow"></span></label>\n                    <div class="toggle">\n                        <label class="split">${(0, a.A)("color")}<div id="text-outline-color"></div></label>\n                        <input type="checkbox" id="text-outline-punch" />\n                        <label class="top-15 switch" for="text-outline-punch">${(0, a.A)("punchout")}<span></span></label>\n                        <div id="text-outline-size" class="top-15"></div>\n                        <div id="text-outline-distance"></div>\n                        <div id="text-outline-direction"></div>\n                    </div>\n                </div>\n                <div>\n                <input type="checkbox" class="toggle-check" id="text-shadow" />\n                <label class="switch subline top-10" for="text-shadow">${(0, a.A)("shadow")}<span></span><span class="arrow"></span></label>\n                <div class="toggle">\n                        <label class="split">${(0, a.A)("color")}<div id="text-shadow-color"></div></label>\n                        <div id="text-shadow-blur" class="top-10"></div>\n                        <div id="text-shadow-distance"></div>\n                        <div id="text-shadow-direction"></div>\n                        <div id="text-shadow-alpha"></div>\n                    </div>\n                </div>\n            <section>\n        `);
           let s = this.selected.textSettings;
           this.backgroundColor = new z.A("text-background-color", c.A.fromHEX(u.Ay.altColor), this.changeBackground);
           this.outlineColor = new z.A("text-outline-color", c.A.fromHEX(u.Ay.altColor), this.changeOutlineColor);
@@ -46813,13 +46813,13 @@ var editor;
           super(e, (0, a.A)("preset"), true);
           this.SERVER_URL = "/";
           this.populatePresets = async () => {
-            const t = await fetch("/assets/static/text/index.json");
+            const t = await fetch("assets/static/text/index.json");
             const e = await t.json();
             const s = (0, i.Ay)("text-preset-content-ss-content");
             s.classList.add("text-holder");
             s.innerHTML = "";
             e.presets.forEach(t => {
-              const e = "/assets/static/text/" + t.id + "/thumbnail.webp";
+              const e = "assets/static/text/" + t.id + "/thumbnail.webp";
               const a = (0, i.T)("div", {
                 id: t.id,
                 className: "text-box"
@@ -46844,7 +46844,7 @@ var editor;
             }
             this.working = true;
             const e = t.currentTarget.getAttribute("id");
-            await (0, w.h6)(this.stage, "/assets/static/text/" + e + "/manifest.json");
+            await (0, w.h6)(this.stage, "assets/static/text/" + e + "/manifest.json");
             this.working = false;
             (0, F.A)("text-preset", e);
           };
@@ -47951,7 +47951,7 @@ var editor;
           }, true);
           const s = (0, n.T)("img", {
             id: "layer-panel-resize",
-            src: "/assets/images/icon/three-dot.svg",
+            src: "assets/images/icon/three-dot.svg",
             className: "resize ic"
           });
           (0, n.Bb)(s, this.resizeStart, this.resizeMove);
@@ -48466,7 +48466,7 @@ var editor;
           this.stage = t;
           this.dialog.style.width = "500px";
           this.dialog.style.maxWidth = "500px";
-          this.setContent(`\n            <label class="top-0">${(0, i.A)("dialogAddLayerHL")}</label>\n\n            <ul id="add-layer-type" class="push-buttons small top-20">\n                <li id="add-layer-empty" data="empty"><img src="/assets/images/tool/empty.svg" class="ic"><span>${(0, i.A)("empty")}</span></li>\n                <li id="add-layer-image" data="image"><img src="/assets/images/tool/image.svg" class="ic"><span>${(0, i.A)("image")}</span></li>\n                <li id="add-layer-frame" data="frame"><img src="/assets/images/tool/frame.svg" class="ic"><span>${(0, i.A)("frame")}</span></li>\n                <li id="add-layer-text" data="text"><img src="/assets/images/tool/text.svg" class="ic"><span>${(0, i.A)("text")}</span></li>\n                <li id="add-layer-shape" data="shape"><img src="/assets/images/tool/shape.svg" class="ic"><span>${(0, i.A)("shape")}</span></li>\n            </ul>\n        `);
+          this.setContent(`\n            <label class="top-0">${(0, i.A)("dialogAddLayerHL")}</label>\n\n            <ul id="add-layer-type" class="push-buttons small top-20">\n                <li id="add-layer-empty" data="empty"><img src="assets/images/tool/empty.svg" class="ic"><span>${(0, i.A)("empty")}</span></li>\n                <li id="add-layer-image" data="image"><img src="assets/images/tool/image.svg" class="ic"><span>${(0, i.A)("image")}</span></li>\n                <li id="add-layer-frame" data="frame"><img src="assets/images/tool/frame.svg" class="ic"><span>${(0, i.A)("frame")}</span></li>\n                <li id="add-layer-text" data="text"><img src="assets/images/tool/text.svg" class="ic"><span>${(0, i.A)("text")}</span></li>\n                <li id="add-layer-shape" data="shape"><img src="assets/images/tool/shape.svg" class="ic"><span>${(0, i.A)("shape")}</span></li>\n            </ul>\n        `);
           (0, h.Ay)("add-layer-empty").addEventListener("click", this.addLayerChoice, true);
           (0, h.Ay)("add-layer-image").addEventListener("click", this.addLayerChoice, true);
           (0, h.Ay)("add-layer-text").addEventListener("click", this.addLayerChoice, true);
@@ -48704,7 +48704,7 @@ var editor;
                   const t = (0, h.T)("img", {
                     className: "visibility ic",
                     title: p.settings.visible ? (0, i.A)("visible") : (0, i.A)("hidden"),
-                    src: p.settings.visible ? "/assets/images/icon/visible.svg" : "/assets/images/icon/hidden.svg"
+                    src: p.settings.visible ? "assets/images/icon/visible.svg" : "assets/images/icon/hidden.svg"
                   });
                   t.addEventListener("mousedown", t => {
                     t.stopPropagation();
@@ -48720,7 +48720,7 @@ var editor;
                   }, t));
                 } else {
                   let t = (0, h.T)("img", {
-                    src: "/assets/images/icon/locked.svg",
+                    src: "assets/images/icon/locked.svg",
                     className: "locked ic",
                     title: (0, i.A)("locked")
                   });
@@ -48743,7 +48743,7 @@ var editor;
                 g.appendChild(m);
                 if (p instanceof d.A && p.hasMask()) {
                   const t = (0, h.T)("img", {
-                    src: "/assets/images/icon/mask.svg",
+                    src: "assets/images/icon/mask.svg",
                     title: (0, i.A)("hasCutout"),
                     className: "cutout ic"
                   });
@@ -48759,7 +48759,7 @@ var editor;
                 }
                 if (p.settings.link && p.settings.link !== "") {
                   m.appendChild((0, h.T)("img", {
-                    src: "/assets/images/icon/linked.svg",
+                    src: "assets/images/icon/linked.svg",
                     title: (0, i.A)("linked"),
                     className: "linked ic"
                   }));
@@ -49118,7 +49118,7 @@ var editor;
           }, true);
           const s = (0, h.T)("img", {
             id: "layer-panel-resize",
-            src: "/assets/images/icon/three-dot.svg",
+            src: "assets/images/icon/three-dot.svg",
             className: "resize ic"
           });
           (0, h.Bb)(s, this.resizeStart, this.resizeMove);
@@ -49399,7 +49399,7 @@ var editor;
                     className: "close ic",
                     width: 10,
                     height: 10,
-                    src: "/assets/images/icon/close.svg",
+                    src: "assets/images/icon/close.svg",
                     onclick: () => {
                       this.web.tabClose(e.id);
                     }
@@ -49425,7 +49425,7 @@ var editor;
                     oncontextmenu: t => this.handleTabContextMenu(t, e.id)
                   }, e.name, (0, i.T)("img", {
                     className: "close ic",
-                    src: "/assets/images/icon/close.svg",
+                    src: "assets/images/icon/close.svg",
                     width: 10,
                     height: 10,
                     onclick: () => this.web.tabClose(e.id)
@@ -49445,7 +49445,7 @@ var editor;
           }, this.tabs, (0, i.T)("div", {
             id: "tabs-drop"
           }, (0, i.T)("img", {
-            src: "/assets/images/icon/tabs.svg",
+            src: "assets/images/icon/tabs.svg",
             className: "ic",
             width: 18,
             height: 18,
@@ -49947,14 +49947,14 @@ var editor;
             i.appendChild(m);
             const y = (0, n.T)("img", {
               className: "close",
-              src: "/assets/images/icon/close.svg",
+              src: "assets/images/icon/close.svg",
               alt: `${(0, a.A)("historyDelete")} ${t.name}`
             });
             y.addEventListener("click", g);
             m.appendChild(y);
             const v = (0, n.T)("img", {
               className: "more",
-              src: "/assets/images/icon/three-dot.svg",
+              src: "assets/images/icon/three-dot.svg",
               alt: (0, a.A)("documentActions")
             });
             v.addEventListener("click", t => {
@@ -50792,7 +50792,7 @@ var editor;
       throw t;
     }) : o());
   };
-  s.p = "/assets/static/";
+  s.p = "assets/static/";
   (() => {
     s.b = typeof document != "undefined" && document.baseURI || self.location.href;
     const t = {
