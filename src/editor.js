@@ -49608,7 +49608,6 @@ var editor;
                   (0, n.Ay)("splash-feed-header").style.display = "none";
                   (0, n.Ay)("feed-show-all").style.display = "none";
                   (0, n.Ay)("history-backup").style.display = "";
-                  (0, n.Ay)("history-clear").style.display = "";
                 });
               }
               if ((h = (0, n.Ay)("splash-tab-feed")) !== null && h !== undefined) {
@@ -49621,7 +49620,6 @@ var editor;
                   (0, n.Ay)("splash-feed-header").style.display = "";
                   (0, n.Ay)("feed-show-all").style.display = "";
                   (0, n.Ay)("history-backup").style.display = "none";
-                  (0, n.Ay)("history-clear").style.display = "none";
                   this.loadFeed();
                 });
               }
@@ -49707,20 +49705,10 @@ var editor;
                 id: "quick-all",
                 href: "#myhistory"
               }, (0, a.A)("all")));
-              (0, n.Ay)("history-clear").onclick = async () => {
-                if (await new S.A("Confirm", (0, a.A)("historyClearConfirm"), (0, a.A)("clear")).init()) {
-                  await k.DocumentMeta.deleteAll();
-                  await this.setHistory();
-                  if (this.stage && this.stage.fresco) {
-                    this.stage.close();
-                  }
-                  (0, n.Ay)("splash-close").style.display = "none";
-                }
-              };
-              for (i = 0; i < s.length && i < 50; i++) {
+              for (i = 0; i < s.length && i < 100; i++) {
                 e.appendChild(this.createHistoryBox(s[i]));
               }
-              if (s.length > 50) {
+              if (s.length > 100) {
                 (0, n.Ay)("history-all").style.display = "flex";
                 (0, n.Ay)("history-all").onclick = this.showAllHistory;
               }
@@ -49738,15 +49726,15 @@ var editor;
             });
             document.body.appendChild(t);
             const e = await k.DocumentMeta.history();
-            const s = new Array();
-            for (var i = 0; i < e.length && i < 100; i++) {
+            let o = new M.ZipWriter();
+            for (var i = 0; i < e.length; i++) {
               document.dispatchEvent(new CustomEvent("loading", {
-                detail: "Creating " + (i + 1) + " of " + Math.min(e.length, 100)
+                detail: "Creating " + (i + 1) + " of " + e.length
               }));
-              const t = e[i];
-              const a = new x.A(t.id, t.name, t.width, t.height, t.transparent ? undefined : t.color, t.templateMeta);
-              await t.restore(a);
-              const n = await (0, L.Ab)(this.stage, {
+              const c = e[i];
+              const a = new x.A(c.id, c.name, c.width, c.height, c.transparent ? undefined : c.color, c.templateMeta);
+              await c.restore(a);
+              const blob = await (0, L.Ab)(this.stage, {
                 id: a.id,
                 name: a.name,
                 quality: 1,
@@ -49754,18 +49742,12 @@ var editor;
                 type: "document",
                 unit: "pixel"
               }, a);
-              s.push(new File([n], a.name + ".pxz"));
+              const bytes = new Uint8Array(await blob.arrayBuffer());
+              o.writeFile(a.name + ".pxz", bytes, false);
             }
             document.dispatchEvent(new CustomEvent("loading", {
               detail: "Creating zip"
             }));
-            let o = new M.ZipWriter();
-            for (let a = 0; a < s.length; a++) {
-              const t = s[a];
-              let e = await t.arrayBuffer();
-              let i = new Uint8Array(e);
-              o.writeFile(t.name, i, false);
-            }
             const r = o.finish();
             const h = new File([new Blob([r.buffer])], "pixlr-backup(" + new Date().toDateString() + ").zip", {
               type: "application/zip"
@@ -49783,9 +49765,38 @@ var editor;
             (0, n.Ay)("history-all").style.display = "none";
             const t = await k.DocumentMeta.history();
             const e = (0, n.Ay)("history-content");
-            for (var s = 50; s < t.length; s++) {
+            for (var s = 100; s < t.length; s++) {
               e.appendChild(this.createHistoryBox(t[s]));
             }
+          };
+          this.showUndoToast = onUndo => {
+            var e;
+            if ((e = (0, n.Ay)("history-undo-toast")) !== null && e !== undefined) {
+              e.remove();
+            }
+            let t = (0, n.T)("div", {
+              id: "history-undo-toast",
+              className: "history-undo-toast"
+            });
+            let c = (0, n.T)("span", {}, (0, a.A)("historyPendingDelete"));
+            let d = (0, n.T)("a", {}, `↺ ${(0, a.A)("historyUndo")}`);
+            d.addEventListener("click", async e => {
+              if (e != null) {
+                e.preventDefault();
+              }
+              if (e != null) {
+                e.stopPropagation();
+              }
+              t.remove();
+              await onUndo();
+            });
+            t.append(c, d);
+            document.body.appendChild(t);
+            setTimeout(() => {
+              if (t.isConnected) {
+                t.remove();
+              }
+            }, 5000);
           };
           this.createHistoryBox = t => {
             const e = this.stage && this.stage.tabs.some(e => e.fresco.id === t.id);
@@ -49880,34 +49891,15 @@ var editor;
             const g = async i => {
               var o;
               var r;
-              var h;
               if (i != null) {
                 i.preventDefault();
               }
               if (i != null) {
                 i.stopPropagation();
               }
-              await t.pendingRemove((i, a) => {
-                var o;
-                var r;
-                if (i) {
-                  console.log(i);
-                }
-                if (a) {
-                  if (e) {
-                    this.tabClose(t.id, true);
-                  }
-                  if (s) {
-                    (0, n.Ay)(t.id).classList.remove("selected");
-                    if ((o = (0, n.Ay)(t.id + "-active")) !== null && o !== undefined) {
-                      o.remove();
-                    }
-                  }
-                  if ((r = (0, n.Ay)(t.id)) !== null && r !== undefined) {
-                    r.remove();
-                  }
-                }
-              });
+              if (!(await new S.A("Confirm", (0, a.A)("historyDeleteConfirm"), (0, a.A)("historyDelete")).init())) {
+                return;
+              }
               if (e) {
                 this.tabClose(t.id, true);
               }
@@ -49917,29 +49909,18 @@ var editor;
                   o.remove();
                 }
               }
-              let l = (0, n.T)("div", {
-                className: "pending-remove"
-              });
-              let c = (0, n.T)("span", {}, (0, a.A)("historyPendingDelete"));
-              let d = (0, n.T)("a", {}, `↺ ${(0, a.A)("historyUndo")}`);
-              d.addEventListener("click", async e => {
-                if (e != null) {
-                  e.preventDefault();
-                }
-                if (e != null) {
-                  e.stopPropagation();
-                }
-                await t.undoRemove();
-                (0, n.Ay)(t.id).classList.remove("pending");
-                l.remove();
-              });
-              l.append(c, d);
               if ((r = (0, n.Ay)(t.id)) !== null && r !== undefined) {
-                r.classList.add("pending");
+                r.remove();
               }
-              if ((h = (0, n.Ay)(t.id)) !== null && h !== undefined) {
-                h.append(l);
-              }
+              this.showUndoToast(async () => {
+                await t.undoRemove();
+                this.setHistory();
+              });
+              await t.pendingRemove(i => {
+                if (i) {
+                  console.log(i);
+                }
+              });
             };
             const m = (0, n.T)("div", {
               className: "settings"
