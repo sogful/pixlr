@@ -1,5 +1,5 @@
-still has missing/broken features, + barely deobfuscated, so still needs work
-this skips the daily export limit, of course! it skips the export window altogether, hence why there are so many buttons to the right
+still has <b>missing/broken features</b>, + barely deobfuscated, so needs work
+this skips the daily export limit, of course! it skips the export window altogether, hence why there are so many format download buttons to the right
 
 <table>
 	<tr>
