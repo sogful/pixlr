@@ -34783,6 +34783,9 @@ var editor;
             i("edit-preferences", () => {
               var t;
               if ((t = (0, a.Ay)("head-settings")) === null || t === undefined) {
+                document.dispatchEvent(new CustomEvent("notification", {
+                  detail: "preferences aren't available in this offline mirror"
+                }));
                 return undefined;
               } else {
                 return t.click();
@@ -34928,6 +34931,9 @@ var editor;
             i("view-theme", () => {
               var t;
               if ((t = (0, a.Ay)("head-settings")) === null || t === undefined) {
+                document.dispatchEvent(new CustomEvent("notification", {
+                  detail: "preferences aren't available in this offline mirror"
+                }));
                 return undefined;
               } else {
                 return t.click();
@@ -35232,6 +35238,9 @@ var editor;
           document.addEventListener("preferences", () => {
             var t;
             if ((t = (0, a.Ay)("head-settings")) === null || t === undefined) {
+              document.dispatchEvent(new CustomEvent("notification", {
+                detail: "preferences aren't available in this offline mirror"
+              }));
               return undefined;
             } else {
               return t.click();
