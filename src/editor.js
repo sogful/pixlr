@@ -34780,17 +34780,6 @@ var editor;
             i("edit-rotate-right", () => this.stage.rotateSelected(false));
             i("edit-flip-horizontal", () => this.stage.flipSelected(false));
             i("edit-flip-vertical", () => this.stage.flipSelected(true));
-            i("edit-preferences", () => {
-              var t;
-              if ((t = (0, a.Ay)("head-settings")) === null || t === undefined) {
-                document.dispatchEvent(new CustomEvent("notification", {
-                  detail: "preferences aren't available in this offline mirror"
-                }));
-                return undefined;
-              } else {
-                return t.click();
-              }
-            });
             i("selection-all", () => this.stage.selectionAll());
             i("selection-deselect", () => this.stage.selectionDeselect());
             i("selection-invert", () => this.stage.selectionInvert());
@@ -48781,7 +48770,10 @@ var editor;
           this.markSelected = (t = true) => {
             var e;
             if ((0, h.Ay)("layer-settings").style.display === "block") {
-              this.hideSettings();
+              const sel = this.stage && this.stage.fresco && this.stage.fresco.getSelected();
+              if (!sel || sel.id !== this.settingsId) {
+                this.hideSettings();
+              }
             }
             if (this.stage && this.stage.fresco && (0, h.Ay)("layer-panel")) {
               if (t) {
