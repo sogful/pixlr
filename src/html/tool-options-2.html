@@ -1,0 +1,300 @@
+                        <section id="focus" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/focus.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+
+                            <div id="focus-no-layer" style="display: none">
+                                <div class="tab-10">Focus only works on image layers, please select another layer.</div>
+                            </div>
+
+                            <div id="focus-settings">
+
+                                <label class="tab-10">Mode:</label>
+                                <div class="switch-icon-field tab-5">
+                                    <input type="radio" id="focus-mode-symmetric" name="focus-mode" value="symmetric"
+                                        checked="true" /><label for="focus-mode-symmetric" tooltip="Symmetric / Tilt"
+                                        flow="down"><img src="assets/images/icon/symmetric.svg" class="ic" width="20" height="20"
+                                            loading="lazy" /></label>
+                                    <input type="radio" id="focus-mode-radial" name="focus-mode" value="radial" /><label
+                                        for="focus-mode-radial" tooltip="Radial" flow="down"><img
+                                            src="assets/images/icon/radial.svg" class="ic" width="20" height="20"
+                                            loading="lazy" /></label>
+                                    <input type="radio" id="focus-mode-linear" name="focus-mode" value="linear" /><label
+                                        for="focus-mode-linear" tooltip="Linear" flow="down"><img
+                                            src="assets/images/icon/linear.svg" class="ic" width="20" height="20"
+                                            loading="lazy" /></label>
+                                    <input type="radio" id="focus-mode-none" name="focus-mode" value="none" /><label
+                                        for="focus-mode-none" tooltip="None" flow="down"><img src="assets/images/icon/none.svg"
+                                            class="ic" width="20" height="20" loading="lazy" /></label>
+                                </div>
+
+                                <div id="focus-blur-amount" class="tab-20"></div>
+
+                                <label class="tab-20">Bokeh:</label>
+                                <div id="focus-options" class="icon-drop tab-5"><img src="assets/images/icon/bokeh.svg"
+                                        class="ic" width="18" height="18" loading="lazy" /></div>
+
+                                <input type="checkbox" id="focus-invert" />
+                                <label class="tab-15 switch" for="focus-invert"><span></span>Invert</label>
+
+                                <a class="button outline tab-30" id="focus-reset"><img src="assets/images/icon/reset.svg"
+                                        class="ic" width="16" height="16">Reset</a>
+                                <a class="button outline tab-10" id="focus-apply"><img src="assets/images/icon/check.svg"
+                                        class="ic" width="16" height="16">Apply</a>
+                            </div>
+                        </section>
+
+                        <section id="frame" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/frame.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+
+                            <div id="frame-no-layer">
+                                <a class="button outline tab-10" id="frame-add-button">Add frame</a>
+                            </div>
+
+                            <div id="frame-settings">
+
+                                <a class="button outline tab-10" id="frame-browse">Set image</a>
+                                <a class="button outline tab-10" id="frame-toggle">Toggle</a>
+
+                                <label class="tab-20">Shape:</label>
+                                <div id="frame-shape" class="tab-5"></div>
+
+                                <label class="tab-20">Styles:</label>
+                                <div id="frame-styles" class="icon-drop tab-5"><img src="assets/images/icon/frame-styles.svg"
+                                        class="ic" /></div>
+
+                                <ul class="icon-button-set tab-20">
+                                    <li id="frame-add" tooltip="Add new" flow="down"><img src="assets/images/icon/add.svg"
+                                            class="ic" /></li>
+                                    <li id="frame-duplicate" tooltip="Duplicate" flow="down"><img
+                                            src="assets/images/icon/duplicate.svg" class="ic" /></li>
+                                    <li id="frame-delete" tooltip="Delete (DEL)" flow="down"><img
+                                            src="assets/images/icon/delete.svg" class="ic" /></li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <section id="gradient" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/gradient.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+
+                            <div id="gradient-no-layer">
+                                <div class="tab-10">Gradient only works on image layers, select another layer.</div>
+                            </div>
+
+                            <div id="gradient-settings">
+                                <label class="tab-10">Type:</label>
+                                <div class="switch-field tab-5">
+                                    <input type="radio" id="gradient-type-linear" name="gradient-type" value="linear"
+                                        checked /><label for="gradient-type-linear">Linear</label>
+                                    <input type="radio" id="gradient-type-radial" name="gradient-type"
+                                        value="radial" /><label for="gradient-type-radial">Radial</label>
+                                </div>
+
+                                <label class="tab-20">Gradient:</label>
+                                <div id="gradient-grad" class="tab-5"></div>
+                                <div id="gradient-opacity" class="tab-20"></div>
+
+                                <label class="tab-20">Blend:</label>
+                                <div class="select">
+                                    <select id="gradient-blend">
+                                        <option value="">None</option>
+                                        <option value="multiply">Multiply</option>
+                                        <option value="screen">Screen</option>
+                                        <option value="overlay">Overlay</option>
+                                        <option value="darken">Darken</option>
+                                        <option value="lighten">Lighten</option>
+                                        <option value="color-dodge">Color-dodge</option>
+                                        <option value="color-burn">Color-burn</option>
+                                        <option value="hard-light">Hard-light</option>
+                                        <option value="soft-light">Soft-light</option>
+                                        <option value="difference">Difference</option>
+                                        <option value="exclusion">Exclusion</option>
+                                        <option value="hue">Hue</option>
+                                        <option value="saturation">Saturation</option>
+                                        <option value="color">Color</option>
+                                        <option value="luminosity">Luminosity</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="hand" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/hand.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+
+                            <div id="hand-settings">
+                                <a class="button outline tab-10" id="hand-1x">100%</a>
+                                <a class="button outline tab-10" id="hand-fit">Fit</a>
+                                <a class="button outline tab-10" id="hand-fill">Fill</a>
+
+                                <label class="tab-20">Click and drag to move the viewport.</label>
+                            </div>
+                        </section>
+
+                        <section id="heal" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/heal.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+
+                            <div id="heal-no-layer" style="display: none">
+                                <div class="tab-10">Heal only works on image layers, select another layer.</div>
+                            </div>
+
+                            <div id="heal-settings">
+
+                                <label class="tab-10">Method:</label>
+                                <div class="switch-field tab-5">
+                                    <input type="radio" id="heal-mode-spot" name="heal-mode" value="spot"
+                                        checked="true" /><label for="heal-mode-spot">Spot</label>
+                                    <input type="radio" id="heal-mode-soft" name="heal-mode" value="soft" /><label
+                                        for="heal-mode-soft">Soft</label>
+                                    <input type="radio" id="heal-mode-object" name="heal-mode" value="object" /><label
+                                        for="heal-mode-object">Object</label>
+                                </div>
+
+                                <div id="heal-brush-size" class="range-box tab-20"></div>
+
+                                <div id="heal-presets">
+                                    <label class="tab-20">Resolve:</label>
+                                    <div class="switch-field tab-5">
+                                        <input type="radio" id="heal-preset-speed" name="heal-preset"
+                                            value="speed" /><label for="heal-preset-speed">Speed</label>
+                                        <input type="radio" id="heal-preset-balanced" name="heal-preset"
+                                            value="balanced" checked="true" /><label
+                                            for="heal-preset-balanced">Balanced</label>
+                                        <input type="radio" id="heal-preset-quality" name="heal-preset"
+                                            value="quality" /><label for="heal-preset-quality">High</label>
+                                        <input type="radio" id="heal-preset-ultra" name="heal-preset"
+                                            value="ultra" /><label for="heal-preset-ultra">Ultra</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="lasso" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/lasso.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+
+                            <div id="lasso-settings">
+
+                                <label class="tab-10">Type:</label>
+                                <div class="switch-icon-field tab-5">
+                                    <input type="radio" id="lasso-type-free" name="lasso-type" value="free"
+                                        checked="true" /><label for="lasso-type-free" tooltip="Free" flow="down"><img
+                                            src="assets/images/icon/lasso-free.svg" class="ic" /></label>
+                                    <input type="radio" id="lasso-type-polygon" name="lasso-type"
+                                        value="polygon" /><label for="lasso-type-polygon" tooltip="Polygon"
+                                        flow="down"><img src="assets/images/icon/lasso-polygon.svg" class="ic" /></label>
+                                    <input type="radio" id="lasso-type-bezier" name="lasso-type" value="bezier" /><label
+                                        for="lasso-type-bezier" tooltip="Bezier" flow="down"><img
+                                            src="assets/images/icon/lasso-bezier.svg" class="ic" /></label>
+                                    <input type="radio" id="lasso-type-magnet" name="lasso-type" value="magnet" /><label
+                                        for="lasso-type-magnet" tooltip="Magnetic" flow="down"><img
+                                            src="assets/images/icon/lasso-magnet.svg" class="ic" /></label>
+                                </div>
+
+                                <label class="tab-20">Mode:</label>
+                                <div class="switch-icon-field tab-5">
+                                    <input type="radio" id="lasso-mode-new" name="lasso-mode" value="new"
+                                        checked /><label for="lasso-mode-new" tooltip="New selection" flow="down"><img
+                                            src="assets/images/icon/selection-new.svg" class="ic" /></label>
+                                    <input type="radio" id="lasso-mode-add" name="lasso-mode" value="add" /><label
+                                        for="lasso-mode-add" tooltip="Add to selection (shift)" flow="down"><img
+                                            src="assets/images/icon/selection-add.svg" class="ic" /></label>
+                                    <input type="radio" id="lasso-mode-remove" name="lasso-mode" value="remove" /><label
+                                        for="lasso-mode-remove" tooltip="Remove from selection (ctrl)" flow="down"><img
+                                            src="assets/images/icon/selection-remove.svg" class="ic" /></label>
+                                </div>
+
+                                <div id="lasso-magnet-settings">
+                                    <div id="lasso-magnet-size" class="tab-20"></div>
+                                </div>
+
+                                <div id="lasso-feather" class="tab-20"></div>
+
+                                <input type="checkbox" id="lasso-anti-alias" checked="true" />
+                                <label class="switch tab-25" for="lasso-anti-alias"><span></span>Anti-alias</label>
+                            </div>
+                        </section>
+
+                        <section id="liquify" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/liquify.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+
+                            <div id="liquify-no-layer" style="display: none">
+                                <div class="tab-10">Liquify only works on image layers, select another layer.</div>
+                            </div>
+
+                            <div id="liquify-settings">
+
+                                <label class="tab-10">Method:</label>
+                                <div class="switch-icon-field tab-5">
+                                    <input type="radio" id="liquify-mode-move" name="liquify-mode" value="MOVE"
+                                        checked /><label for="liquify-mode-move" tooltip="Push" flow="down"><img
+                                            src="assets/images/icon/liquify-push.svg" class="ic" /></label>
+                                    <input type="radio" id="liquify-mode-grow" name="liquify-mode" value="GROW" /><label
+                                        for="liquify-mode-grow" tooltip="Enlarge" flow="down"><img
+                                            src="assets/images/icon/liquify-grow.svg" class="ic" /></label>
+                                    <input type="radio" id="liquify-mode-shrink" name="liquify-mode"
+                                        value="SHRINK" /><label for="liquify-mode-shrink" tooltip="Shrink"
+                                        flow="down"><img src="assets/images/icon/liquify-shrink.svg" class="ic" /></label>
+                                    <input type="radio" id="liquify-mode-swirl-cw" name="liquify-mode"
+                                        value="SWIRL-CW" /><label for="liquify-mode-swirl-cw" tooltip="Swirl right"
+                                        flow="down"><img src="assets/images/icon/liquify-swirl-right.svg" class="ic" /></label>
+                                    <input type="radio" id="liquify-mode-swirl-ccw" name="liquify-mode"
+                                        value="SWIRL-CCW" /><label for="liquify-mode-swirl-ccw" tooltip="swirlLeft"
+                                        flow="down"><img src="assets/images/icon/liquify-swirl-left.svg" class="ic" /></label>
+                                    <input type="radio" id="liquify-mode-restore" name="liquify-mode"
+                                        value="ERASE" /><label for="liquify-mode-restore" tooltip="Restore"
+                                        flow="down"><img src="assets/images/icon/liquify-restore.svg" class="ic" /></label>
+                                </div>
+
+                                <div id="liquify-brush-size" class="tab-20"></div>
+                                <div id="liquify-brush-strength" class="tab-20"></div>
+                                <div id="liquify-brush-density" class="tab-20"></div>
+
+                                <input type="checkbox" id="liquify-hq-preview" />
+                                <label class="switch tab-25" for="liquify-hq-preview"><span></span>High quality
+                                    preview</label>
+
+                            </div>
+
+                        </section>
+
+                        <section id="marquee" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/marquee.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+
+                            <div id="marquee-settings">
+
+                                <label class="tab-10">Type:</label>
+                                <div class="switch-icon-field tab-5">
+                                    <input type="radio" id="marquee-type-rectangle" name="marquee-type"
+                                        value="rectangle" checked="true" /><label for="marquee-type-rectangle"
+                                        tooltip="Rectangle" flow="down"><img src="assets/images/icon/rectangle.svg"
+                                            class="ic" /></label>
+                                    <input type="radio" id="marquee-type-ellipse" name="marquee-type"
+                                        value="ellipse" /><label for="marquee-type-ellipse" tooltip="Ellipse"
+                                        flow="down"><img src="assets/images/icon/ellipse.svg" class="ic" /></label>
+                                </div>
+
+                                <label class="tab-20">Mode:</label>
+                                <div class="switch-icon-field tab-5">
+                                    <input type="radio" id="marquee-mode-new" name="marquee-mode" value="new"
+                                        checked /><label for="marquee-mode-new" tooltip="New selection" flow="down"><img
+                                            src="assets/images/icon/selection-new.svg" class="ic" /></label>
+                                    <input type="radio" id="marquee-mode-add" name="marquee-mode" value="add" /><label
+                                        for="marquee-mode-add" tooltip="Add to selection (shift)" flow="down"><img
+                                            src="assets/images/icon/selection-add.svg" class="ic" /></label>
+                                    <input type="radio" id="marquee-mode-remove" name="marquee-mode"
+                                        value="remove" /><label for="marquee-mode-remove"
+                                        tooltip="Remove from selection (ctrl)" flow="down"><img
+                                            src="assets/images/icon/selection-remove.svg" class="ic" /></label>
+                                </div>
+
+                                <div id="marquee-feather" class="range-box tab-20"></div>
+
+                                <input type="checkbox" id="marquee-anti-alias" checked="true" />
+                                <label class="switch tab-25" for="marquee-anti-alias"><span></span>Anti-alias</label>
+                            </div>
+                        </section>

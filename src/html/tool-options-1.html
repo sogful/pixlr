@@ -1,0 +1,500 @@
+                        <section id="arrange" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/arrange.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+
+                            <div id="arrange-settings">
+
+                                <div id="arrange-apect-holder">
+                                    <label class="tab-10">Aspect:</label>
+                                    <div class="switch-field tab-5" flow="down">
+                                        <input type="radio" id="arrange-aspect-fixed" name="arrange-aspect"
+                                            value="fixed" checked="true" /><label
+                                            for="arrange-aspect-fixed">Fixed</label>
+                                        <input type="radio" id="arrange-aspect-free" name="arrange-aspect"
+                                            value="free" /><label for="arrange-aspect-free">Free</label>
+                                    </div>
+                                </div>
+
+                                <label class="tab-20">Pos:</label>
+                                <div class="input-label tab-5"><span>X</span><input type="number" id="arrange-left">
+                                </div>
+                                <div class="input-label tab-10"><span>Y</span><input type="number" id="arrange-top">
+                                </div>
+
+                                <label class="tab-20">Size:</label>
+                                <div class="input-label tab-5"><span>W</span><input type="number" id="arrange-width">
+                                </div>
+                                <div id="arrange-aspect-icon" style="cursor:pointer"><img src="assets/images/icon/locked.svg"
+                                        id="arrange-size-lock" width="12" height="12" loading="lazy"
+                                        class="tiny-icon ic"><img src="assets/images/icon/x.svg" id="arrange-size-vs" width="12"
+                                        height="12" loading="lazy" class="tiny-icon ic"></div>
+                                <div class="input-label"><span>H</span><input type="number" class="tab-0"
+                                        id="arrange-height"></div>
+
+                                <ul id="arrange-rotate" class="icon-button-set tab-20">
+                                    <li id="arrange-rotate-left" tooltip="Rotate left" flow="down"><img
+                                            src="assets/images/icon/rotate-left.svg" class="ic" width="18" height="18"
+                                            loading="lazy"></li>
+                                    <li id="arrange-rotate-right" tooltip="Rotate right" flow="down"><img
+                                            src="assets/images/icon/rotate-right.svg" class="ic" width="18" height="18"
+                                            loading="lazy"></li>
+                                    <li id="arrange-flip-horizontal" tooltip="Flip horizontal" flow="down"><img
+                                            src="assets/images/icon/flip-horizontal.svg" class="ic" width="18" height="18"
+                                            loading="lazy"></li>
+                                    <li id="arrange-flip-vertical" tooltip="Flip vertical" flow="down"><img
+                                            src="assets/images/icon/flip-vertical.svg" class="ic" width="18" height="18"
+                                            loading="lazy"></li>
+                                </ul>
+
+                                <ul class="icon-button-set tab-20">
+                                    <li id="arrange-duplicate" tooltip="Duplicate (Ctrl+D)" flow="down" class="tab-10">
+                                        <img src="assets/images/icon/duplicate.svg" class="ic" width="18" height="18"
+                                            loading="lazy" /></li>
+                                    <li id="arrange-delete" tooltip="Delete (DEL)" flow="down"><img
+                                            src="assets/images/icon/delete.svg" class="ic" width="18" height="18"
+                                            loading="lazy" /></li>
+                                </ul>
+
+                                <div class="tab-20" tooltip="Tool settings" flow="down">
+                                    <div id="arrange-tool-settings" class="icon-drop"><img src="assets/images/icon/settings.svg"
+                                            class="ic" width="18" height="18" loading="lazy" /></div>
+                                </div>
+                            </div>
+
+                            <div id="arrange-selection" style="display: none;">
+
+                                <a class="button outline tab-10" id="arrange-selection-transform"><img
+                                        src="assets/images/tool/transform.svg" class="ic" width="16" height="16">Transform</a>
+                                <a class="button outline tab-10" id="arrange-selection-distort"><img
+                                        src="assets/images/tool/distort.svg" class="ic" width="16" height="16">Distort</a>
+
+                                <div class="tab-20">Active selection, drag to move/cut selected area.</div>
+                            </div>
+
+                            <div id="arrange-selection-locked" style="display: none;">
+                                <a class="button outline tab-10" id="arrange-rasterize"
+                                    tooltip="Convert text/element to image" flow="down">Rasterize</a>
+                                <div class="tab-20">Active selection, can not change Text, Shape or Element layer or a
+                                    Group.</div>
+                            </div>
+
+                            <div id="arrange-no-layer" style="display: none;">
+                                <a class="button outline tab-10" id="arrange-convert"><img src="assets/images/icon/locked.svg"
+                                        class="ic" width="16" height="16">Unlock</a>
+                                <a class="button outline tab-10" id="arrange-duplicate-button"><img
+                                        src="assets/images/icon/duplicate.svg" class="ic" width="16" height="16">Duplicate</a>
+
+                                <div class="tab-20">Layer is locked in position, unlock to enable transforms.</div>
+                            </div>
+
+                            <div id="arrange-no-layer" style="display: none;">
+                                <div class="tab-10">No layer (or empty layer), select a layer in the right hand layer
+                                    bar.</div>
+                            </div>
+                        </section>
+
+                        <section id="clone" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/clone.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+
+                            <div id="clone-no-layer" style="display: none">
+                                <div class="tab-10">Clone only works on image layers, please select another layer.</div>
+                            </div>
+
+                            <div id="clone-settings">
+                                <label class="tab-10">Mode:</label>
+                                <div class="switch-field tab-5" tooltip="Select source or paint (Shift)" flow="down">
+                                    <input type="radio" id="clone-mode-paint" name="clone-mode" value="paint" /><label
+                                        for="clone-mode-paint">Paint</label>
+                                    <input type="radio" id="clone-mode-source" name="clone-mode" value="source"
+                                        checked="true" /><label for="clone-mode-source">Source</label>
+                                </div>
+                                <label class="tab-20">Brush:</label>
+                                <div id="clone-brush"></div>
+
+                                <div id="clone-opacity" class="tab-20"></div>
+
+                                <input type="checkbox" id="clone-aligned" />
+                                <label class="switch tab-25" for="clone-aligned"
+                                    tooltip="Aligned source beetween paints" flow="down"><span></span>Aligned</label>
+
+                                <input type="checkbox" id="clone-sample-all">
+                                <label class="tab-20 switch" for="clone-sample-all"><span></span>Sample all
+                                    layers</label>
+                            </div>
+                        </section>
+
+                        <section id="crop" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/crop.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+                            <div id="crop-content" class="content">
+
+                                <label class="tab-10">Width:</label><input type="number" id="crop-width" />
+                                <label class="tab-10">Height:</label><input type="number" id="crop-height" />
+
+                                <div id="crop-straighten" class="range-box tab-20"></div>
+
+                                <label class="tab-20">Constraint:</label>
+                                <div class="switch-field tab-5">
+                                    <input type="radio" id="crop-constraint-free" name="crop-constraint-mode"
+                                        value="free" checked="true" /><label for="crop-constraint-free">Free</label>
+                                    <input type="radio" id="crop-constraint-ratio" name="crop-constraint-mode"
+                                        value="ratio" /><label for="crop-constraint-ratio">Ratio</label>
+                                    <input type="radio" id="crop-constraint-size" name="crop-constraint-mode"
+                                        value="size" /><label for="crop-constraint-size">Size</label>
+                                </div>
+
+                                <div class="tab-10" id="crop-constraint-settings" style="display: flex">
+
+                                    <label class="tab-10">W:</label><input type="number" id="crop-constraint-width"
+                                        value="1" />
+                                    <label class="tab-10">H:</label><input type="number" id="crop-constraint-height"
+                                        value="1" />
+
+                                    <label class="tab-20">Preset:</label>
+                                    <div class="select tab-5">
+                                        <select id="crop-constraint-preset">
+                                            <option value="0:0">None</option>
+                                            <option value="" disabled>Fixed ratio:</option>
+                                            <option value="x:y">Original</option>
+                                            <option value="1:1" selected>1:1 (Square)</option>
+                                            <option value="4:3">4:3 (Monitor)</option>
+                                            <option value="14:9">14:9</option>
+                                            <option value="16:9">16:9 (Widescreen)</option>
+                                            <option value="16:10">16:10</option>
+                                            <option value="2:1">2:1</option>
+                                            <option value="3:1">3:1 (Panorama)</option>
+                                            <option value="4:1">4:1</option>
+                                            <option value="3:2">3:2 (35mm film)</option>
+                                            <option value="5:4">5:4</option>
+                                            <option value="7:5">7:5</option>
+                                            <option value="19:10">19:10</option>
+                                            <option value="21:9">21:9 (Cinemascope)</option>
+                                            <option value="32:9">32:9 (Super ultra wide)</option>
+                                            <option value="" disabled>Output size:</option>
+                                            <option value="180:180">Facebook profile</option>
+                                            <option value="851:315">Facebook cover</option>
+                                            <option value="1200:900">Facebook post</option>
+                                            <option value="1280:720">Facebook ad</option>
+                                            <option value="180:180">Instagram profile</option>
+                                            <option value="1080:1080">Instagram post</option>
+                                            <option value="1080:1920">Instagram story</option>
+                                            <option value="150:150">Twitter profile</option>
+                                            <option value="1500:500">Twitter header</option>
+                                            <option value="1024:512">Twitter image</option>
+                                            <option value="1200:628">Twitter card</option>
+                                            <option value="1200:675">Twitter ad</option>
+                                            <option value="800:800">Youtube profile</option>
+                                            <option value="2560:1440">Youtube channel art</option>
+                                            <option value="1280:720">Youtube thumb</option>
+                                            <option value="1024:768">Web mini 1024x768</option>
+                                            <option value="1280:800">Web small 1280x800</option>
+                                            <option value="1366:768">Web common 1366x768</option>
+                                            <option value="1440:900">Web medium 1440x900</option>
+                                            <option value="1920:1080">Full HD 1920x1080</option>
+                                            <option value="3840:2160">Ultra HD 4x 3840x2160</option>
+                                            <option value="2480:3508">paper A4</option>
+                                            <option value="1748:2480">Paper A5</option>
+                                            <option value="1280:1748">Paper A6</option>
+                                            <option value="2400:3300">Paper letter</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+                                <a class="button small outline tab-30" id="crop-reset"><img src="assets/images/icon/reset.svg"
+                                        class="ic" width="16" height="16">Reset</a>
+                                <a class="button small outline tab-10" id="crop-apply"><img src="assets/images/icon/check.svg"
+                                        class="ic" width="16" height="16">Apply</a>
+                            </div>
+                        </section>
+
+                        <section id="cutout" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/cutout.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+
+                            <div id="cutout-no-layer" style="display: none">
+                                <div class="tab-10">Select a image layer or rasterize text / element to create a mask
+                                    on.</div>
+                            </div>
+
+                            <div id="cutout-sub-tools">
+
+                                
+
+                                <label class="tab-20">Tool:</label>
+                                <div class="switch-icon-field tab-5">
+                                    <input type="radio" id="cutout-type-shape" name="cutout-type" value="shape"
+                                        checked /><label for="cutout-type-shape" tooltip="Shape mask" flow="down"><img
+                                            src="assets/images/tool/shape.svg" class="ic" /></label>
+                                    <input type="radio" id="cutout-type-magic" name="cutout-type" value="magic" /><label
+                                        for="cutout-type-magic" tooltip="Magic mask" flow="down"><img
+                                            src="assets/images/tool/wand.svg" class="ic" /></label>
+                                    <input type="radio" id="cutout-type-draw" name="cutout-type" value="draw" /><label
+                                        for="cutout-type-draw" tooltip="Draw mask" flow="down"><img
+                                            src="assets/images/tool/draw.svg" class="ic" /></label>
+                                    <input type="radio" id="cutout-type-lasso" name="cutout-type" value="lasso" /><label
+                                        for="cutout-type-lasso" tooltip="Lasso mask" flow="down"><img
+                                            src="assets/images/tool/lasso.svg" class="ic" /></label>
+                                    <input type="radio" id="cutout-type-gradient" name="cutout-type"
+                                        value="gradient" /><label for="cutout-type-gradient" tooltip="Gradient mask"
+                                        flow="down"><img src="assets/images/tool/gradient.svg" class="ic" /></label>
+                                </div>
+
+                                <label class="tab-20">Mode:</label>
+                                <div class="switch-icon-field tab-5">
+                                    <input type="radio" id="cutout-mode-keep" name="cutout-mode" value="keep"
+                                        checked /><label for="cutout-mode-keep" tooltip="Add to mask" flow="down"><img
+                                            src="assets/images/icon/selection-add.svg" class="ic" /></label>
+                                    <input type="radio" id="cutout-mode-remove" name="cutout-mode"
+                                        value="remove" /><label for="cutout-mode-remove" tooltip="remove from mask"
+                                        flow="down"><img src="assets/images/icon/selection-remove.svg" class="ic" /></label>
+                                </div>
+
+                                <div id="cutout-magic-settings" class="tab-20">
+
+                                    <div id="cutout-magic-tolerance" class="range-box"></div>
+                                    <div id="cutout-magic-feather" class="range-box tab-20"></div>
+
+                                    <input type="checkbox" id="cutout-magic-contiguous" checked>
+                                    <label class="tab-20 switch"
+                                        for="cutout-magic-contiguous"><span></span>Contiguous</label>
+                                </div>
+
+                                <div id="cutout-draw-settings" class="tab-20" style="display: none;">
+                                    <label>Brush:</label>
+                                    <div id="cutout-draw-brush"></div>
+                                    <div id="cutout-draw-opacity" class="range-box tab-20"></div>
+                                </div>
+
+                                <div id="cutout-lasso-settings" class="tab-20" style="display: none;">
+                                    <div id="cutout-lasso-feather" class="range-box"></div>
+                                </div>
+
+                                <div id="cutout-shape-settings" class="tab-20" style="display: none;">
+
+                                    <label>Shape:</label>
+                                    <div class="switch-icon-field tab-5">
+                                        <input type="radio" id="cutout-shape-type-rectangle" name="cutout-shape-type"
+                                            value="rectangle" checked="true" /><label for="cutout-shape-type-rectangle"
+                                            tooltip="Rectangle" flow="down"><img src="assets/images/icon/shape-rectangle.svg"
+                                                class="ic" /></label>
+                                        <input type="radio" id="cutout-shape-type-ellipse" name="cutout-shape-type"
+                                            value="ellipse" /><label for="cutout-shape-type-ellipse" tooltip="Circle"
+                                            flow="down"><img src="assets/images/icon/shape-ellipse.svg" class="ic" /></label>
+                                        <input type="radio" id="cutout-shape-type-line" name="cutout-shape-type"
+                                            value="line" /><label for="cutout-shape-type-line" tooltip="Line"
+                                            flow="down"><img src="assets/images/icon/shape-line.svg" class="ic" /></label>
+                                    </div>
+
+                                    <div id="cutout-shape-feather" class="range-box tab-20"></div>
+                                </div>
+
+                                <div id="cutout-gradient-settings" class="tab-20" style="display: none;">
+                                    <label>Type:</label>
+                                    <div class="switch-field tab-5">
+                                        <input type="radio" id="cutout-gradient-type-linear" name="cutout-gradient-type"
+                                            value="linear" checked /><label
+                                            for="cutout-gradient-type-linear">Linear</label>
+                                        <input type="radio" id="cutout-gradient-type-radial" name="cutout-gradient-type"
+                                            value="radial" /><label for="cutout-gradient-type-radial">Radial</label>
+                                    </div>
+                                    <div class="tab-20" id="cutout-gradient-grad"></div>
+                                </div>
+
+                                <input type="checkbox" id="cutout-show-ghost">
+                                <label class="tab-25 switch" for="cutout-show-ghost"><span></span>Hint removed</label>
+
+                                <div class="tab-20">
+                                    <div id="cutout-tool-more" class="icon-drop"><img src="assets/images/icon/three-dot.svg"
+                                            class="ic" /> </div>
+                                </div>
+
+                            </div>
+                        </section>
+
+                        <section id="detail" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/detail.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+
+                            <div id="detail-no-layer" style="display: none">
+                                <div class="tab-10">Blur / sharpen and smudge only works on image layers (or non empty
+                                    layers), select another layer.</div>
+                            </div>
+
+                            <div id="detail-settings">
+
+                                <label class="tab-10">Mode:</label>
+                                <div class="switch-field tab-5">
+                                    <input type="radio" id="detail-mode-blur" name="detail-mode" value="blur"
+                                        checked /><label for="detail-mode-blur">Blur</label>
+                                    <input type="radio" id="detail-mode-sharpen" name="detail-mode"
+                                        value="sharpen" /><label for="detail-mode-sharpen">Sharpen</label>
+                                    <input type="radio" id="detail-mode-smudge" name="detail-mode"
+                                        value="smudge" /><label for="detail-mode-smudge">Smudge</label>
+                                </div>
+                                <label class="tab-20">Brush:</label>
+                                <div id="detail-brush"></div>
+
+                                <div id="detail-strength" class="range-box tab-20"></div>
+
+                            </div>
+                        </section>
+
+                        <section id="disperse" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/disperse.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+
+                            <div id="disperse-no-layer" style="display: none">
+                                <div class="tab-10">Disperse only works on image layers, please select another layer.
+                                </div>
+                            </div>
+
+                            <div id="disperse-settings">
+                                <label class="tab-10">Mode:</label>
+                                <div class="switch-field tab-5">
+                                    <input type="radio" id="disperse-mode-mask" name="disperse-mode" value="mask"
+                                        checked="true" /><label for="disperse-mode-mask">Mask</label>
+                                    <input type="radio" id="disperse-mode-effect" name="disperse-mode"
+                                        value="effect" /><label for="disperse-mode-effect">Effect</label>
+                                </div>
+
+                                <div id="disperse-mask-settings">
+                                    <div id="disperse-brush-size" class="tab-20"></div>
+                                </div>
+                                <div id="disperse-effect-settings" style="display:none;">
+
+                                    <label class="tab-20">Shape:</label>
+                                    <div class="switch-icon-field tab-5">
+                                        <input type="radio" id="disperse-type-circle" name="disperse-type"
+                                            value="circle" checked="true" /><label for="disperse-type-circle"
+                                            tooltip="Circle" flow="down"><img src="assets/images/icon/shape-ellipse.svg"
+                                                class="ic" width="20" height="20" loading="lazy" /></label>
+                                        <input type="radio" id="disperse-type-hexagon" name="disperse-type"
+                                            value="hexagon" /><label for="disperse-type-hexagon" tooltip="Hexagon"
+                                            flow="down"><img src="assets/images/icon/shape-hexagon.svg" class="ic" width="20"
+                                                height="20" loading="lazy" /></label>
+                                        <input type="radio" id="disperse-type-square" name="disperse-type"
+                                            value="square" /><label for="disperse-type-square" tooltip="Square"
+                                            flow="down"><img src="assets/images/icon/shape-rectangle.svg" class="ic" width="20"
+                                                height="20" loading="lazy" /></label>
+                                        <input type="radio" id="disperse-type-triangle" name="disperse-type"
+                                            value="triangle" /><label for="disperse-type-triangle" tooltip="Triangle"
+                                            flow="down"><img src="assets/images/icon/shape-triangle.svg" class="ic" width="20"
+                                                height="20" loading="lazy" /></label>
+                                        <input type="radio" id="disperse-type-heart" name="disperse-type"
+                                            value="heart" /><label for="disperse-type-heart" tooltip="Heart"
+                                            flow="down"><img src="assets/images/icon/shape-heart.svg" class="ic" width="20"
+                                                height="20" loading="lazy" /></label>
+                                        <input type="radio" id="disperse-type-cross" name="disperse-type"
+                                            value="cross" /><label for="disperse-type-cross" tooltip="Cross"
+                                            flow="down"><img src="assets/images/icon/shape-cross.svg" class="ic" width="20"
+                                                height="20" loading="lazy" /></label>
+                                        <input type="radio" id="disperse-type-star" name="disperse-type"
+                                            value="star" /><label for="disperse-type-star" tooltip="Star"
+                                            flow="down"><img src="assets/images/icon/shape-star.svg" class="ic" width="20"
+                                                height="20" loading="lazy" /></label>
+                                        <input type="radio" id="disperse-type-glimmer" name="disperse-type"
+                                            value="glimmer" /><label for="disperse-type-glimmer" tooltip="Glimmer"
+                                            flow="down"><img src="assets/images/icon/shape-glimmer.svg" class="ic" width="20"
+                                                height="20" loading="lazy" /></label>
+                                    </div>
+
+                                    <label class="tab-20">Options:</label>
+                                    <div id="disperse-options" class="icon-drop tab-5"><img
+                                            src="assets/images/icon/disperse-options.svg" class="ic" width="18" height="18"
+                                            loading="lazy" /></div>
+
+                                    <a class="button outline tab-30" id="disperse-reset"><img src="assets/images/icon/reset.svg"
+                                            class="ic" width="16" height="16">Reset</a>
+                                    <a class="button outline tab-10" id="disperse-apply"><img src="assets/images/icon/check.svg"
+                                            class="ic" width="16" height="16">Apply</a>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="draw" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/draw.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+
+                            <div id="draw-no-layer">
+                                <div class="tab-10">Select a image layer in the layer list or add a new empty layer
+                                </div>
+                            </div>
+
+                            <div id="draw-settings">
+
+                                <label class="tab-10">Brush:</label>
+                                <div id="draw-brush"></div>
+
+                                <div id="draw-opacity" class="tab-20"></div>
+                                <div id="draw-flow" class="tab-20"></div>
+
+                                <label class="tab-20">Mirror:</label>
+                                <div class="select">
+                                    <select id="draw-mirror">
+                                        <option value="none" selected>None</option>
+                                        <option value="vertical">Vertical</option>
+                                        <option value="horizontal">Horizontal</option>
+                                        <option value="fourway">Four way</option>
+                                    </select>
+                                </div>
+
+                                <input id="draw-scatter" type="checkbox" />
+                                <label class="switch tab-25" for="draw-scatter"><span></span>Scatter</label>
+
+                                <input id="draw-hard-tip" type="checkbox" />
+                                <label class="switch tab-20" for="draw-hard-tip"><span></span>Hard tip</label>
+
+                                <input id="draw-pen-pressure" type="checkbox" checked="true" />
+                                <label class="switch tab-20" for="draw-pen-pressure"><span></span>Use pen
+                                    pressure</label>
+
+                            </div>
+                        </section>
+
+                        <section id="eraser" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/eraser.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+
+                            <div id="eraser-no-layer">
+                                <div class="tab-10">You can only erase from image layers, select another layer.</div>
+                            </div>
+
+                            <div id="eraser-settings">
+
+                                <label class="tab-10">Brush:</label>
+                                <div id="eraser-brush"></div>
+
+                                <div id="eraser-opacity" class="tab-20"></div>
+                                <div id="eraser-flow" class="tab-20"></div>
+
+                                <input id="eraser-hard-tip" type="checkbox" />
+                                <label class="switch tab-25" for="eraser-hard-tip"><span></span>Hard tip</label>
+
+                                <input id="eraser-pen-pressure" type="checkbox" checked="true" />
+                                <label class="switch tab-20" for="eraser-pen-pressure"><span></span>Use pen
+                                    pressure</label>
+                            </div>
+                        </section>
+
+                        <section id="fill" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/fill.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+
+                            <div id="fill-no-layer" style="display: none">
+                                <div class="tab-10">Fill only works on image layers, select another layer.</div>
+                            </div>
+
+                            <div id="fill-settings">
+
+                                <div id="fill-tolerance" class="tab-10"></div>
+                                <div id="fill-opacity" class="tab-20"></div>
+
+                                <input type="checkbox" id="fill-anti-alias" checked>
+                                <label class="tab-25 switch" for="fill-anti-alias"><span></span>Anti-alias</label>
+
+                                <input type="checkbox" id="fill-contiguous" checked>
+                                <label class="tab-20 switch" for="fill-contiguous"><span></span>Contiguous</label>
+                            </div>
+                        </section>

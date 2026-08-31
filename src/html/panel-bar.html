@@ -1,0 +1,115 @@
+            <section id="panel-bar">
+                
+
+                <div id="layer-panel" class="panel active">
+                    <div id="layer-panel-title" class="title">
+                        Layers
+                        <span id="layer-minimize" class="minimize ic"></span>
+                        <span id="layer-close" class="close ic"></span>
+                    </div>
+                    <div class="splitter small" style="margin-bottom:4px;position:relative;">
+                        <!--Set it here due to title events -->
+                        <div id="layer-panel-more" tooltip="Settings" flow="left" class="icon-button">
+                            <img src="assets/images/icon/three-dot.svg" class="ic" width="18" height="18" loading="lazy">
+                        </div>
+
+                        <!-- floating stuff -->
+                        <div id="layer-settings">
+
+                            <img id="layer-settings-close" class="close ic" style="top:2px;right:2px;"
+                                src="assets/images/icon/close.svg" width="14" height="14" loading="lazy">
+
+                            <label class="top-4">Name</label>
+                            <input type="text" id="layer-settings-name" maxlength="50" style="width:100%"
+                                autocomplete="none">
+
+                            <label class="top-10">Blend Mode</label>
+                            <div class="select top-0">
+                                <select id="layer-settings-blend-mode">
+                                    <option value="">None</option>
+                                    <option value="multiply">Multiply</option>
+                                    <option value="screen">Screen</option>
+                                    <option value="lighter">Lighter</option>
+                                    <option value="overlay">Overlay</option>
+                                    <option value="darken">Darken</option>
+                                    <option value="lighten">Lighten</option>
+                                    <option value="color-dodge">Color-dodge</option>
+                                    <option value="color-burn">Color-burn</option>
+                                    <option value="hard-light">Hard-light</option>
+                                    <option value="soft-light">Soft-light</option>
+                                    <option value="difference">Difference</option>
+                                    <option value="exclusion">Exclusion</option>
+                                    <option value="hue">Hue</option>
+                                    <option value="saturation">Saturation</option>
+                                    <option value="color">Color</option>
+                                    <option value="luminosity">Luminosity</option>
+                                    <option value="destination-out">Alpha / Erase</option>
+                                    <option value="destination-in">Mask</option>
+                                </select>
+                            </div>
+
+                            <div id="layer-settings-opacity" class="top-10"></div>
+
+                            <div class="switch-field stretch top-10">
+                                <input type="radio" id="layer-settings-locked-false" name="layer-settings-locked"
+                                    value="false" /><label for="layer-settings-locked-false">Unlocked</label>
+                                <input type="radio" id="layer-settings-locked-true" name="layer-settings-locked"
+                                    value="true" /><label for="layer-settings-locked-true">Locked</label>
+                            </div>
+                            <div class="switch-field stretch top-10">
+                                <input type="radio" id="layer-settings-visible-true" name="layer-settings-visible"
+                                    value="true" /><label for="layer-settings-visible-true">Visible</label>
+                                <input type="radio" id="layer-settings-visible-false" name="layer-settings-visible"
+                                    value="false" /><label for="layer-settings-visible-false">Hidden</label>
+                            </div>
+
+                            <ul class="icon-button-set reverse top-20">
+                                <li id="layer-settings-merge-down" tooltip="Merge down" flow="up"><img
+                                        src="assets/images/icon/merge-down.svg" class="ic" width="18" height="18"
+                                        loading="lazy" /></li>
+                                <li id="layer-settings-merge-visible" tooltip="Merge visible" flow="up"><img
+                                        src="assets/images/icon/merge-visible.svg" class="ic" width="18" height="18"
+                                        loading="lazy" /></li>
+                                <li id="layer-settings-merge-flatten" tooltip="Flatten image" flow="up"><img
+                                        src="assets/images/icon/merge-flatten.svg" class="ic" width="18" height="18"
+                                        loading="lazy" /></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div id="layer-panel-content">
+                        <div id="layer-list">
+
+                        </div>
+                    </div>
+                    <ul id="layer-panel-bottom" class="icon-button-set">
+                        <li id="layer-panel-link" style="margin-right:auto;display:none;" tooltip="Link"
+                            flow="up-right"><img src="assets/images/icon/link.svg" class="ic" width="16" height="16"
+                                loading="lazy"></li>
+                        <li id="layer-panel-group" style="display:none" tooltip="group" flow="up-left"><img
+                                src="assets/images/icon/group.svg" class="ic" width="16" height="16" loading="lazy"></li>
+                        <li id="layer-panel-add"><img src="assets/images/icon/add.svg" class="ic" width="16" height="16"
+                                loading="lazy">
+                            <ul>
+                                <li id="layer-panel-add-text" data="text"><img src="assets/images/tool/text.svg" width="18"
+                                        height="18" loading="lazy" class="ic" />Text</li>
+                                <li id="layer-panel-add-shape" data="shape"><img src="assets/images/tool/shape.svg" width="18"
+                                        height="18" loading="lazy" class="ic" />Shape</li>
+                                <li id="layer-panel-add-frame" data="frame"><img src="assets/images/tool/frame.svg" width="18"
+                                        height="18" loading="lazy" class="ic" />Frame</li>
+                                <li id="layer-panel-add-image" data="image"><img src="assets/images/tool/image.svg" width="18"
+                                        height="18" loading="lazy" class="ic" />Image</li>
+                                <li id="layer-panel-add-empty" data="empty"><img src="assets/images/tool/empty.svg" width="18"
+                                        height="18" loading="lazy" class="ic" />Empty</li>
+                            </ul>
+                        </li>
+                        <li id="layer-panel-copy" tooltip="Duplicate (Ctrl+D)" flow="up-left"><img
+                                src="assets/images/icon/duplicate.svg" class="ic" width="16" height="16" loading="lazy"></li>
+                        <li id="layer-panel-delete" tooltip="Delete (DEL)" flow="up-left"><img
+                                src="assets/images/icon/delete.svg" class="ic" width="16" height="16" loading="lazy"></li>
+                    </ul>
+                </div>
+
+                
+
+            </section>

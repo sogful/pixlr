@@ -1,0 +1,389 @@
+                        <section id="pen" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/pen.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+
+                            <div id="pen-no-layer">
+                                <div class="tab-10">Pen only works on image layers, select another layer.</div>
+                            </div>
+
+                            <div id="pen-settings">
+
+                                <label class="tab-10">Variant:</label>
+                                <div class="select">
+                                    <select id="pen-mode">
+                                        <option value="plain">Plain</option>
+                                        <option value="neon">Neon</option>
+                                        <option value="sketchy" selected>Sketchy</option>
+                                        <option value="parallel">Parallel</option>
+                                        <option value="trail">Trail</option>
+                                        <option value="shaded">Shaded</option>
+                                        <option value="furry">Furry</option>
+                                        <option value="crayon">Crayon</option>
+                                        <option value="ink">Ink</option>
+                                    </select>
+                                </div>
+
+                                <div id="pen-size" class="tab-20"></div>
+                                <div id="pen-amount" class="tab-20"></div>
+                                <div id="pen-opacity" class="tab-20"></div>
+
+                            </div>
+                        </section>
+
+                        <section id="picker" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/picker.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+
+                            <div id="picker-settings">
+
+                                <label class="tab-10">Target:</label>
+                                <div class="switch-field tab-5">
+                                    <input type="radio" id="picker-target-main" name="picker-target" value="main"
+                                        checked="true" /><label for="picker-target-main">Main</label>
+                                    <input type="radio" id="picker-target-alt" name="picker-target" value="alt" /><label
+                                        for="picker-target-alt">Alter</label>
+                                </div>
+
+                                <label class="tab-20">Shades:</label>
+                                <div class="color-pod small " id="picker-shade-1"></div>
+                                <div class="color-pod small " id="picker-shade-2"></div>
+                                <div class="color-pod small " id="picker-shade-3"></div>
+                                <div class="color-pod small " id="picker-shade-4"></div>
+                                <div class="color-pod small " id="picker-shade-5"></div>
+
+                                <label class="tab-20">Triadic:</label>
+                                <div class="color-pod small " id="picker-triad-1"></div>
+                                <div class="color-pod small " id="picker-triad-2"></div>
+                                <div class="color-pod small " id="picker-triad-3"></div>
+
+                                <label class="tab-20">Tetradic:</label>
+                                <div class="color-pod small " id="picker-tetra-1"></div>
+                                <div class="color-pod small " id="picker-tetra-2"></div>
+                                <div class="color-pod small " id="picker-tetra-3"></div>
+                                <div class="color-pod small " id="picker-tetra-4"></div>
+
+                                <label class="tab-20">Analogous:</label>
+                                <div class="color-pod small " id="picker-analo-1"></div>
+                                <div class="color-pod small " id="picker-analo-2"></div>
+                                <div class="color-pod small " id="picker-analo-3"></div>
+
+                                <label class="tab-20">Complement:</label>
+                                <div class="color-pod small " id="picker-comp-1"></div>
+                                <div class="color-pod small " id="picker-comp-2"></div>
+                            </div>
+                        </section>
+
+                        <section id="replace" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/replace.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+
+                            <div id="replace-no-layer">
+                                <div class="tab-10">Select a image layer in the layer list or add a new empty layer.
+                                </div>
+                            </div>
+
+                            <div id="replace-settings">
+
+                                <label class="tab-10">Brush:</label>
+                                <div id="replace-brush"></div>
+
+                                <label class="tab-20">Mode:</label>
+                                <div class="select">
+                                    <select id="replace-mode">
+                                        <option value="auto" selected>Auto</option>
+                                        <option value="hue">Hue</option>
+                                        <option value="sat">Saturation</option>
+                                        <option value="bri">Brightness</option>
+                                        <option value="fill">Fill</option>
+                                    </select>
+                                </div>
+
+                                <div id="replace-tolerance" class="tab-20"></div>
+
+                                <div id="replace-opacity" class="tab-20"></div>
+
+                                <input id="replace-hard-tip" type="checkbox" />
+                                <label class="switch tab-20" for="replace-hard-tip"><span></span>Hard tip</label>
+                            </div>
+                        </section>
+
+                        <section id="shape" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/shape.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+
+                            <div>
+                                <label class="tab-10">Mode:</label>
+                                <div class="switch-field tab-5">
+                                    <input type="radio" id="shape-mode-design" name="shape-mode" value="design"
+                                        checked /><label for="shape-mode-design" tooltip="One vector shape per layer"
+                                        flow="down">Design</label>
+                                    <input type="radio" id="shape-mode-draw" name="shape-mode" value="draw" /><label
+                                        for="shape-mode-draw" tooltip="Same layer pixel drawing"
+                                        flow="down">Draw</label>
+                                </div>
+                            </div>
+
+                            <div id="shape-draw-no-layer">
+                                <div class="tab-20">Select or create a image layer in the layer list or select design
+                                    mode.</div>
+                            </div>
+
+                            <div id="shape-draw-settings">
+                                <label class="tab-20">Type:</label>
+                                <div class="switch-icon-field tab-5">
+                                    <input type="radio" id="shape-draw-type-rectangle" name="shape-draw-type"
+                                        value="rectangle" checked="true" /><label for="shape-draw-type-rectangle"
+                                        tooltip="Rectangle" flow="down"><img src="assets/images/icon/shape-rectangle.svg"
+                                            class="ic" /></label>
+                                    <input type="radio" id="shape-draw-type-rounded" name="shape-draw-type"
+                                        value="rounded" /><label for="shape-draw-type-rounded"
+                                        tooltip="Rounded rectangle" flow="down"><img src="assets/images/icon/shape-rounded.svg"
+                                            class="ic" /></label>
+                                    <input type="radio" id="shape-draw-type-ellipse" name="shape-draw-type"
+                                        value="ellipse" /><label for="shape-draw-type-ellipse" tooltip="Circle"
+                                        flow="down"><img src="assets/images/icon/shape-ellipse.svg" class="ic" /></label>
+                                    <input type="radio" id="shape-draw-type-triangle" name="shape-draw-type"
+                                        value="triangle" /><label for="shape-draw-type-triangle" tooltip="Triangle"
+                                        flow="down"><img src="assets/images/icon/shape-triangle.svg" class="ic" /></label>
+                                    <input type="radio" id="shape-draw-type-star" name="shape-draw-type"
+                                        value="star" /><label for="shape-draw-type-star" tooltip="Star" flow="down"><img
+                                            src="assets/images/icon/shape-star.svg" class="ic" /></label>
+                                    <input type="radio" id="shape-draw-type-heart" name="shape-draw-type"
+                                        value="heart" /><label for="shape-draw-type-heart" tooltip="Heart"
+                                        flow="down"><img src="assets/images/icon/shape-heart.svg" class="ic" /></label>
+                                    <input type="radio" id="shape-draw-type-line" name="shape-draw-type"
+                                        value="line" /><label for="shape-draw-type-line" tooltip="Line" flow="down"><img
+                                            src="assets/images/icon/shape-line.svg" class="ic" /></label>
+                                    <input type="radio" id="shape-draw-type-bezier" name="shape-draw-type"
+                                        value="bezier" /><label for="shape-draw-type-bezier" tooltip="Bezier"
+                                        flow="down"><img src="assets/images/icon/shape-bezier.svg" class="ic" /></label>
+                                </div>
+
+                                <div id="shape-draw-opacity" class="tab-20"></div>
+                                <div id="shape-draw-size" class="tab-20"></div>
+                                <div id="shape-draw-radii" style="display: none;" class="tab-20"></div>
+
+                                <div id="shape-draw-fill-settings" class="tab-25">
+                                    <input type="checkbox" id="shape-draw-fill" checked="true" />
+                                    <label class="switch" for="shape-draw-fill"><span></span>Fill</label>
+                                </div>
+
+                            </div>
+
+                            <div id="shape-settings">
+                                <label class="tab-20">Type:</label>
+                                <div class="switch-icon-field tab-5">
+                                    <input type="radio" id="shape-type-rectangle" name="shape-type" value="rectangle"
+                                        checked="true" /><label for="shape-type-rectangle"
+                                        id="shape-type-rectangle-label" tooltip="Rectangle" flow="down"><img
+                                            src="assets/images/icon/shape-rectangle.svg" class="ic" /></label>
+                                    <input type="radio" id="shape-type-rounded" name="shape-type"
+                                        value="rounded" /><label for="shape-type-rounded" id="shape-type-rounded-label"
+                                        tooltip="Rounded rectangle" flow="down"><img src="assets/images/icon/shape-rounded.svg"
+                                            class="ic" /></label>
+                                    <input type="radio" id="shape-type-ellipse" name="shape-type"
+                                        value="ellipse" /><label for="shape-type-ellipse" id="shape-type-ellipse-label"
+                                        tooltip="Circle" flow="down"><img src="assets/images/icon/shape-ellipse.svg"
+                                            class="ic" /></label>
+                                    <input type="radio" id="shape-type-line" name="shape-type" value="line" /><label
+                                        for="shape-type-line" id="shape-type-line-label" tooltip="Line" flow="down"><img
+                                            src="assets/images/icon/shape-line.svg" class="ic" /></label>
+                                    <input type="radio" id="shape-type-path" name="shape-type" value="path" /><label
+                                        for="shape-type-path" id="shape-type-path-label" tooltip="custom"
+                                        flow="down"><img src="assets/images/icon/shape-path.svg" class="ic" /></label>
+                                </div>
+
+                                <div id="shape-path">
+                                    <label class="tab-15">Shape:</label>
+                                    <div id="shape-shape" class="tab-5"></div>
+                                </div>
+
+                                <div id="shape-fill-settings">
+                                    <label class="tab-20">Fill:</label>
+                                    <div id="shape-fill" class="tab-5"></div>
+                                </div>
+
+                                <div id="shape-line-settings">
+                                    <div id="shape-line-size" class="tab-20"></div>
+                                    <div id="shape-line-color" class="tab-10"></div>
+                                </div>
+
+                                <div id="shape-outline-radii" style="display: none;" class="tab-20"></div>
+
+                                <div id="shape-styles-settings">
+                                    <label class="tab-20">Styles:</label>
+                                    <div id="shape-styles" class="icon-drop tab-5"><img src="assets/images/icon/frame-styles.svg"
+                                            class="ic" /></div>
+                                </div>
+
+                                <ul id="shape-action" class="icon-button-set tab-20">
+                                    <li id="shape-duplicate" tooltip="Duplicate" flow="down"><img
+                                            src="assets/images/icon/duplicate.svg" class="ic" /></li>
+                                    <li id="shape-delete" tooltip="Delete (DEL)" flow="down"><img
+                                            src="assets/images/icon/delete.svg" class="ic" /></li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <section id="temper" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/temper.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+
+                            <div id="temper-no-layer" style="display: none">
+                                <div class="tab-10">Temper only works on image layers (or non empty layers), select
+                                    another layer.</div>
+                            </div>
+
+                            <div id="temper-settings">
+
+                                <label class="tab-10">Mode:</label>
+                                <div class="switch-field tab-5">
+                                    <input type="radio" id="temper-mode-increase" name="temper-mode" value="increase"
+                                        checked /><label for="temper-mode-increase">Increase</label>
+                                    <input type="radio" id="temper-mode-decrease" name="temper-mode"
+                                        value="decrease" /><label for="temper-mode-decrease">Decrease</label>
+                                </div>
+                                <label class="tab-20">Method:</label>
+                                <div class="switch-field tab-5">
+                                    <input type="radio" id="temper-method-vibrance" name="temper-method"
+                                        value="vibrance" checked /><label for="temper-method-vibrance">Vibrance</label>
+                                    <input type="radio" id="temper-method-saturation" name="temper-method"
+                                        value="saturation" /><label for="temper-method-saturation">Saturation</label>
+                                    <input type="radio" id="temper-method-temperature" name="temper-method"
+                                        value="temperature" /><label for="temper-method-temperature">Temperature</label>
+                                </div>
+                                <label class="tab-20">Brush:</label>
+                                <div id="temper-brush"></div>
+
+                                <div id="temper-brush-strength" class="range-box tab-20"></div>
+                            </div>
+                        </section>
+
+                        <section id="text" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/text.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+
+                            <div id="text-no-layer">
+                                <a class="button outline tab-10" id="add-text-button">Add text</a>
+                                <label class="tab-20">Preset:</label>
+                                <div id="text-presets" class="icon-drop tab-5"><img src="assets/images/icon/text-styles.svg"
+                                        class="ic" /></div>
+                            </div>
+
+                            <div id="text-settings">
+
+                                <a class="button outline tab-10" id="text-edit">Edit</a>
+
+                                <label class="tab-20">Font:</label>
+                                <div id="text-font-picker" class="font-picker tab-5"></div>
+
+                                <label class="tab-20">Fill:</label>
+                                <div id="text-fill" class="tab-5"></div>
+
+                                <div id="text-size" class="range-box tab-20"></div>
+
+                                <label class="tab-20">Format:</label>
+                                <div id="text-format" class="icon-drop tab-5"><img src="assets/images/icon/text-format.svg"
+                                        class="ic" /></div>
+
+                                <label class="tab-15">Styles:</label>
+                                <div id="text-styles" class="icon-drop tab-5"><img src="assets/images/icon/text-styles.svg"
+                                        class="ic" /></div>
+
+                                <ul class="icon-button-set tab-20">
+                                    <li id="text-add" tooltip="Add new" flow="down"><img src="assets/images/icon/add.svg"
+                                            class="ic" /></li>
+                                    <li id="text-duplicate" tooltip="Duplicate" flow="down"><img
+                                            src="assets/images/icon/duplicate.svg" class="ic" /></li>
+                                    <li id="text-delete" tooltip="Delete (DEL)" flow="down"><img
+                                            src="assets/images/icon/delete.svg" class="ic" /></li>
+                                </ul>
+
+                            </div>
+                        </section>
+
+                        <section id="toning" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/toning.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+
+                            <div id="toning-no-layer" style="display: none">
+                                <div class="tab-10">Toning only works on image layers (or non empty layers), select
+                                    another layer.</div>
+                            </div>
+
+                            <div id="toning-settings">
+                                <label class="tab-10">Mode:</label>
+                                <div class="switch-field tab-5">
+                                    <input type="radio" id="toning-mode-lighten" name="toning-mode" value="lighten"
+                                        checked /><label for="toning-mode-lighten">Lighten</label>
+                                    <input type="radio" id="toning-mode-darken" name="toning-mode"
+                                        value="darken" /><label for="toning-mode-darken">Darken</label>
+                                </div>
+                                <label class="tab-20">Range:</label>
+                                <div class="switch-field tab-5">
+                                    <input type="radio" id="toning-range-shadow" name="toning-range"
+                                        value="shadow" /><label for="toning-range-shadow">Shadows</label>
+                                    <input type="radio" id="toning-range-midtone" name="toning-range" value="midtone"
+                                        checked /><label for="toning-range-midtone">Midtones</label>
+                                    <input type="radio" id="toning-range-highlight" name="toning-range"
+                                        value="highlight" /><label for="toning-range-highlight">Highlights</label>
+                                </div>
+                                <label class="tab-20">Brush:</label>
+                                <div id="toning-brush"></div>
+
+                                <div id="toning-brush-strength" class="tab-20"></div>
+
+                            </div>
+                        </section>
+
+                        <section id="wand" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/wand.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+
+                            <div id="wand-settings">
+                                <label class="tab-10">Mode:</label>
+                                <div class="switch-icon-field tab-5">
+                                    <input type="radio" id="wand-mode-new" name="wand-mode" value="new" checked /><label
+                                        for="wand-mode-new" tooltip="New selection" flow="down"><img
+                                            src="assets/images/icon/selection-new.svg" class="ic" /></label>
+                                    <input type="radio" id="wand-mode-add" name="wand-mode" value="add" /><label
+                                        for="wand-mode-add" tooltip="Add to selection (shift)" flow="down"><img
+                                            src="assets/images/icon/selection-add.svg" class="ic" /></label>
+                                    <input type="radio" id="wand-mode-remove" name="wand-mode" value="remove" /><label
+                                        for="wand-mode-remove" tooltip="Remove from selection (ctrl)" flow="down"><img
+                                            src="assets/images/icon/selection-remove.svg" class="ic" /></label>
+                                </div>
+
+                                <div id="wand-tolerance" class="tab-20"></div>
+                                <div id="wand-feather" class="tab-20"></div>
+
+                                <input type="checkbox" id="wand-anti-alias" checked>
+                                <label class="tab-25 switch" for="wand-anti-alias"><span></span>Anti-alias</label>
+
+                                <input type="checkbox" id="wand-contiguous" checked>
+                                <label class="tab-20 switch" for="wand-contiguous"><span></span>Contiguous</label>
+
+                                <input type="checkbox" id="wand-sample-all">
+                                <label class="tab-20 switch" for="wand-sample-all"><span></span>Sample all
+                                    layers</label>
+                            </div>
+                        </section>
+
+                        <section id="zoom" class="option">
+                            <div class="option-icon"><img src="assets/images/tool/zoom.svg" class="ic" width="22" height="22"
+                                    loading="lazy"></div>
+
+                            <div id="zoom-settings">
+
+                                <label class="tab-10">Mode:</label>
+                                <div class="switch-field tab-5">
+                                    <input type="radio" id="zoom-mode-plus" name="zoom-mode" value="plus"
+                                        checked="true" /><label for="zoom-mode-plus">Plus</label>
+                                    <input type="radio" id="zoom-mode-minus" name="zoom-mode" value="minus" /><label
+                                        for="zoom-mode-minus">Minus</label>
+                                </div>
+                                <a class="button outline tab-20" id="zoom-1x">100%</a>
+                                <a class="button outline tab-10" id="zoom-fit">Fit</a>
+                                <a class="button outline tab-10" id="zoom-fill">Fill</a>
+                            </div>
+                        </section>

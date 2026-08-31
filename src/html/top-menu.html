@@ -1,0 +1,240 @@
+                <ul id="menu" class="menu">
+                    <li>
+                        <label>File</label>
+                        <ul>
+                            <li id="file-new">New image.. <span>Ctrl + E</span></li>
+                            <li id="file-open">Open image.. <span>Ctrl + O</span></li>
+                            <li id="file-open-url">Open image URL.. </li>
+                            
+                            <li class="split"></li>
+                            <li id="file-save">Save.. <span>Ctrl + S</span></li>
+                            <li class="more">Export
+                                <ul>
+                                    <li id="export-image">Quick export image as PNG.. </li>
+                                    <li id="export-layer">Quick export layer as PNG.. </li>
+                                </ul>
+                            </li>
+                            <li id="file-print">Print.. <span>Ctrl + P</span></li>
+                            <li id="file-close">Close <span>Ctrl + Q</span></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <label>Edit</label>
+                        <ul>
+                            <li id="edit-undo">Undo <span>Ctrl + Z</span></li>
+                            <li id="edit-redo">Redo <span>Ctrl + Y</span></li>
+                            <li class="split"></li>
+                            <li id="edit-cut">Cut <span>Ctrl + X</span></li>
+                            <li id="edit-copy">Copy <span>Ctrl + C</span></li>
+                            <li class="selection disabled" id="edit-clear">Clear <span>DEL</span></li>
+                            <li id="edit-paste">Paste <span>Ctrl + V</span></li>
+                            <li class="split"></li>
+                            <li class="image noframe" id="edit-free-transform">Free transform..<span>Ctrl + R</span>
+                            </li>
+                            <li class="image noframe" id="edit-free-distort">Free distort..<span>Ctrl + K</span></li>
+                            <li class="more">Transform
+                                <ul>
+                                    <li id="edit-rotate-left"><img src="assets/images/icon/rotate-left.svg" width="16"
+                                            height="16" loading="lazy">Rotate left / ccw</li>
+                                    <li id="edit-rotate-right"><img src="assets/images/icon/rotate-right.svg" width="16"
+                                            height="16" loading="lazy">Rotate right / cw</li>
+                                    <li id="edit-flip-horizontal" class="image"><img src="assets/images/icon/flip-horizontal.svg"
+                                            width="16" height="16" loading="lazy">Flip horizontal</li>
+                                    <li id="edit-flip-vertical" class="image"><img src="assets/images/icon/flip-vertical.svg"
+                                            width="16" height="16" loading="lazy">Flip vertical</li>
+                                </ul>
+                            </li>
+                            <li class="split"></li>
+                            <li class="image noframe" id="edit-stroke">Stroke..</li>
+                            <li class="image" id="edit-fill">Fill..</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <label>Image</label>
+                        <ul>
+                            <li id="image-resize">Image size..</li>
+                            <li id="image-canvas-resize">Canvas size..</li>
+                            <li id="image-smart-resize">Smart resize..</li>
+                            <li class="split"></li>
+                            <li id="image-canvas-color">Canvas background..</li>
+                            <li class="more">Canvas rotation
+                                <ul>
+                                    <li id="image-rotate-left"><img src="assets/images/icon/rotate-left.svg" width="16"
+                                            height="16" loading="lazy">Rotate left / ccw</li>
+                                    <li id="image-rotate-right"><img src="assets/images/icon/rotate-right.svg" width="16"
+                                            height="16" loading="lazy">Rotate right / cw</li>
+                                    <li id="image-flip-horizontal"><img src="assets/images/icon/flip-horizontal.svg" width="16"
+                                            height="16" loading="lazy">Flip horizontal</li>
+                                    <li id="image-flip-vertical"><img src="assets/images/icon/flip-vertical.svg" width="16"
+                                            height="16" loading="lazy">Flip vertical</li>
+                                </ul>
+                            </li>
+                            <li class="split"></li>
+                            <li class="selection" id="image-crop">Crop</li>
+                            <li id="image-trim">Trim</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <label>Layer</label>
+                        <ul>
+                            <li id="layer-new">New layer</li>
+                            <li id="layer-duplicate">Duplicate layer <span>Ctrl + D</span></li>
+                            <li id="layer-open">Add image as layer..</li>
+                            
+                            <li id="layer-url">Add URL as layer..</li>
+                            <li id="layer-delete">Delete layer <span>DEL</span></li>
+                            <li class="split"></li>
+                            <li id="layer-rasterize">Rasterize layer</li>
+                            <li class="split"></li>
+                            <li id="layer-merge-down">Merge down <span>Ctrl + 6</span></li>
+                            <li id="layer-merge-visible">Merge visible <span>Ctrl + 7</span></li>
+                            <li id="layer-merge-flatten">Flatten image <span>Ctrl + 8</span></li>
+                            <li class="split"></li>
+                            <li id="layer-move-up">Bring forward / up <span>Ctrl + 4</span></li>
+                            <li id="layer-move-down">Send backward / down <span>Ctrl + 5</span></li><li class="split"></li>
+                            <li class="split"></li>
+                            <li class="image noframe" id="layer-add-mask">Add mask</li>
+                            <li class="mask" id="layer-apply-mask">Apply mask</li>
+                            <li class="mask" id="layer-delete-mask">Remove mask</li>
+                            <li class="more">More mask
+                                <ul>
+                                    <li class="mask" id="layer-invert-mask">Invert mask</li>
+                                    <li class="mask" id="layer-extract-mask">Extract mask as layer</li>
+                                    <li class="mask" id="layer-convert-mask">Convert mask to selection</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <label>Select</label>
+                        <ul>
+                            <li id="selection-all">Select all <span>Ctrl + A</span></li>
+                            <li id="selection-pixels">Select pixels </li>
+                            
+                            <li class="selection" id="selection-deselect">Deselect <span>Ctrl + D</span></li>
+                            <li class="selection" id="selection-invert">Invert selection <span>Ctrl + I</span></li>
+                            <li class="selection" id="selection-convert">Convert to mask </li>
+                            <li class="split"></li>
+                            <li class="selection" id="selection-save">Save selection</li>
+                            <li class="disabled" id="selection-restore">Restore selection</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <label>Adjustment</label>
+                        <ul>
+                            <li class="image" id="adjust-auto">Auto adjust</li>
+                            <li class="image" id="adjust-pop">Auto pop</li>
+                            <li class="image" id="adjust-bw">Auto B&W</li>
+                            <li class="split"></li>
+                            <li class="image" id="adjust-brightness-contrast">Brightness and contrast..</li>
+                            <li class="image" id="adjust-temperature-tint">Temperature and tint..</li>
+                            <li class="image" id="adjust-hue-saturation">Hue and saturation.. <span>Ctrl + U</span></li>
+                            <li class="image" id="adjust-vibrance">Vibrance..</li>
+                            <li class="image" id="adjust-mimichdr">Mimic HDR..</li>
+                            <li class="image" id="adjust-balance">Color balance..</li>
+                            <li class="image" id="adjust-lookup">Color lookup..</li>
+                            <li class="image" id="adjust-monochrome">Monochrome..</li>
+                            <li class="split"></li>
+                            <li class="image" id="adjust-highlights-shadows">Highlights and shadows..</li>
+                            <li class="image" id="adjust-exposure">Exposure..</li>
+                            <li class="split"></li>
+                            <li class="image" id="adjust-curves">Curves.. <span>Ctrl + M</span></li>
+                            <li class="image" id="adjust-levels">Levels.. <span>Ctrl + L</span></li>
+                            <li class="split"></li>
+                            <li class="image" id="adjust-threshold">Threshold..</li>
+                            <li class="image" id="adjust-alphaThreshold">Threshold Alpha..</li>
+                            <li class="image" id="adjust-posterize">Posterize..</li>
+                            <li class="image" id="adjust-desaturate">Desaturate</li>
+                            <li class="image" id="adjust-invert">Invert</li>
+                            <li class="image" id="adjust-solarize">Solarize</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <label>Filter</label>
+                        <ul>
+                            <li class="image" id="filter-effect">Effect library..</li>
+                            <li class="split"></li>
+                            
+                            
+                            <li class="split"></li>
+                            <li class="more">Details
+                                <ul>
+                                    <li class="image" id="filter-sharpen">Sharpen..</li>
+                                    <li class="image" id="filter-clarity">Clarity..</li>
+                                    <li class="image" id="filter-blur">Blur..</li>
+                                    <li class="image" id="filter-gaussian-blur">Gaussian blur..</li>
+                                    <li class="image" id="filter-motion-blur">Motion blur..</li>
+                                    <li class="image" id="filter-radial-blur">Radial blur..</li>
+                                    <li class="image" id="filter-zoom-blur">Zoom blur..</li>
+                                    <li class="image" id="filter-smooth">Smooth..</li>
+                                    <li class="image" id="filter-grain">Grain..</li>
+                                    <li class="image" id="filter-noise">Add noise..</li>
+                                    <li class="image" id="filter-denoise">Remove noise..</li>
+                                </ul>
+                            </li>
+                            <li class="split"></li>
+                            <li class="more">Glitches
+                                <ul>
+                                    <li class="image" id="filter-fringe">Fringe..</li>
+                                    <li class="image" id="filter-rgb-split">RGB Split..</li>
+                                    <li class="image" id="filter-scanlines">Scanlines..</li>
+                                    <li class="image" id="filter-interference">Interference..</li>
+                                    <li class="image" id="filter-slice">Slice..</li>
+                                </ul>
+                            </li>
+                            <li class="more">Creative
+                                <ul>
+                                    <li class="image" id="filter-wave">Wave..</li>
+                                    <li class="image" id="filter-reflect">Reflect..</li>
+                                    <li class="image" id="filter-fish-eye">Fish Eye..</li>
+                                    <li class="image" id="filter-kaleidoscope">Kaleidoscope..</li>
+                                    <li class="image" id="filter-polarcoordinates">Polar Coordinates..</li>
+                                </ul>
+                            </li>
+                            <li class="split"></li>
+                            <li class="image" id="filter-vignette">Vignette..</li>
+                            <li class="image" id="filter-bloom">Bloom..</li>
+                            <li class="image" id="filter-glamour">Glamour..</li>
+                            <li class="image" id="filter-dehaze">Dehaze..</li>
+                            <li class="split"></li>
+                            <li class="image noframe" id="filter-inner-glow">Inner glow..</li>
+                            <li class="image noframe" id="filter-outer-glow">Outer glow..</li>
+                            <li class="image noframe" id="filter-outline">Outline..</li>
+                            <li class="image" id="filter-inner-shadow">Inner shadow</li>
+                            <li class="image noframe" id="filter-drop-shadow">Drop shadow..</li>
+                            <li class="image noframe" id="filter-bevel">Bevel..</li>
+                            <li class="split"></li>
+                            <li class="image" id="filter-sobel">Find edges..</li>
+                            <li class="image" id="filter-pixelate">Pixelate..</li>
+                            <li class="image" id="filter-mosaic">Mosaic..</li>
+                            <li class="image" id="filter-halftone">Halftone..</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <label>View</label>
+                        <ul>
+                            <li id="view-floating">Toggle floating panels</li>
+                            <li id="view-restore">Restore all panels</li>
+                            
+                            <li class="split"></li>
+                            <li id="view-quicklink">Quicklink bar</li>
+                            
+                            <li id="view-layer">Layers panel</li>
+                            
+                            <li class="split"></li>
+                            <li id="view-zoom-in">Zoom in <span>Ctrl + +</span></li>
+                            <li id="view-zoom-out">Zoom out <span>Ctrl + -</span></li>
+                            <li class="split"></li>
+                            <li id="view-zoom-fit">Fit screen <span>Ctrl + 0</span></li>
+                            <li id="view-zoom-fill">Fill screen <span>Ctrl + 2</span></li>
+                            <li class="split"></li>
+                            <li id="view-zoom-1x">100% <span>Ctrl + 1</span></li>
+                            <li id="view-zoom-2x">200%</li>
+                            <li id="view-zoom-3x">300% <span>Ctrl + 3</span></li>
+                            <li class="split"></li>
+                            <li id="view-preview">Toggle preview mode <span>Tab</span></li>
+                            <li id="view-full-screen">Toggle full screen <span>F11</span></li>
+                            <li id="view-theme">Change theme / colors</li>
+                        </ul>
+                    </li>
+                </ul>
