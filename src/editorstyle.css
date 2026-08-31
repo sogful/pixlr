@@ -10063,6 +10063,8 @@ html:not(.touch) #color-switch:hover img {
     background-color: var(--panel-color);
     border-radius: 8px;
     box-shadow: 0 0 20px 2px rgba(0, 0, 0, .4);
+    display: flex;
+    flex-direction: column;
     height: 80%;
     left: 200px;
     overflow: hidden;
@@ -10074,6 +10076,7 @@ html:not(.touch) #color-switch:hover img {
 }
 
 #font-list .title {
+    flex-shrink: 0;
     height: 34px;
     line-height: 34px
 }
@@ -10082,12 +10085,18 @@ html:not(.touch) #color-switch:hover img {
     top: 3px
 }
 
+#font-list .splitter,
+#font-list .pill-toggle {
+    flex-shrink: 0
+}
+
 #font-list-holder {
-    height: calc(100% - 190px)
+    flex: 1;
+    min-height: 0
 }
 
 #font-list-add {
-    height: 450px;
+    flex-shrink: 0;
     padding: 10px;
     width: 100%
 }
@@ -10191,31 +10200,6 @@ html:not(.touch) .font-picker:hover img {
 
 html:not(.touch) .font-pod:hover img.close {
     display: block
-}
-
-.google-fonts-entry {
-    align-items: center;
-    border-bottom: 1px solid var(--component-dim);
-    border-radius: 4px;
-    cursor: pointer;
-    display: flex;
-    gap: 10px;
-    margin: 4px 15px;
-    padding: 10px
-}
-
-html:not(.touch) .google-fonts-entry:hover {
-    background-color: var(--component-color)
-}
-
-.google-fonts-entry span {
-    color: var(--text-color);
-    flex: 1;
-    font-size: 13px
-}
-
-.google-fonts-entry .chevron {
-    opacity: .4
 }
 
 .google-font-dialog {

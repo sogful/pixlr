@@ -6366,7 +6366,7 @@ var editor;
           if (!t) {
             return;
           }
-          const e = t.local ? new FontFace(t.name, await (0, n.CB)(t.font)) : new FontFace(t.name, `url(/font/${t.short}.woff) format('woff')`);
+          const e = t.local ? new FontFace(t.name, await (0, n.CB)(t.font)) : new FontFace(t.name, `url(assets/fonts/${t.short}.woff) format('woff')`);
           if (document.fonts.has(e)) {
             return Promise.resolve(e);
           }
@@ -45924,13 +45924,6 @@ var editor;
       }
       class T {
         constructor(t, e, s, o) {
-          this.openGoogleFonts = () => {
-            this.hideFontList(false);
-            new C(() => {}, () => {
-              this.removeEventHandlers();
-              this.showFontList();
-            });
-          };
           this.addLocalFont = () => {
             (0, w.XN)(true).then(async t => {
               for (var e, s = 0; e = t[s]; s++) {
@@ -45960,11 +45953,29 @@ var editor;
             }
             this.removeEventHandlers();
           };
-          this.populateFonts = () => {
-            const t = (0, i.Ay)("font-list-holder-ss-content");
-            if (t.childElementCount !== f.A.fontList.length) {
-              t.innerHTML = "";
-              f.A.fontList.forEach(e => {
+          this.systemFontShorts = ["arial", "courier", "georgia", "trebuchet", "verdana"];
+          this.activeTab = "imported";
+          this.selectTab = t => {
+            this.activeTab = t;
+            const e = (0, i.Ay)("font-tab-imported");
+            const s = (0, i.Ay)("font-tab-presets");
+            if (e && s) {
+              e.classList.toggle("active", t === "imported");
+              s.classList.toggle("active", t === "presets");
+            }
+            this.populateFonts(true);
+            const pods = document.querySelectorAll("#font-list-holder div.font-pod");
+            for (let i = 0; i < pods.length; i++) {
+              pods[i].addEventListener("click", this.selectFont, false);
+              pods[i].addEventListener("mouseenter", this.enterFont, false);
+            }
+          };
+          this.populateFonts = (force = false) => {
+            const holder = (0, i.Ay)("font-list-holder-ss-content");
+            const list = f.A.fontList.filter(t => this.activeTab === "imported" ? t.local || this.systemFontShorts.includes(t.short) : !t.local && !this.systemFontShorts.includes(t.short));
+            if (force || holder.childElementCount !== list.length) {
+              holder.innerHTML = "";
+              list.forEach(e => {
                 let s = document.createElement("div");
                 if (e.local) {
                   s.append((0, i.T)("img", {
@@ -45993,10 +46004,7 @@ var editor;
                 s.setAttribute("data", e.name);
                 s.setAttribute("id", "font:" + e.name);
                 s.classList.add("font-pod");
-                if (e.premium) {
-                  s.classList.add("premium");
-                }
-                t.appendChild(s);
+                holder.appendChild(s);
               });
             }
           };
@@ -46135,14 +46143,9 @@ var editor;
           };
           this.selectFont = t => {
             let e = t.currentTarget;
-            let s = e.classList.contains("premium");
             let i = e.getAttribute("data");
-            if (!s || (0, v.zl)("premium")) {
-              this.loadFont(i);
-              this.hideFontList(false);
-            } else {
-              new x.default("font", "premium");
-            }
+            this.loadFont(i);
+            this.hideFontList(false);
           };
           this.removeFont = (t, e) => {
             t.preventDefault();
@@ -46201,21 +46204,18 @@ var editor;
             }, (0, a.A)("font")), (0, i.T)("div", {
               className: "splitter"
             }), (0, i.T)("div", {
-              id: "google-fonts-entry",
-              className: "google-fonts-entry",
-              onclick: () => this.openGoogleFonts()
-            }, (0, i.T)("img", {
-              src: "assets/images/icon/google-logo.svg",
-              width: 20,
-              height: 20,
-              className: "ic"
-            }), (0, i.T)("span", {}, (0, a.A)("googleFonts")), (0, i.T)("img", {
-              src: "assets/images/icon/chevron-right.svg",
-              width: 16,
-              height: 16,
-              className: "ic chevron"
-            })), (0, i.T)("div", {
-              style: "position:relative;margin: 10px 15px;"
+              className: "pill-toggle",
+              style: "margin: 10px 15px;"
+            }, (0, i.T)("div", {
+              id: "font-tab-imported",
+              className: "pill-toggle-item active",
+              onclick: () => this.selectTab("imported")
+            }, "Imported"), (0, i.T)("div", {
+              id: "font-tab-presets",
+              className: "pill-toggle-item",
+              onclick: () => this.selectTab("presets")
+            }, "Presets")), (0, i.T)("div", {
+              style: "position:relative;margin: 0 15px 10px 15px;"
             }, (0, i.T)("input", {
               id: "font-search",
               className: "font-search",
