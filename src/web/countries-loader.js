@@ -1,6 +1,6 @@
 (function () {
     var request = new XMLHttpRequest();
-    request.open("GET", "src/web/data/countries.json", false);
+    request.open("GET", "assets/static/countries.json", false);
     request.send(null);
     window.__pixlrCountries = request.status === 200 ? JSON.parse(request.responseText) : {};
 })();
