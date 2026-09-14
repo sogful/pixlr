@@ -1195,8 +1195,6 @@ html:not(.touch) #color-switch:hover img {
     display: flex;
     flex-grow: 1;
     flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
     white-space: nowrap
 }
 
@@ -1251,6 +1249,50 @@ html:not(.touch) #color-switch:hover img {
 
 .option.active {
     display: flex
+}
+
+@media only screen and (max-width:650px) {
+    .option-bar {
+        height: 40px
+    }
+
+    #toggle-home {
+        height: 28px;
+        margin-top: 6px;
+        min-width: 36px;
+        width: 36px
+    }
+
+    .option-content {
+        min-width: 0;
+        overflow: hidden
+    }
+
+    .option {
+        height: 32px;
+        line-height: 32px
+    }
+
+    .option .button {
+        min-width: 64px
+    }
+
+    .option .icon-button-set li {
+        height: 28px;
+        width: 28px
+    }
+
+    .option-icon {
+        height: 32px;
+        margin-left: 2px;
+        padding: 5px;
+        width: 32px
+    }
+
+    .option-icon img {
+        height: 20px;
+        width: 20px
+    }
 }
 
 .option-icon {

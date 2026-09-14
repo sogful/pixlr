@@ -1151,13 +1151,10 @@ select option {
     background-color: var(--menu-color);
     display: flex;
     height: 32px;
-    overflow-x: auto;
-    overflow-y: hidden;
     padding-left: 16px
 }
 
 #menu>li {
-    flex: 0 0 auto;
     margin-right: 2px;
     padding: 0
 }
@@ -1233,6 +1230,19 @@ select option {
 .menu>li:hover>label {
     background-color: rgba(0, 0, 0, .8);
     color: #fff !important
+}
+
+@media only screen and (max-width:650px) {
+    #menu {
+        padding-left: 4px
+    }
+
+    .menu label,
+    .menu li,
+    .overflow-menu li {
+        font-size: 12px;
+        padding: 0 6px
+    }
 }
 
 .menu.active li:hover>ul,
