@@ -92,7 +92,7 @@ window.__editorModules[1255] = function (t, e, s) {
             this.BL.y = Number((0, i.Ay)("distort-y3").value);
             this.BR.x = Number((0, i.Ay)("distort-x4").value);
             this.BR.y = Number((0, i.Ay)("distort-y4").value);
-            window.requestAnimationFrame(this.render);
+            this.requestRender();
           };
           this.updateInputs = () => {
             (0, i.Ay)("distort-x1").value = Math.round(this.TL.x).toString();
@@ -110,13 +110,13 @@ window.__editorModules[1255] = function (t, e, s) {
               this.split = 8;
               this.isDown = true;
               this.downPosition = this.ss.clone();
-              window.requestAnimationFrame(this.render);
+              this.requestRender();
             } else if (this.isInside(this.downPoint)) {
               this.split = 5;
               this.isMove = true;
               this.isDown = true;
               this.offset = new c.A();
-              window.requestAnimationFrame(this.render);
+              this.requestRender();
             } else {
               this.choice();
             }
@@ -132,7 +132,7 @@ window.__editorModules[1255] = function (t, e, s) {
                 this.ss.y = this.downPosition.y + (t.y - this.downPoint.y);
                 this.updateInputs();
               }
-              window.requestAnimationFrame(this.render);
+              this.requestRender();
             } else if (this.isControl(t)) {
               this.modal.style.cursor = "pointer";
             } else if (this.isInside(t)) {
@@ -156,9 +156,18 @@ window.__editorModules[1255] = function (t, e, s) {
               this.offset = undefined;
               this.downPoint = undefined;
               this.downPosition = undefined;
-              window.requestAnimationFrame(this.render);
+              this.requestRender();
               this.updateInputs();
             }
+          };
+          this.requestRender = () => {
+            if (this.renderFrame) {
+              return;
+            }
+            this.renderFrame = window.requestAnimationFrame(() => {
+              this.renderFrame = undefined;
+              this.render();
+            });
           };
           this.renderLow = () => {
             this.split = 5;
@@ -398,6 +407,10 @@ window.__editorModules[1255] = function (t, e, s) {
               document.removeEventListener("keydown", this.keyDown, false);
               document.removeEventListener("keyup", this.keyUp, false);
               document.removeEventListener("viewport-render", this.renderLow);
+              if (this.renderFrame) {
+                window.cancelAnimationFrame(this.renderFrame);
+                this.renderFrame = undefined;
+              }
               (0, i.Ay)("distort-apply").removeEventListener("click", this.apply, false);
               (0, i.Ay)("distort-cancel").removeEventListener("click", this.cancel, false);
               (0, i.Ay)("distort-x1").removeEventListener("input", this.inputPosition, false);
@@ -553,7 +566,7 @@ window.__editorModules[1255] = function (t, e, s) {
             document.addEventListener("keydown", this.keyDown, false);
             document.addEventListener("keyup", this.keyUp, false);
             document.addEventListener("viewport-render", this.renderLow);
-            window.requestAnimationFrame(this.render);
+            this.requestRender();
             this.updateInputs();
           } else {
             this.callback();
@@ -1922,6 +1935,12 @@ window.__editorModules[1255] = function (t, e, s) {
             var t;
             var e;
             var s;
+            if (this.distort) {
+              this.distort.apply();
+            }
+            if (this.transform) {
+              this.transform.apply();
+            }
             this.stage.history.commitTransaction();
             if ((t = this.reform) !== null && t !== undefined) {
               t.cleanUp();

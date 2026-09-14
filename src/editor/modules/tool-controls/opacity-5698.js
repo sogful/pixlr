@@ -163,7 +163,7 @@ window.__editorModules[5698] = function (t, e, s) {
             }
             if (a) {
               this.scratch.applySelection(this.stage);
-              window.requestAnimationFrame(() => this.stage.render());
+              this.requestRender();
             }
           };
           this.draw = (t, e) => {
@@ -187,6 +187,15 @@ window.__editorModules[5698] = function (t, e, s) {
               this.scratch.ctx.drawImage(this.brush.canvas, s, i);
             }
           };
+          this.requestRender = () => {
+            if (this.renderFrame) {
+              return;
+            }
+            this.renderFrame = window.requestAnimationFrame(() => {
+              this.renderFrame = undefined;
+              this.stage.render();
+            });
+          };
           this.up = t => {
             this.stage.coating.freeze(false);
             this.removeMoveListeners();
@@ -209,12 +218,21 @@ window.__editorModules[5698] = function (t, e, s) {
                 mask: s
               });
             }
-            window.requestAnimationFrame(() => this.stage.render());
+            this.requestRender();
           };
           this.cleanUp = () => {
             var t;
+            const e = this.isDown && this.selected && this.scratch;
+            if (e) {
+              this.up();
+              this.isDown = false;
+            }
             if ((t = this.stage.fresco) !== null && t !== undefined) {
               t.removeScratch();
+            }
+            if (this.renderFrame && !e) {
+              window.cancelAnimationFrame(this.renderFrame);
+              this.renderFrame = undefined;
             }
             this.stage.coating.removePicker();
             this.brushPod.cleanUp();
