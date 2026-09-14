@@ -1151,10 +1151,13 @@ select option {
     background-color: var(--menu-color);
     display: flex;
     height: 32px;
+    overflow-x: auto;
+    overflow-y: hidden;
     padding-left: 16px
 }
 
 #menu>li {
+    flex: 0 0 auto;
     margin-right: 2px;
     padding: 0
 }
@@ -1317,4 +1320,4 @@ select option {
     margin: 6px 8px 6px 0;
     opacity: .8;
     width: 16px
-}
+}

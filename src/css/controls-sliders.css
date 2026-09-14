@@ -1092,6 +1092,7 @@ html:not(.touch) .text-box:hover {
 
 .new-box {
     cursor: pointer;
+    flex: 1 1 110px;
     min-width: 110px;
     opacity: .75;
     position: relative;
@@ -1142,6 +1143,53 @@ html:not(.touch) .text-box:hover {
 .new-box small {
     color: var(--text-dim);
     font-size: 10px
+}
+
+@media only screen and (max-width:650px) {
+    .new-canvas-modal {
+        bottom: 0;
+        left: 0;
+        overflow: hidden !important;
+        position: fixed;
+        right: 0;
+        top: 0
+    }
+
+    .new-canvas-dialog .content {
+        min-height: 0;
+        overflow: hidden !important
+    }
+
+    .new-canvas-dialog .content>.flex {
+        flex-direction: column;
+        height: calc(100% - 58px) !important;
+        margin: 0 20px !important;
+        min-width: 0
+    }
+
+    .new-canvas-dialog #ceate-new-outer {
+        flex: 1 1 auto !important;
+        min-height: 0;
+        overflow-y: auto
+    }
+
+    .new-canvas-dialog #ceate-new-outer+div {
+        flex-basis: auto !important;
+        margin: 10px 0 0 !important;
+        min-width: 0 !important;
+        width: auto !important
+    }
+
+    .new-canvas-dialog .new-holder {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+
+    .new-canvas-dialog .new-box {
+        max-width: none;
+        min-width: 0;
+        width: auto !important
+    }
 }
 
 .section-list li {
@@ -1316,4 +1364,4 @@ html:not(.touch) .text-box:hover {
     top: 6px;
     width: 80px;
     z-index: 9898989
-}
+}

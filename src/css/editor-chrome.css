@@ -1195,6 +1195,8 @@ html:not(.touch) #color-switch:hover img {
     display: flex;
     flex-grow: 1;
     flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
     white-space: nowrap
 }
 
@@ -1309,4 +1311,4 @@ html:not(.touch) #color-switch:hover img {
 .option .input-label input {
     margin-left: 0 !important;
     width: 60px !important
-}
+}

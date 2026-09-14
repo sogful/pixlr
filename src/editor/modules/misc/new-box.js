@@ -152,12 +152,15 @@ window.__editorModules[6931] = function (t, e, s) {
             this.cleanUp();
           };
           this.stage = t;
+          this.dialog.classList.add("new-canvas-dialog");
+          this.dialog.parentElement.classList.add("new-canvas-modal");
           (0, n.Ay)("dialog-apply" + this.mid).innerText = (0, i.A)("create");
           (0, n.Ay)("dialog-buttons" + this.mid).style.marginTop = "0px";
-          if (document.body.clientWidth >= 650) {
+          if (document.body.clientWidth >= 320) {
             this.dialog.style.width = "90%";
             this.dialog.style.maxWidth = "1200px";
-            this.dialog.style.height = window.innerHeight - 300 + "px";
+            this.dialog.style.height = Math.min(720, Math.max(320, window.innerHeight - 120)) + "px";
+            this.dialog.style.maxHeight = "calc(100vh - 24px)";
             this.content.style.padding = "0";
             this.content.style.height = "1vh";
             this.content.style.display = "flex";
@@ -170,7 +173,7 @@ window.__editorModules[6931] = function (t, e, s) {
               t[e].addEventListener("click", this.selectType, false);
             }
             let s = this.holder.clientWidth;
-            let a = Math.floor(s / 125);
+            let a = Math.max(1, Math.floor(s / 125));
             this.boxSize = Math.floor(125 + (s - a * 125) / a);
             new r.A((0, n.Ay)("ceate-new-outer"));
             this.setType("recommended");
