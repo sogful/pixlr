@@ -179,7 +179,13 @@ window.__editorModules[5699] = function (t, e, s) {
         const s = (e == null ? undefined : e.rect) || new a.A(0, 0, t.width, t.height);
         const i = u(s.width, s.height);
         i.getContext("2d").drawImage(t, -s.x, -s.y);
-        return new Promise((t, s) => i.toBlob(t, e == null ? undefined : e.type, e == null ? undefined : e.quality));
+        return new Promise((resolve, reject) => i.toBlob(blob => {
+          if (blob && blob.size) {
+            resolve(blob);
+          } else {
+            reject(new Error("Image encoding failed. Please try saving again."));
+          }
+        }, e == null ? undefined : e.type, e == null ? undefined : e.quality));
       }
       function w(t, e, s) {
         if (!t || !e) {
@@ -230,8 +236,8 @@ window.__editorModules[5699] = function (t, e, s) {
         for (let u = 0; u < l;) {
           const t = o * ~~(u / m);
           const e = h * u++;
-          for (let s = 0; s < h;) {
-            p[e + s++] = n[t + ~~(s / g)];
+          for (let s = 0; s < h; s++) {
+            p[e + s] = n[t + Math.min(o - 1, Math.floor(s / g))];
           }
         }
         c.putImageData(d, 0, 0);
@@ -241,7 +247,7 @@ window.__editorModules[5699] = function (t, e, s) {
         if (!t) {
           return;
         }
-        if (e > t.width || s > t.width) {
+        if (e > t.width || s > t.height) {
           return k(t, e, s);
         }
         if (e < 4096 && s < 4096 && (t.width > 4096 || t.height > 4096)) {

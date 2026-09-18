@@ -49,7 +49,7 @@ window.__editorModules[7732] = function (t, e, s) {
             }
             if (this.rect.width !== this.canvas.width || this.rect.height !== this.canvas.height) {
               this.canvas = t ? a.tm(this.canvas, this.rect.width, this.rect.height) : a.B3(this.canvas, this.rect.width, this.rect.height);
-              this.mask &&= a.tm(this.mask, this.rect.width, this.rect.height);
+              this.mask &&= t ? a.tm(this.mask, this.rect.width, this.rect.height) : a.B3(this.mask, this.rect.width, this.rect.height);
             }
             if (this.rect.rotation !== 0) {
               this.rect = this.rect.getRotatedBounds();

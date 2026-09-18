@@ -5,7 +5,9 @@ window.__editorModules[3641] = function (t, e, s) {
         EB: () => w,
         IF: () => y,
         gr: () => v,
-        zu: () => g
+        zu: () => g,
+        filename: () => filename,
+        download: () => download
       });
       var i = s(7775);
       var a = s(5283);
@@ -19,13 +21,46 @@ window.__editorModules[3641] = function (t, e, s) {
       var u = s(4182);
       var p = s(98);
       s(2128);
+      function filename(name, extension) {
+        const base = String(name || "Untitled").trim().replace(/(?:\.(?:png|jpe?g|webp|gif|bmp|tiff?|avif|heic|heif|svg|ico|pdf|pxz|pxd|psd|zip))+$/i, "");
+        return (base || "Untitled") + "." + extension;
+      }
+      async function download(stage, format = "png") {
+        const fresco = stage.fresco;
+        if (!fresco) {
+          return false;
+        }
+        const name = fresco.name || "Untitled";
+        let blob;
+        if (format === "pxz") {
+          blob = await f(stage, {
+            id: fresco.id, name, quality: 1, nonDestructive: true,
+            type: "document", unit: "pixel"
+          }, fresco);
+        } else {
+          const opaque = format === "jpg" || format === "jpeg" || format === "pdf";
+          const canvas = stage.getOutputCanvas(fresco, 1, opaque ? "#ffffff" : undefined);
+          if (!canvas || !canvas.width || !canvas.height) {
+            throw new Error("The image has no pixels to export.");
+          }
+          blob = await n.PG(canvas, {
+            type: opaque ? "image/jpeg" : "image/" + format,
+            quality: 0.92
+          });
+          if (format === "pdf") {
+            blob = await w(canvas.width, canvas.height, blob);
+          }
+        }
+        v(blob, name, format);
+        return true;
+      }
       function g() {
         return window.showSaveFilePicker !== undefined;
       }
       async function m(t, e, s, i = "image/png") {
         try {
           return await window.showSaveFilePicker({
-            suggestedName: t + "." + e,
+            suggestedName: filename(t, e),
             types: [{
               description: s,
               accept: {
@@ -52,18 +87,23 @@ window.__editorModules[3641] = function (t, e, s) {
         return true;
       }
       function v(t, e, s) {
+        if (!(t instanceof Blob) || !t.size) {
+          throw new Error("Image encoding failed. Please try saving again.");
+        }
         let i = (0, a.T)("a", {
           id: "download-link"
         });
         window.document.body.append(i);
-        i.download = e + "." + s;
-        i.href = URL.createObjectURL(t);
+        i.download = filename(e, s);
+        const url = URL.createObjectURL(t);
+        i.href = url;
         if (i.download === undefined) {
           window.location = i.href;
         } else {
           i.click();
         }
         i.remove();
+        window.setTimeout(() => URL.revokeObjectURL(url), 60000);
       }
       async function f(t, e, i = t.fresco) {
         const {
@@ -146,7 +186,7 @@ window.__editorModules[3641] = function (t, e, s) {
               if (t.mask) {
                 let e = n.r0();
                 const s = await n.PG(t.mask, {
-                  type: "image/web",
+                  type: "image/webp",
                   quality: 0.8
                 });
                 b.push(new File([s], e + ".webp"));
@@ -295,7 +335,7 @@ window.__editorModules[3641] = function (t, e, s) {
                   v.canvas = n.tm(v.canvas, v.trim.width, v.trim.height);
                 }
                 const t = await n.PG(v.canvas, {
-                  type: "image/web",
+                  type: "image/webp",
                   quality: e.quality
                 });
                 b.push(new File([t], a + ".webp"));
@@ -425,7 +465,7 @@ window.__editorModules[3641] = function (t, e, s) {
         let o;
         o = e.getOutputCanvas();
         a = e.fresco.name || "untitled";
-        a = n.Dk(a);
+        a = filename(a, t).slice(0, -t.length - 1);
         let h = await n.PG(o, {
           type: "image/" + t.replace("jpg", "jpeg"),
           quality: 1

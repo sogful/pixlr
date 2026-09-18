@@ -53,6 +53,10 @@ window.__editorModules[5698] = function (t, e, s) {
             }
           };
           this.layerSelect = () => {
+            if (this.isDown && this.selected && this.scratch) {
+              this.up();
+              this.isDown = false;
+            }
             if (!this.stage.fresco.isSelectedType(u.A.TYPE_IMAGE)) {
               (0, i.Ay)("draw-no-layer").style.display = "flex";
               (0, i.Ay)("draw-settings").style.display = "none";
@@ -90,9 +94,9 @@ window.__editorModules[5698] = function (t, e, s) {
             }
             let a = l.A.fromHEX(c.Ay.mainColor);
             let n = (0, i.Ay)("draw-hard-tip").checked;
-            if (!!g.A.isEqual(this.brush.settings, this.lastSettings) || !a.isEqual(this.lastColor) || n !== this.lastTip) {
+            if (!g.A.isEqual(this.brush.settings, this.lastSettings) || !a.isEqual(this.lastColor) || n !== this.lastTip) {
               this.brush.generate(a, n);
-              this.lastSettings = this.brush.settings;
+              this.lastSettings = {...this.brush.settings};
               this.lastColor = a;
               this.lastTip = n;
             }
@@ -162,7 +166,6 @@ window.__editorModules[5698] = function (t, e, s) {
               }
             }
             if (a) {
-              this.scratch.applySelection(this.stage);
               this.requestRender();
             }
           };
@@ -193,13 +196,18 @@ window.__editorModules[5698] = function (t, e, s) {
             }
             this.renderFrame = window.requestAnimationFrame(() => {
               this.renderFrame = undefined;
+              this.scratch.applySelection(this.stage);
               this.stage.render();
             });
           };
           this.up = t => {
             this.stage.coating.freeze(false);
             this.removeMoveListeners();
-            const e = n.TL(this.scratch.canvas);
+            if (!this.selected || !this.scratch) {
+              return;
+            }
+            this.scratch.applySelection(this.stage);
+            const e = n.TL(this.scratch.getCanvas());
             if (e && e.width > 0 && e.height > 0) {
               let t = this.selected.rect ? n.ON(this.selected.canvas, e.rebase(this.selected.rect.x, this.selected.rect.y)) : undefined;
               const s = n.$z(this.selected.mask);
@@ -230,10 +238,11 @@ window.__editorModules[5698] = function (t, e, s) {
             if ((t = this.stage.fresco) !== null && t !== undefined) {
               t.removeScratch();
             }
-            if (this.renderFrame && !e) {
+            if (this.renderFrame) {
               window.cancelAnimationFrame(this.renderFrame);
               this.renderFrame = undefined;
             }
+            this.stage.render();
             this.stage.coating.removePicker();
             this.brushPod.cleanUp();
             this.opacity.cleanUp();

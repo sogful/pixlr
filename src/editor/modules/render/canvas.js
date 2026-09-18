@@ -1327,14 +1327,7 @@ window.__editorModules[3350] = function (t, e, s) {
             document.removeEventListener("visibilitychange", this.visibilityChange, false);
           };
           this.visibilityChange = () => {
-            if (!this.fresco) {
-              return;
-            }
-            const t = this.fresco.layers.flatMap(t => [t.canvas, t.mask]).filter(Boolean);
-            if (document.visibilityState === "hidden") {
-              p.mM.backupAll(t);
-            } else if (p.mM.ensureAll(t)) {
-              this.fresco.layers.forEach(t => t.render());
+            if (this.fresco && document.visibilityState === "visible") {
               this.render();
             }
           };
@@ -1378,6 +1371,11 @@ window.__editorModules[3350] = function (t, e, s) {
           document.addEventListener("visibilitychange", this.visibilityChange, false);
         }
         async syncDocument(t) {
+          if (t && this.syncQueue > 0 && !this.syncDisabled && !r.Ay.api) {
+            this.pendingSync ||= new Set();
+            this.pendingSync.add(t);
+            return;
+          }
           if (!!t && !(this.syncQueue > 0) && !this.syncDisabled && !r.Ay.api) {
             try {
               this.syncQueue++;
@@ -1408,6 +1406,11 @@ window.__editorModules[3350] = function (t, e, s) {
               document.cookie = "has-history=true; path=/; SameSite=Strict; expires=Fri, 31 Dec 9999 23:59:59 GMT";
             } finally {
               this.syncQueue--;
+              const pending = this.pendingSync?.values().next().value;
+              if (pending) {
+                this.pendingSync.delete(pending);
+                await this.syncDocument(pending);
+              }
             }
           }
         }

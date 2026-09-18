@@ -893,60 +893,27 @@ window.__editorModules[481] = function (t, e, s) {
             this.downloadFormat("png");
           };
           this.downloadFormat = async fmt => {
-            if (!this.stage || !this.stage.fresco) {
+            if (!this.stage?.fresco || this.downloading) {
               return;
             }
-            const name = this.stage.fresco.name || "Untitled";
-            let blob;
-            if (fmt === "pxz") {
-              try {
-                blob = await (0, g.Ab)(this.stage, {
-                  id: this.stage.fresco.id,
-                  name: name,
-                  quality: 1,
-                  nonDestructive: false,
-                  type: "document",
-                  unit: "pixel"
-                });
-              } catch (err) {
-                console.error(err);
-                return;
-              }
-            } else {
-              const needsBg = fmt === "jpg" || fmt === "pdf";
-              const canvas = this.stage.getOutputCanvas(this.stage.fresco, 1, needsBg ? "#ffffff" : undefined);
-              const mime = fmt === "pdf" ? "image/jpeg" : "image/" + fmt;
-              blob = await new Promise(resolve => canvas.toBlob(resolve, mime, 0.92));
-              if (fmt === "pdf") {
-                try {
-                  blob = await (0, g.EB)(this.stage.fresco.width, this.stage.fresco.height, blob);
-                } catch (err) {
-                  console.error(err);
-                  return;
-                }
-              }
+            this.downloading = true;
+            this.setSaving();
+            try {
+              document.dispatchEvent(new CustomEvent("select-tool"));
+              this.stage.history.commitTransaction();
+              await g.download(this.stage, fmt);
+            } catch (error) {
+              console.error("Download failed", error);
+              document.dispatchEvent(new CustomEvent("notification", {
+                detail: "Download failed. Please try again."
+              }));
+            } finally {
+              this.downloading = false;
+              this.setSaving(false);
             }
-            if (!blob) {
-              return;
-            }
-            const file = new File([blob], name + "." + fmt);
-            if ((0, g.zu)()) {
-              const handle = await (0, g.D0)(name, fmt, fmt.toUpperCase(), file.type || "image/png");
-              if (handle === false) {
-                return;
-              }
-              if (!(await (0, g.IF)(handle, file))) {
-                (0, g.gr)(file, name, fmt);
-              }
-            } else {
-              (0, g.gr)(file, name, fmt);
-            }
-            document.dispatchEvent(new CustomEvent("notification", {
-              detail: (0, a.A)("fileSaved")
-            }));
           };
           this.setSaving = (t = true) => {
-            (0, n.Ay)("save").classList.toggle("working", t);
+            (0, n.Ay)("save")?.classList.toggle("working", t);
           };
           new w.A();
           if (window.matchMedia("(display-mode: standalone)").matches || document.referrer.includes("android-app://")) {

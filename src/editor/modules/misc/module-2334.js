@@ -297,6 +297,7 @@ window.__editorModules[2334] = function (t, e, s) {
           await Promise.all([s.delete(t), a.delete(t), n.delete(t)]);
         }
         static async sync(t, e) {
+          const started = t.syncRequested || new Date();
           if (!e.hasLayer(t)) {
             throw new Error("This is probably a bug, cant create layermeta from layer not in the fresco");
           }
@@ -317,7 +318,7 @@ window.__editorModules[2334] = function (t, e, s) {
             let [e] = t.transaction("readwrite", "layer-meta");
             await e.put(s);
           }
-          t.syncLatest = new Date();
+          t.syncLatest = t.syncRequested && t.syncRequested !== started ? undefined : started;
         }
       }
     }

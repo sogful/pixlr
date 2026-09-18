@@ -23,7 +23,9 @@ window.__editorModules[5527] = function (t, e, s) {
                 break;
               }
             }
-            this.stage.raster.releasePointerCapture(t.pointerId);
+            if (this.stage.raster.hasPointerCapture(t.pointerId)) {
+              this.stage.raster.releasePointerCapture(t.pointerId);
+            }
           };
           this.pointerDown = t => {
             t.stopPropagation();
@@ -46,9 +48,16 @@ window.__editorModules[5527] = function (t, e, s) {
           };
           this.pointerUp = t => {
             t.stopPropagation();
+            if (!this.isDown) {
+              return;
+            }
             this.isDown = false;
             const e = a.Ay.isHDPI ? 2 : 1;
             this.up(new i.A(t.offsetX * e, t.offsetY * e));
+          };
+          this.pointerCancel = t => {
+            this.pointerUp(t);
+            this.removePointer(t);
           };
           this.dblClick = t => {
             t.stopPropagation();
@@ -69,10 +78,14 @@ window.__editorModules[5527] = function (t, e, s) {
           this.addMoveListeners = () => {
             this.stage.raster.addEventListener("pointermove", this.pointerMove, false);
             this.stage.raster.addEventListener("pointerup", this.pointerUp, false);
+            this.stage.raster.addEventListener("pointercancel", this.pointerCancel, false);
+            this.stage.raster.addEventListener("lostpointercapture", this.pointerCancel, false);
           };
           this.removeMoveListeners = () => {
             this.stage.raster.removeEventListener("pointermove", this.pointerMove, false);
             this.stage.raster.removeEventListener("pointerup", this.pointerUp, false);
+            this.stage.raster.removeEventListener("pointercancel", this.pointerCancel, false);
+            this.stage.raster.removeEventListener("lostpointercapture", this.pointerCancel, false);
           };
           this.down = (t, e, s) => {};
           this.move = (t, e, s) => {};
