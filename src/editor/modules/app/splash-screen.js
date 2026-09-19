@@ -31,6 +31,7 @@ window.__editorModules[481] = function (t, e, s) {
       var L = s(3641);
       var M = s(2355);
       var P = s(5288);
+      var database = s(9973);
       var D = t([M]);
       var z = D.then ? (await D)() : D;
       M = z[0];
@@ -87,12 +88,13 @@ window.__editorModules[481] = function (t, e, s) {
           };
           this.hideSplash = () => {
             var t;
+            const changed = !document.documentElement.classList.contains("workcast");
             (0, n.Ay)("workspace").style.display = "block";
             if ((t = (0, n.Ay)("modal-deeplink")) !== null && t !== undefined) {
               t.remove();
             }
             document.documentElement.classList.add("workcast");
-            document.dispatchEvent(new CustomEvent("resize"));
+            if (changed) document.dispatchEvent(new CustomEvent("resize"));
           };
           this.setUpSplash = () => {
             var t;
@@ -200,11 +202,16 @@ window.__editorModules[481] = function (t, e, s) {
             });
           };
           this.setHistory = async () => {
+            const generation = this.historyGeneration = (this.historyGeneration || 0) + 1;
+            this.thumbnailObserver?.disconnect();
+            this.thumbnailLoads = new WeakMap();
             const t = (0, n.Ay)("splash-open-quick");
             t.innerHTML = "";
             const e = (0, n.Ay)("history-content");
             e.innerHTML = "";
             const s = await k.DocumentMeta.history();
+            if (generation !== this.historyGeneration) return;
+            (0, n.Ay)("history-all").style.display = "none";
             (0, n.Ay)("splash-content-history").style.display = s.length > 0 ? "block" : "none";
             if (s.length > 0) {
               for (var i = 0; i < s.length && i < 3; i++) {
@@ -291,42 +298,16 @@ window.__editorModules[481] = function (t, e, s) {
             t.remove();
           };
           this.autoBackupToCache = async () => {
-            if (!("caches" in window) || this.__autoBackupRunning) {
+            if (!("caches" in window) || !window.projectbackup || this.stage.syncQueue || this.stage.importing) {
               return;
             }
-            this.__autoBackupRunning = true;
             try {
-              const e = await k.DocumentMeta.history();
-              if (!e.length) {
-                return;
+              const connection = await database.P2();
+              if (connection.underlying) {
+                return await window.projectbackup.sync(connection.underlying);
               }
-              let o = new M.ZipWriter();
-              for (var i = 0; i < e.length; i++) {
-                const c = e[i];
-                const a = new x.A(c.id, c.name, c.width, c.height, c.transparent ? undefined : c.color, c.templateMeta);
-                await c.restore(a);
-                const blob = await (0, L.Ab)(this.stage, {
-                  id: a.id,
-                  name: a.name,
-                  quality: 1,
-                  nonDestructive: false,
-                  type: "document",
-                  unit: "pixel"
-                }, a);
-                const bytes = new Uint8Array(await blob.arrayBuffer());
-                o.writeFile(a.name + ".pxz", bytes, false);
-              }
-              const r = o.finish();
-              const cache = await caches.open("pixlr-backup");
-              await cache.put("/backup.zip", new Response(new Blob([r.buffer]), {
-                headers: {
-                  "Content-Type": "application/zip"
-                }
-              }));
-            } catch (err) {
-              console.log(err);
-            } finally {
-              this.__autoBackupRunning = false;
+            } catch (error) {
+              console.error("Local backup failed", error);
             }
           };
           this.showAllHistory = async () => {
@@ -387,7 +368,7 @@ window.__editorModules[481] = function (t, e, s) {
             let d;
             const loadThumb = () => {
               t.getThumbnail().then(e => {
-                if (e) {
+                if (e && r.isConnected) {
                   d = e;
                   e.alt = t.name;
                   r.appendChild(e);
@@ -395,15 +376,21 @@ window.__editorModules[481] = function (t, e, s) {
               });
             };
             if ("IntersectionObserver" in window) {
-              const thumbObserver = new IntersectionObserver(entries => {
-                if (entries[0].isIntersecting) {
-                  thumbObserver.disconnect();
-                  loadThumb();
+              this.thumbnailLoads ||= new WeakMap();
+              this.thumbnailObserver ||= new IntersectionObserver(entries => {
+                for (const entry of entries) {
+                  if (entry.isIntersecting) {
+                    this.thumbnailObserver.unobserve(entry.target);
+                    const load = this.thumbnailLoads.get(entry.target);
+                    this.thumbnailLoads.delete(entry.target);
+                    if (load) load();
+                  }
                 }
               }, {
                 rootMargin: "200px"
               });
-              thumbObserver.observe(r);
+              this.thumbnailLoads.set(r, loadThumb);
+              this.thumbnailObserver.observe(r);
             } else {
               loadThumb();
             }

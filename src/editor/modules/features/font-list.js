@@ -106,13 +106,33 @@ window.__editorModules[4182] = function (t, e, s) {
           if (!t) {
             return;
           }
-          const e = t.local ? new FontFace(t.name, await (0, n.CB)(t.font)) : new FontFace(t.name, `url(assets/fonts/${t.short}.woff) format('woff')`);
-          if (document.fonts.has(e)) {
-            return Promise.resolve(e);
+          h.loaded ||= new Map();
+          const source = t.local ? t.font : t.short;
+          const cached = h.loaded.get(t.name);
+          if (cached && cached.source === source) {
+            return cached.promise;
           }
-          let s = await e.load();
-          document.fonts.add(s);
-          return s;
+          const entry = {source};
+          entry.promise = (async () => {
+            const face = t.local ? new FontFace(t.name, await (0, n.CB)(t.font)) : new FontFace(t.name, `url(assets/fonts/${t.short}.woff) format('woff')`);
+            await face.load();
+            if (cached?.face) {
+              document.fonts.delete(cached.face);
+            }
+            document.fonts.add(face);
+            o.A.clearMeasurements();
+            entry.face = face;
+            return face;
+          })();
+          h.loaded.set(t.name, entry);
+          try {
+            return await entry.promise;
+          } catch (error) {
+            if (h.loaded.get(t.name) === entry) {
+              h.loaded.delete(t.name);
+            }
+            throw error;
+          }
         }
         static getFontDesc(t) {
           return h.fontList.find(e => e.name === t);

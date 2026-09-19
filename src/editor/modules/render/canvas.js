@@ -1391,6 +1391,7 @@ window.__editorModules[3350] = function (t, e, s) {
               let m = u.bD(T.DocumentMeta, await c.get(t.id));
               m ||= new T.DocumentMeta(t.id, t.name, t.width, t.height);
               m.lastModified = o;
+              m.syncPending = true;
               m.width = t.width;
               m.color = t.color;
               m.height = t.height;
@@ -1403,6 +1404,9 @@ window.__editorModules[3350] = function (t, e, s) {
               await Promise.all(v.map(async t => T.z.delete(t)));
               const w = t.layers.filter(t => t.syncRequested && (!t.syncLatest || t.syncRequested > t.syncLatest));
               await Promise.all(w.map(e => T.z.sync(e, t)));
+              m.syncPending = false;
+              const [metadata] = l.transaction("readwrite", "document-meta");
+              await metadata.put(m);
               document.cookie = "has-history=true; path=/; SameSite=Strict; expires=Fri, 31 Dec 9999 23:59:59 GMT";
             } finally {
               this.syncQueue--;

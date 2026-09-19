@@ -1,7 +1,12 @@
 window.__editorModules[8464] = function (t, e, s) {
       var i = s(5283);
       var a = s(5699);
+      const measurements = new Map();
+      document.fonts.addEventListener("loadingdone", () => measurements.clear());
       class n {
+        static clearMeasurements() {
+          measurements.clear();
+        }
         constructor(t, e, s = true) {
           this.lineSpace = 0;
           this.letterSpace = 0;
@@ -57,6 +62,12 @@ window.__editorModules[8464] = function (t, e, s) {
           if (this.size < 1) {
             return;
           }
+          const key = this.getCssFont() + ":" + document.fonts.size;
+          const cached = measurements.get(key);
+          if (cached) {
+            Object.assign(this, cached);
+            return;
+          }
           var t = document.createElement("canvas");
           t.width = this.size * 20;
           t.height = Math.round(this.size * 2);
@@ -80,6 +91,10 @@ window.__editorModules[8464] = function (t, e, s) {
             this.measureTextFallback();
           }
           this.padding = Math.round(this.height * 0.2);
+          if (measurements.size >= 256) {
+            measurements.delete(measurements.keys().next().value);
+          }
+          measurements.set(key, {ascent: this.ascent, height: this.height, baseline: this.baseline, padding: this.padding});
         }
         measureTextFallback() {
           var t = document.createElement("span");

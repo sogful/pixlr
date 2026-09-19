@@ -262,6 +262,7 @@ window.__editorModules[2334] = function (t, e, s) {
                 const t = new r.A(this.id, this.text, a.bD(o.A, this.rect), a.bD(p.A, this.textSettings));
                 t.settings = this.settings;
                 await y.A.loadFont(this.textSettings.font);
+                t.textSettings.measureText();
                 await t.prepare();
                 return t;
               }
@@ -308,8 +309,9 @@ window.__editorModules[2334] = function (t, e, s) {
           } else if (t.type === u.A.TYPE_FRAME) {
             n = t.trim && t.trim.isSet() && !!t.canvas || !t.trim && !t.canvas;
           }
-          if (n) {
-            const [e, n] = await Promise.all([a.PG(t.canvas), a.PG(t.mask)]);
+          const encoded = !t.syncRequested && t.encoded;
+          if (n || encoded) {
+            const [e, n] = encoded ? [encoded.bitmap, encoded.mask] : await Promise.all([a.PG(t.canvas), a.PG(t.mask)]);
             const o = await (0, i.P2)();
             let [r, h, l] = o.transaction("readwrite", "layer-bitmap", "layer-meta", "layer-mask");
             await Promise.all([h.put(s), e ? r.put(e, s.id) : r.delete(s.id), n ? l.put(n, s.id) : l.delete(s.id)]);
@@ -319,6 +321,7 @@ window.__editorModules[2334] = function (t, e, s) {
             await e.put(s);
           }
           t.syncLatest = t.syncRequested && t.syncRequested !== started ? undefined : started;
+          delete t.encoded;
         }
       }
     }

@@ -4,10 +4,20 @@ window.__editorModules[9973] = function (t, e, s) {
       });
       var i;
       var a = s(5699);
+      let connection;
       async function n() {
         try {
-          return await h.open();
+          connection ||= h.open().then(database => {
+            database.underlying.onversionchange = () => {
+              database.underlying.close();
+              connection = undefined;
+            };
+            database.underlying.onclose = () => {connection = undefined;};
+            return database;
+          });
+          return await connection;
         } catch (t) {
+          connection = undefined;
           return Promise.resolve(new d());
         }
       }

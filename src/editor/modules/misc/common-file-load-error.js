@@ -31,6 +31,7 @@ window.__editorModules[2128] = function (t, e, s) {
       var T = s(4358);
       var L = s(5138);
       var M = s(5096);
+      var database = s(9973);
       function P(t, e = false, s = "*/*") {
         return new Promise((i, n) => {
           if ((0, a.Ay)("browse")) {
@@ -392,7 +393,7 @@ window.__editorModules[2128] = function (t, e, s) {
             const nameStart = off + 30;
             const name = new TextDecoder().decode(buf.subarray(nameStart, nameStart + nameLen));
             const dataStart = nameStart + nameLen + extraLen;
-            const data = buf.slice(dataStart, dataStart + compSize);
+            const data = buf.subarray(dataStart, dataStart + compSize);
             entries.push({name, data});
             off = dataStart + compSize;
             if (entries.length > 1000) break;
@@ -402,47 +403,29 @@ window.__editorModules[2128] = function (t, e, s) {
           return null;
         }
       }
-      function __pxzExistingNames() {
-        return new Promise(res => {
-          try {
-            const req = indexedDB.open("pixlr", 2);
-            req.onsuccess = () => {
-              try {
-                const tx = req.result.transaction("document-meta", "readonly");
-                const all = tx.objectStore("document-meta").getAll();
-                all.onsuccess = () => res((all.result || []).map(r => r.name));
-                all.onerror = () => res([]);
-              } catch (e) {
-                res([]);
-              }
-            };
-            req.onerror = () => res([]);
-          } catch (e) {
-            res([]);
-          }
-        });
-      }
-      async function I(t, e, i, a) {
+      async function I(t, e, i, a, bulk = false) {
         const __pxzBuf = new Uint8Array(await e.arrayBuffer());
         const __pxzEntries = __parseStoreZip(__pxzBuf);
         if (__pxzEntries && __pxzEntries.length && !__pxzEntries.some(en => en.name === "manifest.json") && __pxzEntries.every(en => /\.pxz$/i.test(en.name))) {
           document.dispatchEvent(new CustomEvent("loading", {detail: "start"}));
+          t.importing = true;
           try {
-            const __existingNames = await __pxzExistingNames();
             let __skipped = 0;
+            let completed = 0;
             for (const en of __pxzEntries) {
-              const __n = en.name.replace(/\.pxz$/i, "");
-              if (__existingNames.includes(__n)) {
-                __skipped++;
-                continue;
-              }
-              await I(t, new File([en.data], en.name), i, a);
+              completed++;
+              document.dispatchEvent(new CustomEvent("loading", {detail: "Importing " + completed + " of " + __pxzEntries.length}));
+              while (t.syncQueue) await new Promise(resolve => setTimeout(resolve, 10));
+              if (await I(t, new File([en.data], en.name), i, a, true) === false) __skipped++;
+              await new Promise(resolve => setTimeout(resolve, 0));
             }
             if (__skipped > 0) {
               document.dispatchEvent(new CustomEvent("notification", {detail: "Skipped " + __skipped + " already-imported project(s)"}));
             }
           } finally {
+            t.importing = false;
             document.dispatchEvent(new CustomEvent("loading", {detail: "stop"}));
+            document.dispatchEvent(new CustomEvent("navigate", {detail: "home"}));
           }
           return;
         }
@@ -451,8 +434,7 @@ window.__editorModules[2128] = function (t, e, s) {
         } = await s.e(262).then(s.bind(s, 2355));
         let h;
         try {
-          let s = await e.arrayBuffer();
-          h = new r(new Uint8Array(s));
+          h = new r(__pxzBuf);
           let c = h.readString("manifest.json");
           let u = JSON.parse(c);
           if (!t) {
@@ -465,22 +447,35 @@ window.__editorModules[2128] = function (t, e, s) {
             }
             throw new Error("No image in PXZ file");
           }
-          t.supressRender = true;
-          const p = new M.A(n.Os(), u.name, u.width, u.height, u.background, i, a);
-          t.addTab(p, "template");
-          document.dispatchEvent(new CustomEvent("loading", {
+          if (bulk && u.id) {
+            const connection = await database.P2();
+            const [store] = connection.transaction("readonly", "document-meta");
+            if (await store.get(u.id)) return false;
+          }
+          if (!bulk) t.supressRender = true;
+          const p = new M.A(bulk && u.id ? u.id : n.Os(), u.name, u.width, u.height, u.background, i, a);
+          if (!bulk) t.addTab(p, "template");
+          if (!bulk) document.dispatchEvent(new CustomEvent("loading", {
             detail: "start"
           }));
-          try {
+          if (!bulk) try {
             let e = h.readFile("thumbnail.webp");
             let s = await n.lz(new Blob([e.buffer]));
             t.renderPreview(s);
           } catch (l) {
             console.log(l);
           }
-          let g = await R(u, new d.A(), h);
-          t.fresco.layers.push(...g);
-          await t.syncDocument(t.fresco);
+          let g = await R(u, new d.A(), h, undefined, bulk);
+          p.layers.push(...g);
+          await t.syncDocument(p);
+          if (bulk) {
+            const thumbnail = h.readFile("thumbnail.webp");
+            if (thumbnail) {
+              const connection = await database.P2();
+              const [store] = connection.transaction("readwrite", "document-thumbnail");
+              await store.put(new Blob([thumbnail], {type: "image/webp"}), p.id);
+            }
+          }
         } catch (c) {
           console.log(c);
           alert("Error while loading PXZ file :(");
@@ -489,13 +484,14 @@ window.__editorModules[2128] = function (t, e, s) {
           if (h != null) {
             h.free();
           }
-          if (t) {
+          if (t && !bulk) {
             t.supressRender = false;
           }
-          document.dispatchEvent(new CustomEvent("loading", {
+          if (!bulk) document.dispatchEvent(new CustomEvent("loading", {
             detail: "stop"
           }));
         }
+        if (bulk) return;
         t.selectLayer(t.fresco.layers[0]);
         t.setZoom("fit");
         document.dispatchEvent(new CustomEvent("layerlist-update"));
@@ -531,7 +527,7 @@ window.__editorModules[2128] = function (t, e, s) {
         document.dispatchEvent(new CustomEvent("viewport-render"));
         document.dispatchEvent(new CustomEvent("layerlist-update"));
       }
-      async function R(t, e = new d.A(), s, i) {
+      async function R(t, e = new d.A(), s, i, bulk = false) {
         let l = new Array();
         if (t.stack) {
           for (let d = 0; d < t.stack.length; d++) {
@@ -541,12 +537,14 @@ window.__editorModules[2128] = function (t, e, s) {
               case y.A.TYPE_ELEMENT:
                 {
                   let t;
+                  const encoded = {};
                   let a = u.rect ? new h.A(u.rect.x + e.x, u.rect.y + e.y, u.rect.w, u.rect.h, u.rect.r) : undefined;
                   if (u.content !== undefined) {
                     if (s) {
                       let e = s.readFile(u.content);
                       if (e) {
-                        t = await n.lz(new Blob([e.buffer]));
+                        encoded.bitmap = new Blob([e]);
+                        if (!bulk) t = await n.lz(encoded.bitmap);
                       }
                     } else {
                       let e = await (0, o.yP)(i + u.content);
@@ -556,6 +554,7 @@ window.__editorModules[2128] = function (t, e, s) {
                     }
                   }
                   let r = new A.A(n.Os(), u.name, t, a, u.locked);
+                  if (bulk) r.encoded = encoded;
                   if (u.opacity !== undefined) {
                     r.settings.opacity = u.opacity;
                   }
@@ -574,9 +573,10 @@ window.__editorModules[2128] = function (t, e, s) {
                   if (u.mask !== undefined && s) {
                     let t = s.readFile(u.mask);
                     if (t) {
-                      r.mask = await n.lz(new Blob([t.buffer]));
+                      encoded.mask = new Blob([t]);
+                      if (!bulk) r.mask = await n.lz(encoded.mask);
                     }
-                    r.render();
+                    if (!bulk) r.render();
                   }
                   l.push(r);
                   break;
@@ -586,7 +586,7 @@ window.__editorModules[2128] = function (t, e, s) {
                   if (!u.format) {
                     continue;
                   }
-                  let t = new E.A(u.format.font?.name, u.format.size);
+                  let t = new E.A(u.format.font?.name, u.format.size, !bulk);
                   if (u.format.align !== undefined) {
                     t.align = u.format.align;
                   }
@@ -632,10 +632,10 @@ window.__editorModules[2128] = function (t, e, s) {
                       if (t) {
                         e = await f.A.loadFontFromTemplate(t, u.format.font.name, u.format.font.content);
                       }
-                    } else if (e) {
+                    } else if (e && !bulk) {
                       await f.A.addToDOM(e);
                     }
-                    t.measureText();
+                    if (!bulk) t.measureText();
                   }
                   if (u.style) {
                     if (u.style.curve) {
@@ -751,7 +751,7 @@ window.__editorModules[2128] = function (t, e, s) {
                     d.textSettings.fillValue = t.getStringValue();
                     d.fill = t;
                   }
-                  await d.prepare();
+                  if (!bulk) await d.prepare();
                   d.settings.name = u.name;
                   l.push(d);
                   break;
@@ -854,7 +854,7 @@ window.__editorModules[2128] = function (t, e, s) {
                       a.shapeSettings.radii = u.format.radii;
                     }
                   }
-                  await a.prepare();
+                  if (!bulk) await a.prepare();
                   l.push(a);
                   break;
                 }

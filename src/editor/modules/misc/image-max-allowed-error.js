@@ -199,13 +199,11 @@ window.__editorModules[5699] = function (t, e, s) {
         i = undefined;
       }
       function x(t, e, s = 0, n = false) {
-        const o = W();
-        if (o === 0) ;else if (t.width > o || t.height > o) {
-          alert((0, i.A)("imageMaxAllowedError").replace("{width}", o.toString()).replace("{height}", o.toString()));
-          return null;
-        }
         let r = n ? d(t.width, t.height) : u(t.width, t.height);
         let h = r.getContext("2d");
+        if (!h || h.isContextLost?.()) {
+          throw new Error("The image is too large for this browser to open.");
+        }
         h.drawImage(t, 0, 0, t.width, t.height);
         h = undefined;
         if (r.width > e || r.height > e) {
@@ -673,41 +671,6 @@ window.__editorModules[5699] = function (t, e, s) {
       }
       Symbol.toStringTag;
       Error;
-      const W = (t = 32768) => {
-        const e = (t, e) => {
-          var s;
-          e.width = e.height = t;
-          const i = e.getContext("2d");
-          try {
-            return !!i && !((s = i.isContextLost) === null || s === undefined ? undefined : s.call(i)) && (i.fillStyle = "#000", i.fillRect(0, 0, 1, 1), i.getImageData(0, 0, 1, 1).data[3] === 255);
-          } catch (a) {
-            return false;
-          }
-        };
-        let s = t;
-        while (s > 0) {
-          const t = document.createElement("canvas");
-          const i = e(s, t);
-          Y(t);
-          if (i) {
-            return s;
-          }
-          s = Math.floor(s / 2);
-        }
-        return 0;
-      };
-      const Y = t => {
-        try {
-          t.width = 0;
-          t.height = 0;
-        } catch (e) {}
-        try {
-          if (t.parentNode) {
-            t.parentNode.removeChild(t);
-          }
-        } catch (s) {}
-        t = null;
-      };
       s.d(e, ["Al", 0, "rgb(255,0,255)", "Dk", 0, t => t.substring(0, t.lastIndexOf(".")) || t, "E5", 0, t => new Promise(e => {
         const s = new FileReader();
         s.onloadend = function (t) {
