@@ -30,9 +30,10 @@ function countLocalProjects() {
             req.onsuccess = () => {
                 try {
                     const db = req.result
-                    if (!db.objectStoreNames.contains("document-meta")) {resolve(0); return}
+                    if (!db.objectStoreNames.contains("document-meta")) {db.close(); resolve(0); return}
                     const tx = db.transaction("document-meta", "readonly")
                     const countReq = tx.objectStore("document-meta").count()
+                    tx.oncomplete = tx.onabort = () => db.close()
                     countReq.onsuccess = () => resolve(countReq.result || 0)
                     countReq.onerror = () => resolve(0)
                 } catch (e) {resolve(0)}
@@ -48,9 +49,9 @@ async function checkLocalBackupRecovery() {
     if (localCount > 0) return
     let cache
     try {cache = await caches.open("pixlr-backup")} catch (e) {return}
+    const snapshot = window.projectbackup && await window.projectbackup.available()
     const response = await cache.match("/backup.zip")
-    if (!response) return
-    const blob = await response.blob()
+    if (!response && !snapshot) return
     const banner = document.createElement("div")
     banner.className = "history-undo-toast"
     banner.style.bottom = "auto"
@@ -59,9 +60,27 @@ async function checkLocalBackupRecovery() {
     span.textContent = "Local backup found"
     const restore = document.createElement("a")
     restore.textContent = "Restore"
-    restore.addEventListener("click", () => {
-        banner.remove()
-        importZipFile(new File([blob], "backup.zip", {type: "application/zip"}))
+    restore.addEventListener("click", async () => {
+        if (restore.dataset.working) return
+        restore.dataset.working = "true"
+        try {
+            if (snapshot) {
+                const database = await new Promise((resolve, reject) => {
+                    const request = indexedDB.open("pixlr", 2)
+                    request.onsuccess = () => resolve(request.result)
+                    request.onerror = () => reject(request.error)
+                })
+                try {await window.projectbackup.restore(database)} finally {database.close()}
+                location.reload()
+            } else {
+                importZipFile(new File([await response.blob()], "backup.zip", {type: "application/zip"}))
+            }
+            banner.remove()
+        } catch (error) {
+            console.error("Backup restore failed", error)
+            span.textContent = "Restore failed. Please try again."
+            delete restore.dataset.working
+        }
     })
     const dismiss = document.createElement("a")
     dismiss.textContent = "Dismiss"
