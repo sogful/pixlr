@@ -29,12 +29,16 @@ window.__editorModules[3438] = function (t, e, s) {
                 break;
               }
             }
-            this.stage.raster.releasePointerCapture(t);
+            if (this.stage.raster.hasPointerCapture(t)) {
+              this.stage.raster.releasePointerCapture(t);
+            }
           };
           this.addListener = () => {
             this.stage.raster.addEventListener("pointerdown", this.pointerDown, false);
             this.stage.raster.addEventListener("pointermove", this.pointerMove, false);
             this.stage.raster.addEventListener("pointerup", this.pointerUp, false);
+            this.stage.raster.addEventListener("pointercancel", this.pointerCancel, false);
+            this.stage.raster.addEventListener("lostpointercapture", this.pointerCancel, false);
             this.raster.addEventListener("dblclick", this.dblClick, false);
             this.raster.addEventListener("contextmenu", this.contextMenu, true);
             document.addEventListener("viewport-render", this.render, false);
@@ -46,6 +50,8 @@ window.__editorModules[3438] = function (t, e, s) {
             this.stage.raster.removeEventListener("pointerdown", this.pointerDown, false);
             this.stage.raster.removeEventListener("pointermove", this.pointerMove, false);
             this.stage.raster.removeEventListener("pointerup", this.pointerUp, false);
+            this.stage.raster.removeEventListener("pointercancel", this.pointerCancel, false);
+            this.stage.raster.removeEventListener("lostpointercapture", this.pointerCancel, false);
             this.raster.removeEventListener("dblclick", this.dblClick, false);
             this.raster.removeEventListener("contextmenu", this.contextMenu, true);
             document.removeEventListener("viewport-render", this.render, false);
@@ -82,6 +88,11 @@ window.__editorModules[3438] = function (t, e, s) {
             this.removePointer(t.pointerId);
             const e = c.Ay.isHDPI ? 2 : 1;
             this.up(new l.A(t.offsetX * e, t.offsetY * e), t.pointerType);
+          };
+          this.pointerCancel = t => {
+            if (this.pointers.includes(t.pointerId)) {
+              this.pointerUp(t);
+            }
           };
           this.supress = t => {
             if (t && !this.supressed) {
@@ -1393,6 +1404,9 @@ window.__editorModules[3438] = function (t, e, s) {
               s.style.textAlign = o.align;
               s.value = t.text;
               const h = () => window.setTimeout(() => {
+                if (!s.isConnected) {
+                  return;
+                }
                 let t = s.cloneNode();
                 t.style.visibility = "false";
                 s.parentNode.insertBefore(t, s);
@@ -1411,6 +1425,9 @@ window.__editorModules[3438] = function (t, e, s) {
               }, true);
               document.body.appendChild(s);
               window.setTimeout(() => {
+                if (!s.isConnected) {
+                  return;
+                }
                 h();
                 s.focus();
                 s.select();
@@ -1428,7 +1445,7 @@ window.__editorModules[3438] = function (t, e, s) {
           };
           this.outsideTextClick = t => {
             let e = (0, i.Ay)("floating-text-input");
-            if (t.target !== e) {
+            if (e && t.target !== e) {
               t.stopImmediatePropagation();
               t.stopPropagation();
               t.preventDefault();
@@ -1453,8 +1470,14 @@ window.__editorModules[3438] = function (t, e, s) {
             }
           };
           this.cleanUp = () => {
+            this.outsideTextClick(new Event("text-cleanup"));
+            document.removeEventListener("mousedown", this.outsideTextClick, true);
             this.proxy = undefined;
             this.removeListener();
+            this.isDown = false;
+            for (const pointer of [...this.pointers]) {
+              this.removePointer(pointer);
+            }
             this.raster.style.cursor = "unset";
             this.matrix = undefined;
             this.raster = undefined;

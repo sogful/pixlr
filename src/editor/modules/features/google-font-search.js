@@ -1269,6 +1269,7 @@ window.__editorModules[5992] = function (t, e, s) {
             document.dispatchEvent(new CustomEvent("viewport-render"));
           };
           this.reformDown = (t, e) => {
+            this.isDown = true;
             this.downPoint = t;
             this.usedtobe = e;
             this.stage.coating.freeze(true);
@@ -1333,6 +1334,10 @@ window.__editorModules[5992] = function (t, e, s) {
             this.stage.duplicateLayer();
           };
           this.cleanUp = () => {
+            this.isDown = false;
+            this.removeMoveListeners();
+            this.stage.coating.clear(true);
+            this.stage.coating.freeze(false);
             this.stage.history.commitTransaction();
             this.reform.cleanUp();
             this.reform = undefined;
